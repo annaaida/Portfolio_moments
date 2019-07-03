@@ -6,13 +6,11 @@ Rails.application.routes.draw do
   	registrations: 'photographers/registrations'
   }
 
-
   devise_for :admins, controllers: {
   	sessions:      'photographers/sessions',
   	passwords:     'photographers/passwords',
   	registrations: 'photographers/registrations'
   }
-
 
   devise_for :users, controllers: {
   	sessions:      'users/sessions',
