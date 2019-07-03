@@ -1,2 +1,13 @@
-<h1>Admins::Countries#edit</h1>
-<p>Find me in app/views/admins/countries/edit.html.erb</p>
+<div class = "container">
+  <div class = "row">
+   <%= form_for (@country) do |f| %>
+
+     <%= f.label :country_id %>
+     <%= f.collection_select :countries_id, Country.all, :id, :country_name,
+                             :prompt => "国を選択" %>
+
+	  <%= f.label :image, "国の写真" %>
+	  <%= f.attachment_field :country_img %>
+   <% end %>
+  </div>
+</div>

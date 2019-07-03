@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :admins do
-    resources :countries, only:[:edit, :update]
+    resources :countries, only:[:index, :edit, :update]
   end
 
   devise_for :photographers, controllers: {
