@@ -7,6 +7,10 @@ class Admins::CitiesController < ApplicationController
   end
 
   def create
+
+    @city = City.new(city_params)
+    @city.save
+
   end
 
   def show
@@ -21,4 +25,11 @@ class Admins::CitiesController < ApplicationController
   def destroy
   end
 
+  private
+
+  def city_params
+    params.require(:city).permit(:city_name, :city_img, :about_city)
+  end
+
 end
+
