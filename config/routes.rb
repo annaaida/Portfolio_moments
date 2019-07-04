@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
   namespace :admins do
+    get 'cities/new'
+    get 'cities/create'
+    get 'cities/show'
+    get 'cities/edit'
+    get 'cities/update'
+    get 'cities/destroy'
+  end
+  namespace :admins do
     root to: "countries#index"
     resources :countries, only:[:index, :edit, :update]
   end
