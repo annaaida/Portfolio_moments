@@ -1,2 +1,19 @@
-<h1>Admins::Cities#new</h1>
-<p>Find me in app/views/admins/cities/new.html.erb</p>
+<div class = "container">
+  <div class = "row">
+    <h2>都市を追加</h2>
+  	  <%= form_for @city, url: admins_cities_new_path do |c| %>
+       <div class = "input">
+       	 <%= c.label "都市名" %>
+       	 <%= c.text_field :city_name %>
+       </div>
+       <div>
+       	 <%= c.label "都市の写真" %>
+	     <%= c.attachment_field :city_img %>
+	   </div>
+	   <div class = "input">
+       	 <%= c.label "都市の説明" %>
+       	 <%= c.text_area :about_city %>
+       </div>
+      <% end %>
+  </div>
+</div>

@@ -1,6 +1,9 @@
 class Admins::CitiesController < ApplicationController
 
   def new
+
+    @city = City.new
+
   end
 
   def create
