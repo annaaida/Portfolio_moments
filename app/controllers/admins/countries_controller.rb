@@ -8,17 +8,21 @@ class Admins::CountriesController < ApplicationController
 
   def edit
 
-  	@countries = Country.page(params[:page])
+  	@country = Country.find(params[:id])
 
   end
 
   def update
+
+  	country = Country.find(params[:id])
+  	country.update(country_params)
+
   end
 
   private
 
-  def update_country_params
-    params.require(:country).permit(:country_name, :country_img)
+  def country_params
+    params.require(:country).permit(:country_name)
   end
 
 end

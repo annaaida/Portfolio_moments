@@ -12,7 +12,7 @@
       	<% @countries.each do |c| %>
       	 <tr>
       	  <td class = "countents"><%= c.country_name %></td>
-      	  <td class = "contents"><%= link_to 'edit', edit_admins_country_path(@countries), class: "review-button btn btn-success" %></td>
+      	  <td class = "contents"><%= link_to 'edit', edit_admins_country_path(c.id), class: "review-button btn btn-success" %></td>
       	 </tr>
       	<% end %>
       	<%= paginate @countries, class: "paginate" %>
