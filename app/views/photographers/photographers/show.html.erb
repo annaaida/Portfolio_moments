@@ -1,2 +1,79 @@
-<h1>Photographers::Photographers#show</h1>
-<p>Find me in app/views/photographers/photographers/show.html.erb</p>
+<!-- ヘッダー -->
+<div class = "header-line">
+  <p class = "header-message">フォトグラファーページ</p>
+</div>
+<header class = "navbar navbar-light bg-light">
+  <nav>
+    <ul class = "nav navbar-nav navbar-right">
+        <li><%= link_to 'このページの使い方' %>
+      <li><%= link_to '問い合わせ' %></li>
+      <li><%= link_to '予約一覧' %></li>
+      <li><%= link_to 'ポートフォリオを確認', photographers_photographer_path(@photographer) %></li> <!-- showページへ -->
+      <li><%= link_to 'ポートフォリオを編集', edit_photographers_photographer_path(@photographer) %></li> <!-- editページへ -->
+      <li><%= link_to 'ログアウト', destroy_photographer_session_path, method: :delete %></li>
+    </ul>
+  </nav>
+</header>
+<!-- フォトグラファーinfo -->
+<div class = "container">
+  <div class = "row">
+    <div class = "col-xs-3">
+      <table class =  "table">
+        <tbody>
+        <tr>
+          <td><%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg" %></td>
+        </tr>
+        <tr>
+          <td><p><%= @photographer.created_at %> からメンバー</td>
+        </tr>
+        <tr>
+          <!-- <td>number of reviews</td> -->
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class = "col-xs-9">
+      <p class = "hi-message"> Hello. I am <%= @photographer.first_name %></p>
+      <table class =  "table">
+        <tbody>
+          <tr>
+            <th><span class="fas fa-quote-left"></span></td>
+            <td><%= @photographer.introduction %></td>
+          </tr>
+          <tr>
+            <td><p><span class="fas fa-home"> Area:<%= @photographer.area %></span></p></td>
+          </tr>
+          <tr>
+            <td><p><span class="fas fa-comments"> I speak native <%= @photographer.mother_tongue %> / conversational <%= @photographer.language_1 %> <%= @photographer.language_2 %></span></p></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-xs-6">
+      <%= image_tag 'noimage.jpg', class: "portfolio-image-main" %>
+    </div>
+    <div class = "col-xs-3">
+      <div class = "row">
+        <%= image_tag 'noimage.jpg', class: "portfolio-image-2" %>
+      </div>
+      <div class = "row">
+        <%= image_tag 'noimage.jpg', class: "portfolio-image-3" %>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-xs-3">
+      <%= image_tag 'noimage.jpg', class: "portfolio-image-4" %>
+    </div>
+    <div class = "col-xs-3">
+      <%= image_tag 'noimage.jpg', class: "portfolio-image-5" %>
+    </div>
+    <div class = "col-xs-3">
+      <%= image_tag 'noimage.jpg', class: "portfolio-image-6" %>
+    </div>
+  </div>
+</div>

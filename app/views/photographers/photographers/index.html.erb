@@ -1,2 +1,20 @@
-<h1>Photographers::Photographers#index</h1>
-<p>Find me in app/views/photographers/photographers/index.html.erb</p>
+<div class = "container">
+  <div class = "row">
+    <!-- ヘッダー -->
+    <div class = "header-line">
+     <p class = "header-message">フォトグラファーページ</p>
+    </div>
+    <header class = "navbar navbar-light bg-light">
+     <nav>
+      <ul class = "nav navbar-nav navbar-right">
+          <li><%= link_to 'このページの使い方' %>
+        <li><%= link_to '問い合わせ' %></li>
+        <li><%= link_to '予約一覧' %></li>
+        <li><%= link_to 'ポートフォリオを確認', photographers_photographer_path(@photographer) %></li> <!-- showページへ -->
+        <li><%= link_to 'ポートフォリオを編集', edit_photographers_photographer_path(@photographer) %></li> <!-- editページへ -->
+        <li><%= link_to 'ログアウト', destroy_photographer_session_path, method: :delete %></li>
+      </ul>
+     </nav>
+    </header>
+  </div>
+</div>
