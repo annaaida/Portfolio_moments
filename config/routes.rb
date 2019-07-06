@@ -1,14 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :photographers do
-    get 'photographers/index'
-    get 'photographers/about'
-    get 'photographers/show'
-    get 'photographers/edit'
-    get 'photographers/update'
-  end
-  namespace :photographers do
-    resources :photographers, only:[:index, :show, :edit, :update]
+    resources :photographers, only:[:index, :about, :show, :edit, :update]
   end
 
   namespace :admins do
@@ -17,9 +10,9 @@ Rails.application.routes.draw do
   end
 
   devise_for :admins, controllers: {
-  	sessions:      'photographers/sessions',
-  	passwords:     'photographers/passwords',
-  	registrations: 'photographers/registrations'
+  	sessions:      'admins/sessions',
+  	passwords:     'admins/passwords',
+  	registrations: 'admins/registrations'
   }
 
   devise_for :users, controllers: {
