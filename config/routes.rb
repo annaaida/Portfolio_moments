@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
   namespace :photographers do
+    get 'photographers/index'
+    get 'photographers/about'
+    get 'photographers/show'
+    get 'photographers/edit'
+    get 'photographers/update'
+  end
+  namespace :photographers do
     resources :photographers, only:[:index, :show, :edit, :update]
   end
 
