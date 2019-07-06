@@ -32,3 +32,60 @@
          </nav>
        <% end %>
 </header>
+<!-- end header navbar-->
+<!-- main flex-slider -->
+<div class="flexslider">
+  <ul class="slides">
+     <li><%= image_tag "slider1.jpg" %></li>
+     <li><%= image_tag "slider2.jpg" %></li>
+     <li><%= image_tag "slider3.jpg" %></li>
+  </ul>
+</div>
+<div class = "container">
+  <div class = "row">
+  	<div class = "how-it-works">
+  	  <div class = "col-xs-3">
+  	  	<%= image_tag 'noimage.jpg' %>
+  	  	<p>Select your destination or city</p>
+  	  </div>
+  	  <div class = "col-xs-3">
+  	  	<%= image_tag 'noimage.jpg' %>
+  	  	<p>Enjoy your photo shoot</p>
+  	  </div>
+  	  <div class = "col-xs-3">
+  	  	<%= image_tag 'noimage.jpg' %>
+  	  	<p>Within 48 hours of your shoot, your edited photos will be delivered via the Snappr app, with one-click sharing or downloading.</p>
+  	  </div>
+    </div>
+    <% link_to "Choose Location" %>
+  </div>
+  <div class = "row">
+	  <div class = "occasions">
+	  	<p class = "anything"> Book a photographer for Anything !</p>
+	  	<p class = "anything_2nd_line"> What is your occasion ? </p>
+	  	<p class = "anything_3rd_line"> We have local specialists for whatever you're shoothing. </p>
+	  <!-- 写真を入れる -->
+	  </div>
+  </div>
+  <div class = "row">
+  	<div class = "happy-reviews">
+  	</div>
+  </div>
+</div>
+<footer class = "navbar navbar-dark bg-dark">
+   <nav class = "nav navbar-nav footer-statement">
+      <h4>Company</h4>
+      <% link_to "About us" %>
+    </nav>
+    <nav class = "nav navbar-nav">
+      <h4 class = "footer-contents-name" > Customer Care</h4>
+      <p><i class="fa fa-phone icon-white"></i> お問い合わせ 0120(XXX)XXX</p>
+      <h5 class = "contact-footer"><%=link_to "お問い合わせ", class: "text-muted" %></h5>
+      <p>お返事に3〜4営業日いただきます。</p>
+    </nav>
+    <nav class = "nav navbar-nav footer-statement">
+      <h4 class = "footer-contents-name">Shipping <i class="fa fa-car icon-white"></i></h4>
+      <p>一配送につき送料全国一律500円（税込）</p>
+      <p>ご注文受付日から5日以内のお届け</p>
+    </nav>
+</footer>
