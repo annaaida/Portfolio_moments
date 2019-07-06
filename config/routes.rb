@@ -1,23 +1,20 @@
 Rails.application.routes.draw do
 
-  namespace :admins do
-    get 'cities/new'
-    get 'cities/create'
-    get 'cities/show'
-    get 'cities/edit'
-    get 'cities/update'
-    get 'cities/destroy'
+  namespace :photographers do
+    get 'photographers/index'
+    get 'photographers/about'
+    get 'photographers/show'
+    get 'photographers/edit'
+    get 'photographers/update'
   end
-  namespace :admins do
-    root to: "countries#index"
-    resources :countries, only:[:index, :edit, :update]
+  namespace :photographers do
+    resources :photographers, only:[:index, :show, :edit, :update]
   end
 
-  devise_for :photographers, controllers: {
-  	sessions:      'photographers/sessions',
-  	passwords:     'photographers/passwords',
-  	registrations: 'photographers/registrations'
-  }
+  namespace :admins do
+    resources :countries, only:[:index, :edit, :update]
+    resources :cities
+  end
 
   devise_for :admins, controllers: {
   	sessions:      'photographers/sessions',

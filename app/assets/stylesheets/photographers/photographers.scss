@@ -1,0 +1,73 @@
+// Place all the styles related to the photographers/Photographers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* header */
+
+header{
+    height: 60px;
+    padding: 8px 60px 5px 60px;
+ }
+
+
+ .header-line{
+     height: 50px;
+     background-color: #FDBB4B;
+ }
+
+
+ .header-message {
+     font-size: 11px;
+     text-align: center;
+     line-height: 50px;
+     font-weight: bold;
+ }
+
+
+ /* show page */
+
+
+ .hi-message {
+     font-size: 72px;
+     font-weight: bold;
+     font-family: 'Noto Sans'
+ }
+
+
+ .table th,td {
+     border-top: none !important;
+ }
+
+
+ p {
+     font-family: 'Noto Sans'
+ }
+
+
+ .portfolio-image-main {
+     width: 530px;
+     height: 530px;
+     margin-bottom: 10px;
+ }
+
+
+ .portfolio-image-2,
+ .portfolio-image-3 {
+     width: 255px;
+     height: 255px;
+     margin-bottom: 20px;
+ }
+
+
+ .portfolio-image-4 {
+     width: 255px;
+     height: 255px;
+ }
+
+
+ .portfolio-image-5,
+ .portfolio-image-6,
+ .portfolio-image-7 {
+     width: 250px;
+     height: 250px;
+ }
