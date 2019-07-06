@@ -9,12 +9,6 @@ Rails.application.routes.draw do
     resources :cities
   end
 
-  devise_for :photographers, controllers: {
-  	sessions:      'photographers/sessions',
-  	passwords:     'photographers/passwords',
-  	registrations: 'photographers/registrations'
-  }
-
   devise_for :admins, controllers: {
   	sessions:      'photographers/sessions',
   	passwords:     'photographers/passwords',
