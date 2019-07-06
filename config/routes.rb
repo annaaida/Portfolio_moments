@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :users do
-    get 'users/index'
+    resources :users, only:[:index, :show, :edit, :update]
     get 'users/about'
-    get 'users/show'
-    get 'users/edit'
-    get 'users/update'
   end
+
   namespace :photographers do
     resources :photographers, only:[:index, :about, :show, :edit, :update]
   end
