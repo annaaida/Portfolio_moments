@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   end
 
   namespace :admins do
-    root to: "countries#index"
     resources :countries, only:[:index, :edit, :update]
     resources :cities
   end

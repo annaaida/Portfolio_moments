@@ -1,5 +1,5 @@
 class Image < ApplicationRecord
 
-  belongs_to :photographers
+  belongs_to :photographer
 
 end
