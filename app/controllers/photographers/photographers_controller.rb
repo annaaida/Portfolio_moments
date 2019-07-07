@@ -2,11 +2,12 @@ class Photographers::PhotographersController < ApplicationController
 
   def index
 
-    @photographer = current_user
-
   end
 
   def new
+
+    @photographer = Photographer.new
+    @images = @photographer.images.build
 
   end
 
@@ -20,7 +21,6 @@ class Photographers::PhotographersController < ApplicationController
 
   def show
 
-    @photographer = current_user
 
   end
 
@@ -43,7 +43,7 @@ class Photographers::PhotographersController < ApplicationController
   def photographer_params
     params.require(:photographer).permit(
       :name,
-      images_attributes: [:id, :image_1, :image_2] #カラム名
+      images_attributes:[:id, :image_1, :image_2, :image_3, :image_4, :image_5, :image_6]
       )
   end
 

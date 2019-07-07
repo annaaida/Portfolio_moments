@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   namespace :photographers do
-    resources :photographers, only:[:index, :about, :show, :edit, :update]
+    resources :photographers, except:[:destroy]
   end
 
   namespace :admins do
