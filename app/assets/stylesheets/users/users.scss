@@ -2,21 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* header */
+
 header {
-    background: rgba(0, 0, 255, 0);
+    background: rgba(255, 255, 255, 0.9);
     position: fixed;
-    top: 0;
-    z-index: 2;
-    display: flex;
-    padding: 60px;
     justify-content: space-between;
+    position: fixed;
+    padding: 40px;
     transition: .5s;
     width: 100%;
 }
 
-.is-animation {
-	background-color: rgba(255,255,255,0);
-	padding: 30px;
+header.trabsform {
+	background-color: rgba(255, 255, 255, 0);
+	padding: 20px;
 }
 
 /* scroll button */
@@ -95,10 +95,18 @@ a span::before {
 	}
 }
 
+/* how it works */
+
+.how-it-works {
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+}
+
 /* anything */
 
 .occasions {
-	margin-top: 40px;
+	margin-top: 100px;
 }
 
 .anything {
@@ -114,9 +122,14 @@ a span::before {
 }
 
 
-/* footer */
+.how-it-works {
+	margin-top: 40px;
+}
 
-/*フッター*/
+
+
+
+/* footer */
 
 footer {
   background-color: black;

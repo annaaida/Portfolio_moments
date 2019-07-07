@@ -4,17 +4,16 @@
 $(function() {
   var $win = $(window),
       $header = $('header'),
-      animationClass = 'is-animation';
+      flexsliderBottom;
 
-  $win.on('load scroll', function() {
-    var value = $(this).scrollTop();
-    if ( value > 100 ) {
-      $header.addClass(animationClass);
+  $win.on('scroll', function() {
+    flexsliderBottom = $('.flexslider').height();
+    if ($win.scrollTop() > flexBottom ) {
+        $header.addClass('transform');
     } else {
-      $header.removeClass(animationClass);
+      $header.removeClass('transform');
     }
   });
 });
-
 
 

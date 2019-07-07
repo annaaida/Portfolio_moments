@@ -1,12 +1,13 @@
 <!-- header navbar -->
 <header class = "navbar">
-    <nav class="navbar navbar-expand-lg fixed-top">
-     <!-- common -->
+	<!-- common -->
+    <nav>
 	   <ul class = "nav navbar-nav navbar-left">
 	     <li><%= link_to "Moments" %></li>
 	     <li><%= link_to "How it works" %></li>
 	     <li><%= link_to "Locations" %></li>
 	   </ul>
+	</nav>
 	   <!-- right side of the header -->
        <% if user_signed_in? %>
          <nav>
@@ -34,8 +35,8 @@
 </header>
 <!-- end header navbar-->
 <!-- main flex-slider -->
-<div class="flexslider">
-  <ul class="slides">
+<div class = "flexslider">
+  <ul class = "slides">
      <li><%= image_tag "slider1.jpg" %></li>
      <li><%= image_tag "slider2.jpg" %></li>
      <li><%= image_tag "slider3.jpg" %></li>
@@ -43,6 +44,7 @@
 </div>
 <div class = "container">
   <div class = "row">
+  	<p class = "anything"> How it works </p>
   	<div class = "how-it-works">
   	  <div class = "col-xs-3">
   	  	<%= image_tag 'noimage.jpg' %>
@@ -89,5 +91,3 @@
       <p>ご注文受付日から5日以内のお届け</p>
     </nav>
 </footer>
-
-<script type = "text/javascript" src = "users/users.js"></script>
