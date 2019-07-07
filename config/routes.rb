@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   namespace :photographers do
+    root to: "photographers#index"
     resources :photographers, except:[:destroy]
     get 'photographers/about'
   end

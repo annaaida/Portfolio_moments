@@ -7,19 +7,19 @@
     <header class = "navbar navbar-light bg-light fixed-top">
      <nav>
       <ul class = "nav navbar-nav navbar-right">
-          <li><%= link_to photographers_photographers_about_path do %>
+          <li><%= link_to photographers_photographers_path(current_user) do %>
                 <p><i class="fas fa-home"></i> Home</p>
               <% end %>
           </li>
-          <li><%= link_to photographers_photographers_about_path do %>
+          <li><%= link_to photographers_photographers_about_path(current_user) do %>
                 <p><i class="fas fa-question-circle"></i> このページの使い方</p>
               <% end %>
           </li>
-          <li><%= link_to  do %>
+          <li><%= link_to edit_user_registration_path(current_user) do %>
                 <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
               <% end %>
           </li>
-          <li><%= link_to  do %>
+          <li><%= link_to users_users_path(current_user) do %>
                 <p><i class="fas fa-user-circle"></i> ユーザーページ </p>
               <% end %>
           </li>
