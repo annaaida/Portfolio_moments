@@ -31,6 +31,10 @@ class Photographers::PhotographersController < ApplicationController
   end
 
   def show
+
+    @user = current_user
+    @photographer = Photographer.find(params[:id])
+
   end
 
   def edit

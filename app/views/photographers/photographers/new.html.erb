@@ -1,8 +1,10 @@
+
+<!-- ユーザー登録後、フォトグラファー権限カラムtrueの場合に、フォトグラファー情報登録画面として本画面に遷移 -->
+
 <section class = "mypage clearfix">
     <h4 class = "user-edit">フォトグラファー情報の登録</h4>
     <p> 後から編集できます </p>
 </section>
-
 <div class = "container">
   <div class = "row">
    <%= form_for @photographer do |f| %>
@@ -34,7 +36,7 @@
       <%= f.label :自己紹介 %>
       <%= f.text_field :introduction, autofocus: true %>
      </div>
-
+     <!-- cocoon images 追加 -->
      <h3> 画像追加 </h3>
 	   <div id = "images">
 	    <%= f.fields_for :images do |images| %>

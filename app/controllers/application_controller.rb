@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
 	  else
 	  	root_path
 	  end
+	 end
 	 # ログイン後のリダイレクト先
      def after_sign_in_path(resource)
       if photographer?
@@ -24,6 +25,7 @@ class ApplicationController < ActionController::Base
 	  else
 	  	users_users_path
 	  end
+	 end
 	 # ログアウト後のリダイレクト先
 	  def after_sign_out_path(resource)
   		root_path
