@@ -1,20 +1,40 @@
-<div class = "container">
+<div class = "container-fluid">
   <div class = "row">
     <!-- ヘッダー -->
     <div class = "header-line">
      <p class = "header-message">フォトグラファーページ</p>
     </div>
-    <header class = "navbar navbar-light bg-light">
+    <header class = "navbar navbar-light bg-light fixed-top">
      <nav>
       <ul class = "nav navbar-nav navbar-right">
-          <li><%= link_to 'このページの使い方' %>
-        <li><%= link_to '問い合わせ' %></li>
-        <li><%= link_to '予約一覧' %></li>
-        <li><%= link_to 'ポートフォリオを確認', photographers_photographer_path(@photographer) %></li> <!-- showページへ -->
-        <li><%= link_to 'ポートフォリオを編集', edit_photographers_photographer_path(@photographer) %></li> <!-- editページへ -->
-        <li><%= link_to 'ログアウト', destroy_photographer_session_path, method: :delete %></li>
+          <li><%= link_to do %>
+                <p><i class="fas fa-question-circle"></i>このページの使い方</p>
+              <% end %>
+          </li>
+          <li><%= link_to  do %>
+                <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
+              <% end %>
+          </li>
+          <li><%= link_to do %>
+                <i class="fas fa-sign-out-alt"></i> ログアウト </p>
+              <% end %>
+          </li>
       </ul>
      </nav>
     </header>
   </div>
+  <div class="clearfix"></div>
+    <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+            <li><%= link_to '予約一覧' %></li>
+            <li><li><%= link_to 'ユーザーからの問い合わせ（これどうやる？）' %></li></li>
+            <li><%= link_to  do %> <!-- showページへ -->
+                <i class="fas fa-camera-retro"></i> ポートフォリオを確認 </p>
+              <% end %>
+            <li><%= link_to  do %> <!-- editページへ -->
+                <i class="far fa-edit"></i> ポートフォリオを編集 </p>
+              <% end %>
+          </li>
+        </ul>
+    </div>
 </div>
