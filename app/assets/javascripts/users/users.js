@@ -16,11 +16,5 @@ $(function() {
   });
 });
 
-// flexslider
 
-$(window).load(function() {
-$('.flexslider').flexslider({
-  fade: true,
-  speed: 800 });
-});
 
