@@ -8,4 +8,25 @@ class ApplicationController < ActionController::Base
     	devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :first_name, :last_name, :kana_first_name, :kana_last_name, :tel, :photographer])
     end
 
+    protected
+
+     # 新規登録後のリダイレクト先
+     def after_sign_up_path_for(resource)
+	  if photographer?
+	    new_photographers_photographer_path
+	  else
+	  	root_path
+	  end
+	 # ログイン後のリダイレクト先
+     def after_sign_in_path(resource)
+      if photographer?
+	    photographers_photographers_path
+	  else
+	  	users_users_path
+	  end
+	 # ログアウト後のリダイレクト先
+	  def after_sign_out_path(resource)
+  		root_path
+	  end
+
 end
