@@ -10,9 +10,10 @@
           <li><%= link_to 'このページの使い方' %>
         <li><%= link_to '問い合わせ' %></li>
         <li><%= link_to '予約一覧' %></li>
+        <li><%= link_to '基本情報を編集', edit_user_registration_path(@photographer) %></li>  <!-- devise registration edit ページへ-->
         <li><%= link_to 'ポートフォリオを確認', photographers_photographer_path(@photographer) %></li> <!-- showページへ -->
         <li><%= link_to 'ポートフォリオを編集', edit_photographers_photographer_path(@photographer) %></li> <!-- editページへ -->
-        <li><%= link_to 'ログアウト', destroy_photographer_session_path, method: :delete %></li>
+        <li><%= link_to 'ログアウト', method: :delete %></li>
       </ul>
      </nav>
     </header>

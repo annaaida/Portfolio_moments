@@ -1,2 +1,59 @@
-<h1>Photographers::Photographers#edit</h1>
-<p>Find me in app/views/photographers/photographers/edit.html.erb</p>
+<section class = "mypage clearfix">
+    <h4 class = "user-edit">登録情報</h4>
+</section>
+
+<%= form_for @photographer do |f| %>
+
+   <div class = "field">
+      <%= f.label :一時間あたりの値段, class: "user-edit-name" %>
+      <%= f.text_field :price, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
+   </div>
+   <div class = "field">
+      <%= f.label :対応可能エリア, class: "user-edit-name" %>
+      <%= f.text_field :area, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
+   </div>
+   <div class = "field">
+      <%= f.label :母国語, class: "user-edit-name" %>
+      <%= f.text_field :mother_tongue, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
+   </div>
+   <div class = "field">
+      <%= f.label :話せる言語1, class: "user-edit-name" %>
+      <%= f.text_field :price, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
+   </div>
+   <div class = "field">
+      <%= f.label :話せる言語2, class: "user-edit-name" %>
+      <%= f.text_field :price, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
+   </div>
+   <div class = "field">
+      <%= f.label :自己紹介, class: "user-edit-name" %>
+      <%= f.text_area :introduction, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
+   </div>
+
+   <div class = "field">
+      <%= f.label :プロファイール画像, class: "user-edit-name" %>
+      <%= f.text_area :profile_img, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
+   </div>
+
+
+   <h3> 画像追加 </h3>
+   <div id="tasks">
+     <%= f.fields_for :images do |images| %>
+       <%= addresses_form.label :images_1, "画像1" %>
+       <%= f.attachment_field :image_1 %>
+
+       <%= addresses_form.label :images_2, "画像2" %>
+       <%= f.attachment_field :image_2 %>
+     <% end %>
+
+    <div class = "password-change">
+      <%= f.label :新パスワード　　　　 %>
+      <%= f.password_field :password, autocomplete: "new-password" %>
+      <% if @minimum_password_length %>
+      <%= @minimum_password_length %>文字以上
+      <% end %>
+    </div>
+
+	<div class="actions">
+      <%= f.submit %>
+    </div>
+
