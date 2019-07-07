@@ -1,3 +1,6 @@
+
+<!-- フォトグラファー トップページ -->
+
 <div class = "container-fluid">
   <div class = "row">
     <!-- header -->
@@ -11,7 +14,7 @@
                 <p><i class="fas fa-home"></i> Home</p>
               <% end %>
           </li>
-          <li><%= link_to photographers_photographers_about_path(current_user) do %>
+          <li><%= link_to photographers_photographers_about_path do %>
                 <p><i class="fas fa-question-circle"></i> このページの使い方</p>
               <% end %>
           </li>
@@ -36,10 +39,10 @@
         <ul class="nav nav-sidebar">
             <li><%= link_to '予約一覧' %></li>
             <li><li><%= link_to 'ユーザーからの問い合わせ（これどうやる？）' %></li></li>
-            <li><%= link_to  do %> <!-- showページへ -->
+            <li><%= link_to photographers_photographer_path(current_user) do %> <!-- showページへ -->
                 <i class="fas fa-camera-retro"></i> ポートフォリオを確認 </p>
               <% end %>
-            <li><%= link_to do %> <!-- editページへ -->
+            <li><%= link_to edit_photographers_photographer_path(current_user) do %> <!-- editページへ -->
                 <i class="far fa-edit"></i> ポートフォリオを編集 </p>
               <% end %>
           </li>
@@ -48,5 +51,4 @@
     <div class="col-sm-6 col-md-5 main">
       <!-- 新着メッセージ一覧 -->
     </div>
-    
 </div>

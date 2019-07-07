@@ -6,6 +6,7 @@ class Photographers::PhotographersController < ApplicationController
 
     @user = current_user
 
+
   end
 
   def new
