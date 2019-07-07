@@ -1,0 +1,161 @@
+// Place all the styles related to the users/Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* header */
+
+header {
+    background: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    justify-content: space-between;
+    position: fixed;
+    padding: 40px;
+    transition: .5s;
+    width: 100%;
+}
+
+header.trabsform {
+	background-color: rgba(255, 255, 255, 0);
+	padding: 20px;
+}
+
+/* scroll button */
+
+a {
+	padding-top: 60px;
+}
+a span {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 46px;
+	height: 46px;
+	margin-left: -23px;
+	border: 1px solid #fff;
+	border-radius: 100%;
+	box-sizing: border-box;
+}
+a span::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	content: '';
+	width: 16px;
+	height: 16px;
+	margin: -12px 0 0 -8px;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	box-sizing: border-box;
+}
+a span::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	content: '';
+	width: 44px;
+	height: 44px;
+	box-shadow: 0 0 0 0 rgba(255,255,255,.1);
+	border-radius: 100%;
+	opacity: 0;
+	-webkit-animation: sdb 3s infinite;
+	animation: sdb 3s infinite;
+	box-sizing: border-box;
+}
+@-webkit-keyframes sdb {
+	0% {
+	opacity: 0;
+	}
+	30% {
+	opacity: 1;
+	}
+	60% {
+	box-shadow: 0 0 0 60px rgba(255,255,255,.1);
+	opacity: 0;
+	}
+	100% {
+	opacity: 0;
+	}
+}
+@keyframes sdb {
+	0% {
+	opacity: 0;
+	}
+	30% {
+	opacity: 1;
+	}
+	60% {
+	box-shadow: 0 0 0 60px rgba(255,255,255,.1);
+	opacity: 0;
+	}
+	100% {
+	opacity: 0;
+	}
+}
+
+/* how it works */
+
+.how-it-works {
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+}
+
+/* anything */
+
+.occasions {
+	margin-top: 100px;
+}
+
+.anything {
+	 font-size: 35px;
+	 font-weight: bold;
+	 font-family: 'Noto Sans';
+	 text-align: center;
+}
+
+.anything_2nd_line,
+.anything_3rd_line {
+	text-align: center;
+}
+
+
+.how-it-works {
+	margin-top: 40px;
+}
+
+
+
+
+/* footer */
+
+footer {
+  background-color: black;
+  height: 250px;
+  color: white;
+  margin-top: 300px;
+  padding: 20px 50px 0 70px;
+}
+
+.icon-white {
+  color: #FFFFFF;
+}
+
+.footer-statement {
+  margin-left: 40px;
+}
+
+.contact-footer {
+  font-weight: bold;
+}
+
+.footer-contents-name {
+  margin-bottom: 20px;
+}
+
+.company-name {
+  font-size: 16px;
+  font-weight: bold;
+}
