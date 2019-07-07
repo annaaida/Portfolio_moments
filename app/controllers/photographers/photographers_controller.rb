@@ -1,7 +1,8 @@
 class Photographers::PhotographersController < ApplicationController
 
-  def index
+  before_action :authenticate_user!
 
+  def index
   end
 
   def new
@@ -9,19 +10,27 @@ class Photographers::PhotographersController < ApplicationController
     @photographer = Photographer.new
     @images = @photographer.images.build
 
+    6.times { @photographer.images.build }
+    # デフォルトで6つの画像投稿欄を作成
+
   end
 
   def create
 
+    @photographer = Photographer.new(photographer_params)
+    @photographer.user_id = current_user.id
+
+    if @photographer.save
+      flash[:notice] = "フォトグラファー情報の登録が完了しました"
+      redirect_to photographers_photographers_path(@photographer)
+    end
+
   end
 
   def about
-
   end
 
   def show
-
-
   end
 
   def edit
@@ -38,7 +47,6 @@ class Photographers::PhotographersController < ApplicationController
   end
 
   private
-
 
   def photographer_params
     params.require(:photographer).permit(
