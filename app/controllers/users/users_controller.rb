@@ -3,6 +3,7 @@ class Users::UsersController < ApplicationController
   def index
 
     @user = current_user
+    @search = City.ransack(params[:q])
 
   end
 
