@@ -12,7 +12,7 @@ header{
 
  .header-line{
      height: 50px;
-     background-color: #FDBB4B;
+     background-color: #199eae;
  }
 
 
@@ -21,14 +21,28 @@ header{
      text-align: center;
      line-height: 50px;
      font-weight: bold;
+     color: white;
  }
 
+
+ /* index page */
+
+ .photographer-info {
+     margin: 2em auto;
+     padding: 1em;
+     width: 80%;
+     border: 1px solid #ccc; /* 枠線 */
+ }
+
+ .profile_image {
+     border-radius: 50%;
+ }
 
  /* show page */
 
 
  .hi-message {
-     font-size: 72px;
+     font-size: 60px;
      font-weight: bold;
      font-family: 'Noto Sans'
  }
@@ -45,29 +59,22 @@ header{
 
 
  .portfolio-image-main {
-     width: 530px;
-     height: 530px;
-     margin-bottom: 10px;
+
  }
 
 
  .portfolio-image-2,
  .portfolio-image-3 {
-     width: 255px;
-     height: 255px;
-     margin-bottom: 20px;
+
  }
 
 
  .portfolio-image-4 {
-     width: 255px;
-     height: 255px;
  }
 
 
  .portfolio-image-5,
  .portfolio-image-6,
  .portfolio-image-7 {
-     width: 250px;
-     height: 250px;
+
  }
