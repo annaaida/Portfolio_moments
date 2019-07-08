@@ -23,8 +23,7 @@ Rails.application.routes.draw do
     resources :cities
   end
 
-  namespace :admins do
-    root to: "users#index"
+  namespace :users do
     resources :users, only:[:index, :show, :edit, :update]
     get 'users/about'
   end
