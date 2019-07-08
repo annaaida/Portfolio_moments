@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	#before_action :search
 
+	 def search
+      @search = City.ransack(params[:q]) #(params[:q])に検索パラメーターが入る 検索する@searchオブジェクトを生成
+      @result = @search.result(distinct: true).page(params[:page]).per(20) #検索結果を表示する@resultオブジェクトを生成
+     end
+
     protected
 
      # 新規登録後のリダイレクト先
@@ -33,10 +38,4 @@ class ApplicationController < ActionController::Base
     	devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :first_name, :last_name, :kana_first_name, :kana_last_name, :tel, :photographer])
      end
 
-    before_filter :set_search
-
-    def search
-      @search = City.ransack(params[:q]) #(params[:q])に検索パラメーターが入る 検索する@searchオブジェクトを生成
-      @result = @search.result(distinct: true).page(params[:page]).per(20) #検索結果を表示する@resultオブジェクトを生成
-    end
 end
