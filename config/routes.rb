@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :users do
-    get 'photographers/index'
-    get 'photographers/show'
-  end
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -28,10 +24,10 @@ Rails.application.routes.draw do
   end
 
   namespace :users do
+    get 'users/about'
     resources :users, only:[:index, :show, :edit, :update]
     resources :countries, only:[:index, :show]
-    get 'users/about'
+    resources :photographers, only:[:index, :show]
   end
-
 
 end
