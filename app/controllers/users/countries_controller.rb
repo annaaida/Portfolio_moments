@@ -7,6 +7,10 @@ class Users::CountriesController < ApplicationController
   end
 
   def show
+
+  	@countries = Country.find(params[:id])
+  	@cities = @countries.cities
+
   end
 
   private
