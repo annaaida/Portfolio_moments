@@ -17,7 +17,6 @@
         <% end %>
       </div>
     </nav>
-
 	   <!-- ヘッダー右 -->
        <% if user_signed_in? %>
          <nav>
@@ -45,6 +44,7 @@
 </header>
 <!-- ヘッダーここまで -->
 <!-- メイン flex-slider -->
+<!-- メイン flex-slider -->
 <div class = "flexslider">
   <ul class = "slides">
      <li><%= image_tag "slider1.jpg" %></li>
@@ -54,34 +54,34 @@
 </div>
 <div class = "container">
   <div class = "row">
-  	<p class = "anything"> How it works </p>
-  	<div class = "how-it-works">
-  	  <div class = "col-xs-3">
-  	  	<%= image_tag 'noimage.jpg' %>
-  	  	<p>Select your destination or city</p>
-  	  </div>
-  	  <div class = "col-xs-3">
-  	  	<%= image_tag 'noimage.jpg' %>
-  	  	<p>Enjoy your photo shoot</p>
-  	  </div>
-  	  <div class = "col-xs-3">
-  	  	<%= image_tag 'noimage.jpg' %>
-  	  	<p>Within 48 hours of your shoot, your edited photos will be delivered via the Snappr app, with one-click sharing or downloading.</p>
-  	  </div>
+    <p class = "anything"> How it works </p>
+    <div class = "how-it-works">
+      <div class = "col-xs-3">
+        <%= image_tag 'noimage.jpg' %>
+        <p>Select your destination or city</p>
+      </div>
+      <div class = "col-xs-3">
+        <%= image_tag 'noimage.jpg' %>
+        <p>Enjoy your photo shoot</p>
+      </div>
+      <div class = "col-xs-3">
+        <%= image_tag 'noimage.jpg' %>
+        <p>Within 48 hours of your shoot, your edited photos will be delivered via the Snappr app, with one-click sharing or downloading.</p>
+      </div>
     </div>
     <% link_to "Choose Location" %>
   </div>
   <div class = "row">
-	  <div class = "occasions">
-	  	<p class = "anything"> Book a photographer for Anything !</p>
-	  	<p class = "anything_2nd_line"> What is your occasion ? </p>
-	  	<p class = "anything_3rd_line"> We have local specialists for whatever you're shoothing. </p>
-	  <!-- 写真を入れる -->
-	  </div>
+    <div class = "occasions">
+      <p class = "anything"> Book a photographer for Anything !</p>
+      <p class = "anything_2nd_line"> What is your occasion ? </p>
+      <p class = "anything_3rd_line"> We have local specialists for whatever you're shoothing. </p>
+    <!-- 写真を入れる -->
+    </div>
   </div>
   <div class = "row">
-  	<div class = "happy-reviews">
-  	</div>
+    <div class = "happy-reviews">
+    </div>
   </div>
 </div>
 <footer class = "navbar navbar-dark bg-dark">
