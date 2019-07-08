@@ -1,59 +1,67 @@
+
+<!-- フォトグラファー "ポートフォリオを編集" ページ -->
+
 <section class = "mypage clearfix">
-    <h4 class = "user-edit">登録情報</h4>
+    <h4 class = "user-edit">ポートフォリオ編集</h4>
 </section>
+<div class = "container">
+  <div class = "row">
+   <%= form_for @photographer, url: edit_photographers_photographer_path do |f| %>
+     <div class = "input">
+      <%= f.label :プロフィール画像 %>
+      <%= f.attachment_field :profile_img %>
+     </div>
+     <div class = "input">
+      <%= f.label :一時間あたりの値段 %>
+      <%= f.text_field :price, autofocus: true %>
+     </div>
+     <div class = "input">
+      <%= f.label :対応可能エリア %>
+      <%= f.text_field :area, autofocus: true %>
+     </div>
+     <div class = "input">
+      <%= f.label :母国語 %>
+      <%= f.text_field :mother_tongue, autofocus: true %>
+     </div>
+     <div class = "input">
+      <%= f.label :話せる言語1 %>
+      <%= f.text_field :language_1, autofocus: true %>
+     </div>
+     <div class = "input">
+      <%= f.label :話せる言語2 %>
+      <%= f.text_field :language_2, autofocus: true %>
+     </div>
+     <div class = "input">
+      <%= f.label :自己紹介 %>
+      <%= f.text_field :introduction, autofocus: true %>
+     </div>
 
-<%= form_for @photographer do |f| %>
-
-   <div class = "field">
-      <%= f.label :一時間あたりの値段, class: "user-edit-name" %>
-      <%= f.text_field :price, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
-   </div>
-   <div class = "field">
-      <%= f.label :対応可能エリア, class: "user-edit-name" %>
-      <%= f.text_field :area, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
-   </div>
-   <div class = "field">
-      <%= f.label :母国語, class: "user-edit-name" %>
-      <%= f.text_field :mother_tongue, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
-   </div>
-   <div class = "field">
-      <%= f.label :話せる言語1, class: "user-edit-name" %>
-      <%= f.text_field :price, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
-   </div>
-   <div class = "field">
-      <%= f.label :話せる言語2, class: "user-edit-name" %>
-      <%= f.text_field :price, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
-   </div>
-   <div class = "field">
-      <%= f.label :自己紹介, class: "user-edit-name" %>
-      <%= f.text_area :introduction, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
-   </div>
-
-   <div class = "field">
-      <%= f.label :プロファイール画像, class: "user-edit-name" %>
-      <%= f.text_area :profile_img, autofocus: true, autocomplete: "tel", class: "user-edit-form" %>
-   </div>
-
-
-   <h3> 画像追加 </h3>
-   <div id="tasks">
-     <%= f.fields_for :images do |images| %>
-       <%= addresses_form.label :images_1, "画像1" %>
-       <%= f.attachment_field :image_1 %>
-
-       <%= addresses_form.label :images_2, "画像2" %>
-       <%= f.attachment_field :image_2 %>
-     <% end %>
-
-    <div class = "password-change">
-      <%= f.label :新パスワード　　　　 %>
-      <%= f.password_field :password, autocomplete: "new-password" %>
-      <% if @minimum_password_length %>
-      <%= @minimum_password_length %>文字以上
+     <!-- images 追加 -->
+     <h3> 画像追加 </h3>
+     <div id = "images">
+      <%= form_for @images, url: edit_photographers_photographer_path do |i| %>
+        <div class = "field">
+         <%= i.attachment_field :image_1 %>
+        </div>
+        <div class = "field">
+         <%= i.attachment_field :image_2 %>
+        </div>
+        <div class = "field">
+         <%= i.attachment_field :image_3 %>
+        </div>
+        <div class = "field">
+         <%= i.attachment_field :image_4 %>
+        </div>
+        <div class = "field">
+         <%= i.attachment_field :image_5 %>
+        </div>
+        <div class = "field">
+         <%= i.attachment_field :image_6 %>
+        </div>
       <% end %>
-    </div>
-
-	<div class="actions">
-      <%= f.submit %>
-    </div>
-
+     </div>
+     <div class="actions">
+     <%= f.submit '編集完了', class: "btn btn-primary col-xs-12" %>
+   <% end %>
+  </div>
+</div>

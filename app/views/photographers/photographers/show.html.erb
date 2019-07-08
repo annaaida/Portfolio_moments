@@ -1,45 +1,71 @@
-<!-- ヘッダー -->
-<div class = "header-line">
-  <p class = "header-message">フォトグラファーページ</p>
+
+<!-- フォトグラファー "ポートフォリオを確認" ページ -->
+
+<div class = "container-fluid">
+  <div class = "row">
+  <!-- header -->
+    <div class = "header-line">
+     <p class = "header-message">フォトグラファーページ</p>
+    </div>
+    <header class = "navbar navbar-light bg-light fixed-top">
+     <nav>
+      <ul class = "nav navbar-nav navbar-right">
+          <li><%= link_to photographers_photographers_path(current_user) do %>
+                <p><i class="fas fa-home"></i> Home</p>
+              <% end %>
+          </li>
+          <li><%= link_to photographers_photographers_about_path do %>
+                <p><i class="fas fa-question-circle"></i> このページの使い方</p>
+              <% end %>
+          </li>
+          <li><%= link_to edit_user_registration_path(current_user) do %>
+                <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
+              <% end %>
+          </li>
+          <li><%= link_to users_users_path(current_user) do %>
+                <p><i class="fas fa-user-circle"></i> ユーザーページ </p>
+              <% end %>
+          </li>
+          <li><%= link_to do %>
+                <i class="fas fa-sign-out-alt"></i> ログアウト </p>
+              <% end %>
+          </li>
+      </ul>
+     </nav>
+    </header>
+  </div>
 </div>
-<header class = "navbar navbar-light bg-light">
-  <nav>
-    <ul class = "nav navbar-nav navbar-right">
-        <li><%= link_to 'このページの使い方' %>
-      <li><%= link_to '問い合わせ' %></li>
-      <li><%= link_to '予約一覧' %></li>
-      <li><%= link_to 'ポートフォリオを確認', photographers_photographer_path(@photographer) %></li> <!-- showページへ -->
-      <li><%= link_to 'ポートフォリオを編集', edit_photographers_photographer_path(@photographer) %></li> <!-- editページへ -->
-      <li><%= link_to 'ログアウト', method: :delete %></li>
-    </ul>
-  </nav>
-</header>
+
 <!-- フォトグラファーinfo -->
 <div class = "container">
   <div class = "row">
-    <div class = "col-xs-3">
+    <div class = "col-xs-4">
+     <div class = "photographer-info">
       <table class =  "table">
         <tbody>
         <tr>
-          <td><%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg" %></td>
+          <td><p>名前: <%= @user.last_name %> <%= @user.first_name %></p></td>
+        <tr>
+          <td><%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
         </tr>
         <tr>
-          <td><p><%= @photographer.created_at %> からメンバー</td>
+          <td><p><%= @photographer.created_at.strftime("%Y") %> からメンバー</p></td>
         </tr>
         <tr>
           <!-- <td>number of reviews</td> -->
         </tr>
         </tbody>
       </table>
+     </div>
     </div>
-
-
-    <div class = "col-xs-9">
-      <p class = "hi-message"> Hello. I am <%= @photographer.first_name %></p>
+    <div class = "col-xs-8">
+      <p class = "hi-message"> Hello. I am <%= @user.first_name %></p>
       <table class =  "table">
         <tbody>
           <tr>
-            <th><span class="fas fa-quote-left"></span></td>
+            <th><span class="fas fa-quote-left"></span></th>
+          </tr>
+          <tr>
             <td><%= @photographer.introduction %></td>
           </tr>
           <tr>
@@ -50,30 +76,30 @@
           </tr>
         </tbody>
       </table>
-    </div>
-  </div>
-  <div class = "row">
-    <div class = "col-xs-6">
-      <%= image_tag 'noimage.jpg', class: "portfolio-image-main" %>
-    </div>
-    <div class = "col-xs-3">
       <div class = "row">
-        <%= image_tag 'noimage.jpg', class: "portfolio-image-2" %>
+        <div class = "col-xs-5 ">
+          <%= image_tag 'noimage.jpg', class: "portfolio-image-main" %>
+        </div>
+        <div class = "col-xs-3">
+          <div class = "row">
+            <%= image_tag 'noimage.jpg', class: "portfolio-image-2" %>
+          </div>
+          <div class = "row">
+            <%= image_tag 'noimage.jpg', class: "portfolio-image-3" %>
+          </div>
+        </div>
       </div>
       <div class = "row">
-        <%= image_tag 'noimage.jpg', class: "portfolio-image-3" %>
+        <div class = "col-xs-2">
+          <%= image_tag 'noimage.jpg', class: "portfolio-image-4" %>
+        </div>
+        <div class = "col-xs-2">
+          <%= image_tag 'noimage.jpg', class: "portfolio-image-5" %>
+        </div>
+        <div class = "col-xs-2">
+          <%= image_tag 'noimage.jpg', class: "portfolio-image-6" %>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class = "row">
-    <div class = "col-xs-3">
-      <%= image_tag 'noimage.jpg', class: "portfolio-image-4" %>
-    </div>
-    <div class = "col-xs-3">
-      <%= image_tag 'noimage.jpg', class: "portfolio-image-5" %>
-    </div>
-    <div class = "col-xs-3">
-      <%= image_tag 'noimage.jpg', class: "portfolio-image-6" %>
     </div>
   </div>
 </div>
