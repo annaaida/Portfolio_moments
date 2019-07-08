@@ -5,7 +5,7 @@ class Photographers::PhotographersController < ApplicationController
   def index
 
     @user = current_user
-
+    #@photographer = Photographer.find(params[:id])
 
   end
 

@@ -37,29 +37,33 @@
 </div>
 <div class = "container">
   <div class = "row">
-    <div class = "col-xs-3">
+    <div class = "col-xs-4">
+     <div class = "photographer-info">
       <table class =  "table">
         <tbody>
         <tr>
-          <td><p>名前: <%= @user.last_name %><%= @user.first_name %></p></td>
+          <td><p>名前: <%= @user.last_name %> <%= @user.first_name %></p></td>
         <tr>
-          <td><%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg" %></td>
+          <td><%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
         </tr>
         <tr>
-          <td><p><%= @photographer.created_at %> からメンバー</td>
+          <td><p><%= @photographer.created_at %> からメンバー</p></td>
         </tr>
         <tr>
           <!-- <td>number of reviews</td> -->
         </tr>
         </tbody>
       </table>
+     </div>
     </div>
-    <div class = "col-xs-9">
+    <div class = "col-xs-8">
       <p class = "hi-message"> Hello. I am <%= @user.first_name %></p>
       <table class =  "table">
         <tbody>
           <tr>
             <th><span class="fas fa-quote-left"></span></th>
+          </tr>
+          <tr>
             <td><%= @photographer.introduction %></td>
           </tr>
           <tr>
@@ -70,30 +74,30 @@
           </tr>
         </tbody>
       </table>
-    </div>
-  </div>
-  <div class = "row">
-    <div class = "col-xs-6">
-      <%= image_tag 'noimage.jpg', class: "portfolio-image-main" %>
-    </div>
-    <div class = "col-xs-3">
       <div class = "row">
-        <%= image_tag 'noimage.jpg', class: "portfolio-image-2" %>
+        <div class = "col-xs-5 ">
+          <%= image_tag 'noimage.jpg', class: "portfolio-image-main" %>
+        </div>
+        <div class = "col-xs-3">
+          <div class = "row">
+            <%= image_tag 'noimage.jpg', class: "portfolio-image-2" %>
+          </div>
+          <div class = "row">
+            <%= image_tag 'noimage.jpg', class: "portfolio-image-3" %>
+          </div>
+        </div>
       </div>
       <div class = "row">
-        <%= image_tag 'noimage.jpg', class: "portfolio-image-3" %>
+        <div class = "col-xs-2">
+          <%= image_tag 'noimage.jpg', class: "portfolio-image-4" %>
+        </div>
+        <div class = "col-xs-2">
+          <%= image_tag 'noimage.jpg', class: "portfolio-image-5" %>
+        </div>
+        <div class = "col-xs-2">
+          <%= image_tag 'noimage.jpg', class: "portfolio-image-6" %>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class = "row">
-    <div class = "col-xs-3">
-      <%= image_tag 'noimage.jpg', class: "portfolio-image-4" %>
-    </div>
-    <div class = "col-xs-3">
-      <%= image_tag 'noimage.jpg', class: "portfolio-image-5" %>
-    </div>
-    <div class = "col-xs-3">
-      <%= image_tag 'noimage.jpg', class: "portfolio-image-6" %>
     </div>
   </div>
 </div>
