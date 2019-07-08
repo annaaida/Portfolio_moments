@@ -12,10 +12,7 @@ class Photographers::PhotographersController < ApplicationController
   def new
 
     @photographer = Photographer.new
-    @images = @photographer.images.build
-
-    6.times { @photographer.images.build }
-    # デフォルトで6つの画像投稿欄を作成
+    @images = Image.new(photographer_id: @photographer.id)
 
   end
 
@@ -44,10 +41,7 @@ class Photographers::PhotographersController < ApplicationController
   def edit
 
     @photographer = Photographer.find(params[:id])
-    @images = @photographer.images.build
-
-    6.times { @photographer.images.build }
-    # デフォルトで6つの画像投稿欄を作成
+    @images = Image.new(photographer_id: @photographer.id)
 
   end
 

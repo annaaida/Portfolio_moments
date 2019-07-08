@@ -36,27 +36,27 @@
       <%= f.label :自己紹介 %>
       <%= f.text_field :introduction, autofocus: true %>
      </div>
-     <!-- cocoon images 追加 -->
+     <!-- images 追加 -->
      <h3> 画像追加 </h3>
 	   <div id = "images">
-	    <%= f.fields_for :images do |f| %>
-	      <div class = "fields">
-	       <%= f.attachment_field :image_1 %>
+	    <%= form_for @images, url: new_photographers_photographer_path do |i| %>
+	      <div class = "field">
+	       <%= i.attachment_field :image_1 %>
 	      </div>
-	      <div class = "fields">
-	       <%= f.attachment_field :image_2 %>
+	      <div class = "field">
+	       <%= i.attachment_field :image_2 %>
 	      </div>
-	      <div class = "fields">
-	       <%= f.attachment_field :image_3 %>
+	      <div class = "field">
+	       <%= i.attachment_field :image_3 %>
 	      </div>
-	      <div class = "fields">
-	       <%= f.attachment_field :image_4 %>
+	      <div class = "field">
+	       <%= i.attachment_field :image_4 %>
 	      </div>
-	      <div class = "fields">
-	       <%= f.attachment_field :image_5 %>
+	      <div class = "field">
+	       <%= i.attachment_field :image_5 %>
 	      </div>
-	      <div class = "fields">
-	       <%= f.attachment_field :image_6 %>
+	      <div class = "field">
+	       <%= i.attachment_field :image_6 %>
 	      </div>
 	    <% end %>
 	   </div>
