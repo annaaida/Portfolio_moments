@@ -18,10 +18,6 @@
                 <p><i class="fas fa-question-circle"></i> このページの使い方</p>
               <% end %>
           </li>
-          <li><%= link_to edit_user_registration_path(current_user) do %>
-                <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
-              <% end %>
-          </li>
           <li><%= link_to users_users_path(current_user) do %>
                 <p><i class="fas fa-user-circle"></i> ユーザーページ </p>
               <% end %>
@@ -34,26 +30,33 @@
      </nav>
     </header>
   </div>
-  <div class="clearfix"></div>
-    <div class="col-sm-3 sidebar">
-     <div class = "photographer-info">
-      <table class =  "table">
-        <tbody>
-        <tr>
-          <td><%= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
-        </tr>
-        <tr>
-          <td><p><%= @user.last_name %> <%= @user.first_name %></p></td>
-        </tr>
-        <tr>
-          <td><p><%#= @year.slice(0,3) %> からメンバー</p></td>
-        </tr>
-        <tr>
-          <!-- <td>number of reviews</td> -->
-        </tr>
-        </tbody>
-      </table>
-     </div>
+  <div class = "row">
+    <div class="clearfix"></div>
+      <div class="col-xs-3 sidebar">
+       <div class = "photographer-info">
+        <table class =  "table">
+          <tbody>
+            <tr>
+              <td><%= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
+            </tr>
+            <tr>
+              <td><p><%= @user.last_name %> <%= @user.first_name %></p></td>
+            </tr>
+            <tr>
+              <td><p><%= @user.email %></p></td>
+            </tr>
+            <tr>
+              <!-- <td>number of reviews</td> -->
+            </tr>
+            <tr>
+              <td><%= link_to edit_user_registration_path(current_user) do %>
+                    <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
+                  <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       </div>
         <ul class="nav nav-sidebar">
             <li><%= link_to '予約一覧' %></li>
             <li><li><%= link_to 'ユーザーからの問い合わせ（これどうやる？）' %></li></li>
@@ -66,10 +69,13 @@
               <% end %>
             </li>
         </ul>
+      </div>
+
+    <div class="col-xs-8 main">
+      <!-- 新着メッセージ一覧 -->
+      <div class = "main-upper">
+        <p>新着予約情報</p>
+      </div>
     </div>
   </div>
-
-    <div class="col-sm-5 main">
-      <!-- 新着メッセージ一覧 -->
-    </div>
 </div>
