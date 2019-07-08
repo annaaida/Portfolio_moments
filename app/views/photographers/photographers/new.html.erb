@@ -39,26 +39,26 @@
      <!-- cocoon images 追加 -->
      <h3> 画像追加 </h3>
 	   <div id = "images">
-	    <%#= f.fields_for :images do |f| %>
+	    <%= f.fields_for :images do |f| %>
 	      <div class = "fields">
-	       <%#= f.attachment_field :image_1 %>
+	       <%= f.attachment_field :image_1 %>
 	      </div>
 	      <div class = "fields">
-	       <%#= f.attachment_field :image_2 %>
+	       <%= f.attachment_field :image_2 %>
 	      </div>
 	      <div class = "fields">
-	       <%#= f.attachment_field :image_3 %>
+	       <%= f.attachment_field :image_3 %>
 	      </div>
 	      <div class = "fields">
-	       <%#= f.attachment_field :image_4 %>
+	       <%= f.attachment_field :image_4 %>
 	      </div>
 	      <div class = "fields">
-	       <%#= f.attachment_field :image_5 %>
+	       <%= f.attachment_field :image_5 %>
 	      </div>
 	      <div class = "fields">
-	       <%#= f.attachment_field :image_6 %>
+	       <%= f.attachment_field :image_6 %>
 	      </div>
-	    <%# end %>
+	    <% end %>
 	   </div>
 	    <div class="actions">
          <%= f.submit '完了', class: "btn btn-primary col-xs-12" %>

@@ -13,6 +13,13 @@ class Admins::CitiesController < ApplicationController
 
   end
 
+  def index
+
+    @search = City.ransack(params[:q])
+    @result = @search.result(distinct: true).page(params[:page]).per(20)
+
+  end
+
   def show
   end
 
