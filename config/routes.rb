@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   namespace :users do
     resources :users, only:[:index, :show, :edit, :update]
+    resources :countries, only:[:index]
     get 'users/about'
   end
 
