@@ -1,27 +1,26 @@
 
 <!-- フォトグラファー ポートフォリオページ (ユーザーから)-->
-
 <div class = "container">
   <div class = "row">
-    <div class = "col-xs-4">
-     <div class = "photographer-info">
-      <table class =  "table">
-        <tbody>
-        <tr>
-          <td><p>名前: <%= @user.last_name %> <%= @user.first_name %></p></td>
-        <tr>
-          <td><%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
-        </tr>
-        <tr>
-          <td><p><%= @user.created_at.strftime("%Y") %> からメンバー</p></td>
-        </tr>
-        <tr>
-          <!-- <td>number of reviews</td> -->
-        </tr>
-        </tbody>
-      </table>
-     </div>
-    </div>
+  	<% @user.zip(@photographer)each do |user photographer| %>
+      <div class = "col-xs-4">
+        <div class = "photographer-info">
+        <table class =  "table">
+          <tbody>
+            <tr>
+              <td><p>名前: <%= @user.last_name %> <%= @user.first_name %></p></td>
+              <td><%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
+            </tr>
+            <tr>
+              <td><p><%= @user.created_at.strftime("%Y") %> からメンバー</p></td>
+            </tr>
+            <tr>
+              <!-- <td>number of reviews</td> -->
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
     <div class = "col-xs-8">
       <p class = "hi-message"> Hello. I am <%= @user.first_name %></p>
       <table class =  "table">
@@ -65,5 +64,6 @@
         </div>
       </div>
     </div>
+    <% end %>
   </div>
 </div>

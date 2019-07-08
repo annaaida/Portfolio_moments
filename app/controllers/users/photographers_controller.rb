@@ -1,6 +1,11 @@
 class Users::PhotographersController < ApplicationController
 
   def index
+
+  	@city = City.find(params[:id])
+  	@user = User.find(params[:id])
+  	@photographer = Photographer.find(params[:id])
+
   end
 
   def show
@@ -8,6 +13,10 @@ class Users::PhotographersController < ApplicationController
   	@user = User.find(params[:id])
   	@photographer = Photographer.find(params[:id])
 
+  end
+
+  def city_params
+  	params.require(:city).permit(:id, :city_name, :city_img, :about_city)
   end
 
   def user_params
