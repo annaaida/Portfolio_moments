@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_050821) do
+ActiveRecord::Schema.define(version: 2019_07_09_051731) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -47,6 +47,13 @@ ActiveRecord::Schema.define(version: 2019_07_09_050821) do
     t.string "city_name"
     t.string "city_img"
     t.text "about_city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "city_photographers", force: :cascade do |t|
+    t.integer "city_id"
+    t.integer "photographer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

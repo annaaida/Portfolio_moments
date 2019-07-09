@@ -1,0 +1,2 @@
+class CityPhotographer < ApplicationRecord
+end
