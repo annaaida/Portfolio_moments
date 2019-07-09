@@ -5,7 +5,7 @@
       <table class =  "table">
         <tbody>
         <tr>
-          <td><p>名前: <%= @photographer.users.last_name %> <%= @photographer.users.first_name %></p></td>
+          <td><p>名前: <%= @photographer.user.last_name %> <%= @photographer.user.first_name %></p></td>
         <tr>
           <td><%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
         </tr>
@@ -20,7 +20,7 @@
      </div>
     </div>
     <div class = "col-xs-8">
-      <p class = "hi-message"> Hello. I am <%= @user.first_name %></p>
+      <p class = "hi-message"> Hello. I am <%= @photographer.user.first_name %></p>
       <table class =  "table">
         <tbody>
           <tr>

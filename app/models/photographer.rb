@@ -1,6 +1,6 @@
 class Photographer < ApplicationRecord
 
-  has_one :user
+  has_one :user, dependent: :destroy
   has_one :image, dependent: :destroy
 
   has_many :city_photographers
