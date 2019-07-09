@@ -15,4 +15,10 @@ class Photographer < ApplicationRecord
     self.last_name + self.first_name
   end
 
+ # いいね
+
+  def favorited_by?(user)
+	favorites.where(user_id: user.id).exists?
+  end
+
 end

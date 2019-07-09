@@ -14,6 +14,9 @@
         </tr>
         <tr>
           <!-- <td>number of reviews</td> -->
+          <span id= "favorite_buttons_<%= @photographer.id %>">
+            <%= render :partial => 'favorites/favorite', :locals => { photographer: @photographer} %>
+          </span>
         </tr>
         </tbody>
       </table>
