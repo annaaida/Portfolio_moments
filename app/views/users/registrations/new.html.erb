@@ -16,7 +16,7 @@
             <div class= "photographer-check">
               <%= f.label :フォトグラファーとしてのアカウント作成の場合下記にチェックを入れてください %>
               <%= f.check_box :photographer ,{}, "true", "false" %>
-            <div>
+            </div>
             <div class = "new-account-info1">
               <%= f.label :姓名%>
               <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
@@ -42,9 +42,16 @@
               <%= f.label :確認 %>
               <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
             </div>
+            <div>
              <%= f.submit "会員登録", class: "new-account-button" %>
             </div>
       <% end %>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
             <%= render "users/shared/links" %>
           </div>
   </div>
