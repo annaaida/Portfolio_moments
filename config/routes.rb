@@ -14,8 +14,8 @@ Rails.application.routes.draw do
 
   namespace :photographers do
     root to: "photographers#index"
-    resources :photographers, except:[:destroy]
     get 'photographers/about'
+    resources :photographers, except:[:destroy]
   end
 
   namespace :admins do
@@ -24,9 +24,11 @@ Rails.application.routes.draw do
   end
 
   namespace :users do
-    resources :users, only:[:index, :show, :edit, :update]
     get 'users/about'
+    resources :users, only:[:index, :show, :edit, :update]
+    resources :countries, only:[:index, :show]
+    resources :cities, only:[:show]
+    resources :photographers, only:[:show]
   end
-
 
 end
