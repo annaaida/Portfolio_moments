@@ -1,11 +1,6 @@
 class Users::PhotographersController < ApplicationController
 
   def index
-
-  	@city = City.find(params[:id])
-  	@user = User.find(params[:id])
-  	@photographer = @city.photographer
-
   end
 
   def show
