@@ -1,3 +1,5 @@
+
+<!-- Location ページ -->
 <!-- ヘッダー -->
 <div class = "container-fluid">
   <div class = "row">
@@ -49,12 +51,14 @@
         <% end %>
       </div>
     </div>
+    <!-- 国一覧 -->
     <main class = "clearfix">
-  <div class = "country-wrapper">
-	  <% @countries.each do |country| %>
-  		<div class = "country-index">
-  			<%#= attachment_image_tag country, :country_img, :fill, 200, 200, format: 'jpeg', fallback: "no_img.jpg", size: "200x200" %><br>
-  			<span class = "country_name"> <%= link_to country.country_name, users_country_path(country) %></span><br>
-  		</div>
-	  <% end %>
-  </div>
+      <div class = "country-wrapper">
+	    <% @countries.each do |country| %>
+  		　　<div class = "country-index">
+  			　　　<%#= attachment_image_tag country, :country_img, :fill, 200, 200, format: 'jpeg', fallback: "no_img.jpg", size: "200x200" %><br>
+  			　　　<span class = "country_name"> <%= link_to country.country_name, users_country_path(country) %></span><br>
+  		　　</div>
+	     <% end %>
+      </div>
+    </main>

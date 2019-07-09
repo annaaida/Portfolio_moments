@@ -1,46 +1,22 @@
-<!-- ヘッダー -->
-<header class = "navbar">
-	<!-- ログイン前後 共通部分 -->
-    <nav>
-	   <ul class = "nav navbar-nav navbar-left">
-	     <li><%= link_to "Moments" %></li>
-	     <li><%= link_to "How it works" %></li>
-	     <li><%= link_to "Locations" %></li>
-	   </ul>
-	  </nav>
-    <!-- 検索フォーム -->
-    <nav class = "nav navbar-nav">
-      <div class = "search-engine">
-        <%= search_form_for @search, url: admins_cities_path do |f| %>
-          <%= f.search_field :city_name_cont, class: 'form-control' %>
-          <%= f.submit "search", class: "btn btn-default" %>
-        <% end %>
-      </div>
-    </nav>
-	   <!-- ヘッダー右 -->
-       <% if user_signed_in? %>
-         <nav>
-           <ul class = "nav navbar-nav navbar-right">
-             <li><%= link_to do %>
-                   <i class="far fa-heart"></i> Favorites
-                 <% end %>
-             </li>
-             <li><%#= link_to [user_path(current_user)] do %>
-                   <%#= attachment_image_tag @user, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: 10x10 %>
-                 <%# end %>
-             </li>
-             <li><%= link_to " Log Out", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out text-muted" %></li>
-           </ul>
-         </nav>
-       <% else %>
-         <nav>
-           <ul class = "nav navbar-nav navbar-right">
-        	  <li><%= link_to "フォトグラファーをはじめる", new_user_registration_path %></li>
-              <li><%= link_to " LOG IN", new_user_session_path, class: "glyphicon glyphicon-log-in" %></li>
-              <li><%= link_to " SIGN UP", new_user_registration_path %></li>
-           </ul>
-         </nav>
-       <% end %>
-</header>
-<!-- ヘッダーここまで -->
-<main>
+
+<!-- 都市詳細 フォトグラファー 一覧ページ -->
+
+<main class = "clearfix">
+    <% @city.each do |c| %>
+      <div class = "top-image"><p><%= c.city_name %></p></div>
+        <p><%= c.country.contry_name %>
+  	    <%#= attachment_image_tag country, :country_img, :fill, 200, 200, format: 'jpeg', fallback: "no_img.jpg", size: "200x200" %>
+  	  </div>
+	<% end %>
+	<% @photographer.each do |photo| %>
+	  <table class = "table table-hover">
+		<tbody>
+    	  <tr>
+    		<td class = "contents"><%= attachment_image_tag photo, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "noimage.jpg", size:'50x50' %></td>
+  	   		<td class = "contents"><%= link_to photo.first_name %></td>
+    	  </tr>
+    	</tbody>
+       </table>
+    <% end %>
+</main>
+

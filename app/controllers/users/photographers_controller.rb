@@ -4,7 +4,7 @@ class Users::PhotographersController < ApplicationController
 
   	@city = City.find(params[:id])
   	@user = User.find(params[:id])
-  	@photographer = Photographer.find(params[:id])
+  	@photographer = @city.photographer
 
   end
 
@@ -14,6 +14,8 @@ class Users::PhotographersController < ApplicationController
   	@photographer = Photographer.find(params[:id])
 
   end
+
+  private
 
   def city_params
   	params.require(:city).permit(:id, :city_name, :city_img, :about_city)
