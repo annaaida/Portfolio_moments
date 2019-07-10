@@ -2,8 +2,8 @@ class Users::BooksController < ApplicationController
 
   def new
 
-  	@book = Book.new
-  	@book.user_id = current_user.id
+  	@booking = Book.new
+  	@booking.user_id = current_user.id
 
   end
 
