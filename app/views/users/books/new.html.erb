@@ -14,7 +14,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<input class="form-control" type="date" required>
+											<input id = "datepicker" class = "form-control" type = "date">
 											<span class="form-label">日付を選択</span>
 										</div>
 									</div>
@@ -78,3 +78,22 @@
 			</div>
 		</div>
 	</div>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$('.form-control').each(function () {
+			floatedLabel($(this));
+		});
+
+		$('.form-control').on('input', function () {
+			floatedLabel($(this));
+		});
+
+		function floatedLabel(input) {
+			var $field = input.closest('.form-group');
+			if (input.val()) {
+				$field.addClass('input-not-empty');
+			} else {
+				$field.removeClass('input-not-empty');
+			}
+		}
+	</script>
