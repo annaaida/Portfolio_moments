@@ -4,7 +4,6 @@ class Users::BooksController < ApplicationController
 
   	@book = Book.new
   	@book.user_id = current_user.id
-    @photographer = Photographer.find(params[:id])
 
   end
 

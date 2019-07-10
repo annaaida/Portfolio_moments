@@ -5,111 +5,114 @@
         <div class = "col-md-5">
 		  <div class = "booking-cta">
 		    <h1>Book a photographer</h1>
+		    <!-- 左下 フォトグラファー情報 -->
             <div class = "row">
               <div class = "col-md-3">
 			    <%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %>
-		  	    <th>name</th>
 		  	  </div>
 		  	  <div class = "col-md-2">
 		  	    <table class = "table">
 		          <tbody>
 		          	<tr>
-		  	          <th><%= @photographer.user.last_name %> <%= @photographer.user.first_name %></th>
+		  	          <th><%#= @photographer.user.last_name %> <%#= @photographer.user.first_name %></th>
 			        </tr>
 					<tr>
-		  			  <th><%= @photographer.price %></th>
-		  			  <th><%= @user.introduction %></th>
+		  			  <th><%#= @photographer.price %></th>
+		  			  <th><%#= @photographer.area %></th>
 					</tr>
 				  </tbody>
 				</table>
-						</div>
-					</div>
-					<div class="col-md-6 col-md-offset-1">
-						<div class="booking-form">
-							<form>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<input id = "datepicker" class = "form-control" type = "date">
-											<span class="form-label">日付を選択</span>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<input class="form-control" type="time" required>
-											<span class="form-label">時間を選択</span>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group">
-											<input class="form-control" type="text">
-											<span class="form-label">待ち合わせ場所</span>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<input class="form-control" type="tel">
-											<span class="form-label">当日つながる電話番号</span>
-										</div>
-									</div>
-									<div class="col-md-3 col-sm-6">
-										<div class="form-group">
-											<span class="form-label">撮影人数</span>
-											<select class="form-control">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
-												<option>6</option>
-												<option>7</option>
-												<option>8</option>
-												<option>9</option>
-												<option>10</option>
-												<option>10人以上</option>
-											</select>
-											<span class="select-arrow"></span>
-										</div>
-									</div>
-							    </div>
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group">
-											<input class="form-control" type="text">
-											<span class="form-label">メッセージ</span>
-										</div>
-									</div>
-								</div>
-								<div class="form-btn">
-									<button class="submit-btn">Book Now</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
+			  </div>
 			</div>
+	      </div>
+	    </div>
+		<div class="col-md-6 col-md-offset-1">
+		  <div class="booking-form">
+		    <form>
+			  <div class="row">
+				<div class="col-md-6">
+				  <div class="form-group">
+					<input id = "datepicker" class = "form-control" type = "date">
+					<span class="form-label">日付を選択</span>
+				  </div>
+				</div>
+				<div class="col-md-6">
+				  <div class="form-group">
+					<input class="form-control" type="time" required>
+					<span class="form-label">時間を選択</span>
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-12">
+				  <div class="form-group">
+					<input class="form-control" type="text">
+					<span class="form-label">待ち合わせ場所</span>
+				  </div>
+				</div>
+			  </div>
+			　<div class="row">
+			　　<div class="col-md-6">
+				　<div class="form-group">
+					<input class="form-control" type="tel">
+					<span class="form-label">当日つながる電話番号</span>
+				　　</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+				　<div class="form-group">
+					<span class="form-label">撮影人数</span>
+					<select class="form-control">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+						<option>10人以上</option>
+					</select>
+					<span class="select-arrow"></span>
+				  </div>
+				</div>
+		      </div>
+			  <div class="row">
+				<div class="col-md-12">
+				  <div class="form-group">
+					<input class="form-control" type="text">
+					<span class="form-label">メッセージ</span>
+				  </div>
+				</div>
+			  </div>
+			  <div class="form-btn">
+				<button class="submit-btn">Book Now</button>
+			  </div>
+			</form>
+		  </div>
 		</div>
+	  </div>
 	</div>
-	<script src="js/jquery.min.js"></script>
-	<script>
-		$('.form-control').each(function () {
-			floatedLabel($(this));
-		});
+  </div>
+</div>
 
-		$('.form-control').on('input', function () {
-			floatedLabel($(this));
-		});
+<script src="js/jquery.min.js"></script>
+<script>
+	$('.form-control').each(function () {
+		floatedLabel($(this));
+	});
 
-		function floatedLabel(input) {
-			var $field = input.closest('.form-group');
-			if (input.val()) {
-				$field.addClass('input-not-empty');
-			} else {
-				$field.removeClass('input-not-empty');
-			}
+	$('.form-control').on('input', function () {
+		floatedLabel($(this));
+	});
+
+	function floatedLabel(input) {
+		var $field = input.closest('.form-group');
+		if (input.val()) {
+			$field.addClass('input-not-empty');
+		} else {
+			$field.removeClass('input-not-empty');
 		}
-	</script>
+	}
+</script>
