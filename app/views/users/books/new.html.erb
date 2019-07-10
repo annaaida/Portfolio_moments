@@ -28,7 +28,7 @@
 	    </div>
 		<div class="col-md-6 col-md-offset-1">
 		  <div class="booking-form">
-		   <%= form_for @booking, url: new_users_book_path do |booking| %>
+		   <%= form_for @booking, url: users_books_path do |booking| %>
 			  <div class="row">
 				<div class="col-md-6">
 				  <div class="form-group">
@@ -73,7 +73,7 @@
 		      </div>
 			  <div class = "row">
 				<div class = "col-md-12">
-				  <div class = "form-group">
+				  <div class = "form-group" >
 					<input class = "form-control" type = "text">
 					<span class = "form-label">メッセージ</span>
 				  </div>

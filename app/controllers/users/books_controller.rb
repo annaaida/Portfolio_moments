@@ -3,15 +3,21 @@ class Users::BooksController < ApplicationController
   def new
 
   	@booking = Book.new
-  	@booking.user_id = current_user.id
+
     #@photographer = Photographer.find(params[:id])
 
   end
 
   def create
 
-  	@book.save
-    redirect_to users_books(@book)
+  	@booking = Book.new(booking_params)
+    @booking.user_id = current_user.id
+    binding.pry
+    if @booking.save
+    redirect_to users_books_index_path(@booking.id)
+    else
+      render :new
+    end
 
   end
 
@@ -22,12 +28,15 @@ class Users::BooksController < ApplicationController
   end
 
   def index
+
+    @book = Book.find(params[:id])
+
   end
 
   private
 
   def booking_params
-  	params.require(:cart).permit(:date, :time, :message, :meeting_spot, :total_price)
+  	params.require(:book).permit(:date, :time, :message, :meeting_spot, :total_price)
   end
 
   def photographer_params
