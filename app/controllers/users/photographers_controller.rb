@@ -4,7 +4,6 @@ class Users::PhotographersController < ApplicationController
 
   	@photographer = Photographer.find(params[:id])
 
-
   end
 
   def photographer_params
