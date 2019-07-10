@@ -3,7 +3,6 @@ class Users::BooksController < ApplicationController
   def new
 
   	@booking = Book.new
-
     #@photographer = Photographer.find(params[:id])
 
   end
@@ -12,9 +11,9 @@ class Users::BooksController < ApplicationController
 
   	@booking = Book.new(booking_params)
     @booking.user_id = current_user.id
-    binding.pry
+
     if @booking.save
-    redirect_to users_books_index_path(@booking.id)
+      redirect_to users_books_index_path(@booking.id)
     else
       render :new
     end
