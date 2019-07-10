@@ -1,4 +1,4 @@
-class Users::BooksController < ApplicationController
+class BooksController < ApplicationController
 
   def new
 
@@ -9,11 +9,13 @@ class Users::BooksController < ApplicationController
 
   def create
 
+  	@photographer = Photographer.find(params[:photographer_id])
   	@booking = Book.new(booking_params)
     @booking.user_id = current_user.id
+    @booking.photographer_id = @photographer.id
 
     if @booking.save
-      redirect_to users_books_index_path(@booking.id)
+      redirect_to photographer_books_index_path(@photographer.id,@booking.id)
     else
       render :new
     end
@@ -30,11 +32,9 @@ class Users::BooksController < ApplicationController
 
     @book = Book.find(params[:id])
 
-
   end
 
   private
-
 
   def booking_params
   	params.require(:book).permit(:date, :time, :message, :meeting_spot, :total_price)
