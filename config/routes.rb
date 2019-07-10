@@ -12,12 +12,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  namespace :photographers do
-    root to: "photographers#index"
-    get 'photographers/about'
-    resources :photographers, except:[:destroy]
-  end
-
   namespace :admins do
     resources :countries, only:[:index, :edit, :update]
     resources :cities
@@ -32,5 +26,11 @@ Rails.application.routes.draw do
     resources :photographers, only:[:show]
     get "/books/:id/index" => "books#index", as: "books_index"
   end
+
+    root to: "photographers#index"
+    get 'photographers/about'
+    resources :photographers, except:[:destroy] do
+      resources :books, only:[:new, :create, :show, :index]
+    end
 
 end
