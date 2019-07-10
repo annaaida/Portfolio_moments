@@ -8,12 +8,13 @@ class BooksController < ApplicationController
   end
 
   def create
-
+  	@photographer = Photographer.find(params[:photographer_id])
   	@booking = Book.new(booking_params)
     @booking.user_id = current_user.id
+    @booking.photographer_id = @photographer.id
 
     if @booking.save
-      redirect_to users_books_index_path(@booking.id)
+      redirect_to photographer_books_index_path(@photographer.id,@booking.id)
     else
       render :new
     end

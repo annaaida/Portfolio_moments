@@ -24,17 +24,16 @@ Rails.application.routes.draw do
   namespace :users do
     get 'users/about'
     resources :users, only:[:index, :show, :edit, :update]
-    resources :books, only:[:new, :create, :show]
     resources :countries, only:[:index, :show]
     resources :cities, only:[:show]
     resources :photographers, only:[:show]
-    get "/books/:id/index" => "books#index", as: "books_index"
   end
 
     root to: "photographers#index"
     get 'photographers/about'
     resources :photographers, except:[:destroy] do
-      resources :books, only:[:new, :create, :show, :index]
+      resources :books, only:[:new, :create, :show]
+      get "/books/:id/index" => "books#index", as: "books_index"
     end
 
 end
