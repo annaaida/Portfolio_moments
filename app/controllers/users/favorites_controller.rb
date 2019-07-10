@@ -1,7 +1,6 @@
 class Users::FavoritesController < ApplicationController
 
   before_action :set_photographer
-  # ？？？？
 
   def create
 
