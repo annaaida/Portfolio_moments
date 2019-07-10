@@ -5,6 +5,7 @@ class Photographer < ApplicationRecord
 
   has_many :city_photographers
   has_many :cities, through: :city_photographers
+  has_many :books
 
   attachment :profile_img
 

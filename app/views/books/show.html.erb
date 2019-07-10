@@ -1,0 +1,31 @@
+<div class = "container">
+  <div class = "row">
+  	<h4>予約詳細</h4>
+  	  <table class = "table history-details">
+  	    <tr>
+          <th>撮影日時</th>
+          <td><p><%= @book.date %> <%= @book.time %></td>
+        </tr>
+        <tr>
+          <th>発送したメッセージ</th>
+          <td><%= @book.message %><br>
+        </tr>
+        <tr>
+          <th>待ち合わせ希望場所</th>
+          <td><%= @book.meeting_spot %></td>
+        </tr>
+        <tr>
+          <th>人数</th>
+          <td> <%= @book.people %>人 </td>
+        </tr>
+        <tr>
+          <th>合計金額</th>
+          <td> <%= number_with_delimiter(@book.total_price) %>円（消費税、送料込み） </td>
+        </tr>
+       	<tr>
+          <th>予約のステータス</th>
+          <td> <%= @book.status %> </td>
+        </tr>
+      </table>
+  </div>
+</div>
