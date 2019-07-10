@@ -2,14 +2,15 @@ class Users::BooksController < ApplicationController
 
   def new
 
-  	book = Book.new
-  	book.user_id = current_user.id
+  	@book = Book.new
+  	@book.user_id = current_user.id
+    @photographer = Photographer.find(params[:id])
 
   end
 
   def create
 
-  	book.save
+  	@book.save
 
   end
 
