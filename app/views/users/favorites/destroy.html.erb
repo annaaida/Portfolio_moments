@@ -1,2 +1,1 @@
-<h1>Users::Favorites#destroy</h1>
-<p>Find me in app/views/users/favorites/destroy.html.erb</p>
+$("#favorite_buttons_<%= @photographer.id %>").html("<%= j(render partial: 'users/favorites/favorite', locals: { photographer: @photographer }) %>");

@@ -13,9 +13,9 @@
           <td><p><%= @photographer.created_at.strftime("%Y") %> からメンバー</p></td>
         </tr>
         <tr>
-          <!-- <td>number of reviews</td> -->
-          <span id= "favorite_buttons_<%= @photographer.id %>">
-            <%= render :partial => 'favorites/favorite', :locals => { photographer: @photographer} %>
+          <!-- いいねボタン -->
+          <span id = "favorite_buttons_<%= @photographer.id %>">
+            <%= render :partial => 'users/favorites/favorite', :locals => { photographer: @photographer} %>
           </span>
         </tr>
         </tbody>
