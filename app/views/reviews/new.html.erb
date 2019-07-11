@@ -1,32 +1,36 @@
 <div class = "container">
   <div class = "row">
     <h3>レビュー投稿</h3>
-    <div class = "col-xs-3">
-        <%#= attachment_image_tag @photographer, :profile_img, :fill, 200, 200, format: 'jpeg', fallback: "noimg.jpg", size: "200x200" %><br>
-    </div>
-    <div class = "col-xs-9">
-        <p class = "name"><%= @photographer.user.last_name %><%= @photographer.user.first_name %></p><br>
+    <div class = "photographer-information">
+      <div class = "col-xs-3">
+          <%#= attachment_image_tag @photographer, :profile_img, :fill, 200, 200, format: 'jpeg', fallback: "noimg.jpg", size: "200x200" %><br>
+      </div>
+      <div class = "col-xs-9">
+          <p class = "name"><%= @photographer.user.last_name %><%= @photographer.user.first_name %></p><br>
+      </div>
     </div>
   </div>
   <div class = "row">
-    <div class = "review-form">
-      <%= form_for @review, url: new_photographer_review_path do |r| %>
-　　       <div class="form-group-name">
-          <%= r.label :name, '投稿者名'  %>
-          <%= r.text_field :name, class: 'form-control' %>
-        </div>
-        <div class="form-group-title">
-          <%= r.label :title, 'レビュータイトル' %>
-          <%= r.text_field :title, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= r.label :body, 'レビュー本文' %>
-          <%= r.text_area :body, class: 'form-control', rows:12 %>
-        </div>
-        <div class = "button-box">
-          <%= r.submit '投稿', class: 'btn btn-info btn-lg btn-block' %>
-        </div>
-      <% end %>
+    <div class = "col-xs-9">
+      <div class = "review-form">
+        <%= form_for @review, url: new_photographer_review_path do |r| %>
+  　　       <div class = "form-group-name">
+            <%= r.label :name, '投稿者名'  %>
+            <%= r.text_field :name, class: 'form-control' %>
+          </div>
+          <div class = "form-group-title">
+            <%= r.label :title, 'レビュータイトル' %>
+            <%= r.text_field :title, class: 'form-control' %>
+          </div>
+          <div class = "form-group">
+            <%= r.label :body, 'レビュー本文' %>
+            <%= r.text_area :body, class: 'form-control', rows:12 %>
+          </div>
+          <div class = "button-box col-xs-offset-10">
+            <%= r.submit '投稿', class: 'btn btn-info btn-lg btn-block' %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
