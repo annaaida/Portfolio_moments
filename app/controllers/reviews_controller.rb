@@ -24,12 +24,18 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+
+    @review = Review.find(params[:id])
+    @photographer = Photographer.find(params[:product_id])
+
   end
 
   def update
-  end
 
-  def destroy
+    review = Review.find(params[:id])
+    review.update(review_params)
+    redirect_to users_photographer_path(review.photographer)
+
   end
 
   private
