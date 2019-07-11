@@ -8,6 +8,7 @@ class BooksController < ApplicationController
   end
 
   def create
+
   	@photographer = Photographer.find(params[:photographer_id])
   	@booking = Book.new(booking_params)
     @booking.user_id = current_user.id

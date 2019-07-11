@@ -62,5 +62,35 @@
         </div>
       </div>
     </div>
+    <div class = "review">
+      <% if user_signed_in? %>
+        <% unless @photographer.reviewed_by?(current_user) %>
+          <%= link_to "レビューを投稿する", new_photographer_review_path(@photographer), class: "review-button btn btn-success" %>
+        <% else %>
+          <% review = Review.find_by(user_id: current_user.id, photographer_id: @photographer.id) %>
+          <%= link_to "レビューを編集する", edit_photographer_review_path(@photographer, @review), class: "review-button btn btn-success" %>
+          <%= link_to "レビューを削除する", photographer_review_path(@photographer, @review), method: :delete, data:{confirm:"本当に削除しますか?"}, class: "review-button btn btn-warning" %>
+        <% end %>
+      <% else %>
+         <p>レビューを書くにはログインしてください。</p>
+      <% end %>
+    </div>
+    <div class = "review-index">
+     <table class = "table review_table">
+       <tr style = "background-color: #DDDDDD;">
+         <th style = "width:100px;"> 投稿者</th>
+         <th style = "width:200px;"> タイトル</th>
+         <th style = "width:600px;"> 本文</th>
+       </tr>
+     <% @reviews.each do |r| %>
+       <tr>
+         <td><%= r.name %></td>
+         <td><%= r.title %></td>
+         <td class = "review_body"><%= r.body %></td>
+       </tr>
+     <% end %>
+     <%= paginate @reviews, class: "paginate" %>
+     </table>
+    </div>
   </div>
 </div>
