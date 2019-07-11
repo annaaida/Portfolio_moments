@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'favorites/create'
+  get 'favorites/destroy'
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -31,6 +33,7 @@ Rails.application.routes.draw do
     resources :reviews
     resources :books, only:[:new, :create, :show]
     get "/books/:id/index" => "books#index", as: "books_index"
+    resource :favorites, only:[:create, :destroy]
   end
 
 end
