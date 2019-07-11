@@ -15,7 +15,7 @@
         <tr>
           <!-- いいねボタン -->
           <span id = "favorite_buttons_<%= @photographer.id %>">
-            <%= render :partial => 'users/favorites/favorite', :locals => { photographer: @photographer} %>
+            <%= render :partial => '/favorites/favorite', :locals => { photographer: @photographer} %>
           </span>
         </tr>
         </tbody>

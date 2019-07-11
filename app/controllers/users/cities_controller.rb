@@ -5,11 +5,6 @@ class Users::CitiesController < ApplicationController
   	@city = City.find(params[:id])
   	@photographer = @city.city_photographers.includes(:photographer)
 
-  	# ランキング機能
-  	like_count = Photographer.joins(:favorites).group(:photographer_id).group("YEAR(created_at)").group("MONTH(created_at)").count 
-    liked_ids = Hash[like_count.sort_by{ |_, v| -v }].keys
-    @ranking= Photographer.where(id: liked_ids)
-
   end
 
 
