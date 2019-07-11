@@ -7,6 +7,7 @@ class Photographer < ApplicationRecord
   has_many :cities, through: :city_photographers
   has_many :favorites, dependent: :destroy
   has_many :books
+  has_many :reviews, dependent: :destroy
 
   attachment :profile_img
 
@@ -20,6 +21,11 @@ class Photographer < ApplicationRecord
 
   def favorited_by?(user)
 	favorites.where(user_id: user.id).exists?
+
+ # レビュー
+
+  def reviewed_by?(user)
+    reviews.where(user_id: user.id).exists?
   end
 
 end

@@ -3,6 +3,7 @@ class Users::PhotographersController < ApplicationController
   def show
 
   	@photographer = Photographer.find(params[:id])
+  	@reviews = @photographer.reviews.page(params[:page]).per(10)
 
   end
 
