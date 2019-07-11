@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   root to: "photographers#index"
   get 'photographers/about'
   resources :photographers, except:[:destroy] do
+    resources :reviews
     resources :books, only:[:new, :create, :show]
     get "/books/:id/index" => "books#index", as: "books_index"
   end
