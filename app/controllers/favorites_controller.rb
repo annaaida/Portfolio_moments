@@ -1,4 +1,4 @@
-class Users::FavoritesController < ApplicationController
+class FavoritesController < ApplicationController
 
   before_action :set_photographer
 
