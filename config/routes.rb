@@ -23,7 +23,6 @@ Rails.application.routes.draw do
     resources :countries, only:[:index, :show]
     resources :cities, only:[:show]
     resources :photographers, only:[:show]
-    resources :favorites, only:[:create, :destroy]
   end
 
   root to: "photographers#index"
@@ -32,6 +31,7 @@ Rails.application.routes.draw do
     resources :reviews
     resources :books, only:[:new, :create, :show]
     get "/books/:id/index" => "books#index", as: "books_index"
+    resource :favorites, only:[:create, :destroy]
   end
 
 end
