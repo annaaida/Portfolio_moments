@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'books/new'
-  get 'books/create'
-  get 'books/show'
-  get 'books/index'
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -29,11 +25,11 @@ Rails.application.routes.draw do
     resources :photographers, only:[:show]
   end
 
-    root to: "photographers#index"
-    get 'photographers/about'
-    resources :photographers, except:[:destroy] do
-      resources :books, only:[:new, :create, :show]
-      get "/books/:id/index" => "books#index", as: "books_index"
-    end
+  root to: "photographers#index"
+  get 'photographers/about'
+  resources :photographers, except:[:destroy] do
+    resources :books, only:[:new, :create, :show]
+    get "/books/:id/index" => "books#index", as: "books_index"
+  end
 
 end
