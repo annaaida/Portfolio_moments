@@ -29,6 +29,28 @@
  }
 
 
+/* ヘッダー */
+
+html {
+  position: relative;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    justify-content: space-between;
+    position: fixed;
+    padding: 40px;
+    transition: .5s;
+    width: 100%;
+    z-index: 10;
+}
+
+header.transform {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+}
+
  /*ユーザー　サインイン 兼 アカウント登録*/
 
 .main-section{
