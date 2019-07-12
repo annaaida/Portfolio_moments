@@ -10,12 +10,12 @@
           <li><a href = "#" class = "sns-btn"><i class = "fab fa-twitter-square"></i></a></li>
           <li><a href = "#" class = "sns-btn"><i class = "fab fa-instagram"></i></a></li>
           <li><a href ="#" class = "sns-btn"><i class = "fab fa-facebook-square"></i></a></li>
-        </ul>
       <!-- いいねボタン -->
           <li><span id = "favorite_buttons_<%= @photographer.id %>"></span>
             <%= render :partial => 'users/favorites/favorite', :locals => { photographer: @photographer} %>
           </li>
           </span>
+        </ul>
         <div class="form-btn">
           <%= link_to 'Book Now', new_photographer_book_path(@photographer), class: "btn btn-danger" %>
         </div>
@@ -67,7 +67,6 @@
             <ul class = "slides">
                <li><%= image_tag "slider1.jpg" %></li>
                <li><%= image_tag "slider2.jpg" %></li>
-               <li><%= image_tag "slider3.jpg" %></li>
             </ul>
           </div>
           <!-- Single Gallery Item -->
