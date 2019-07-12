@@ -1,13 +1,11 @@
 
 <!-- ヘッダー部分テンプレート -->
 <%= render 'layouts/users-header' %>
-<br>
-<br>
 <!-- メイン flex-slider -->
     <div class = "flexslider">
       <ul class = "slides">
+         <li><%= image_tag "slider1.jpg" %></li>
          <li><%= image_tag "slider2.jpg" %></li>
-         <li><%= image_tag "slider3.jpg" %></li>
       </ul>
     </div>
     <div class = "container">
@@ -42,15 +40,6 @@
         </div>
       </div>
     </div>
-    <footer class = "navbar navbar-dark bg-dark">
-       <nav class = "nav navbar-nav footer-statement">
-        <nav class = "nav navbar-nav">
-          <h4 class = "footer-contents-name" > Customer Care</h4>
-          <p><i class="fa fa-phone icon-white"></i> お問い合わせ 0120(XXX)XXX</p>
-          <h5 class = "contact-footer"><%=link_to "お問い合わせ", class: "text-muted" %></h5>
-          <p>お返事に3〜4営業日いただきます。</p>
-        </nav>
-      </nav>
-    </footer>
+    <%= render 'layouts/users-footer' %>
   </div>
 </div>
