@@ -39,27 +39,75 @@ header{
      border-radius: 50%;
  }
 
- /* show page */
+ /* ユーザー側 / フォトグラファー側 show page 【共通部分】  */
 
 
  .hi-message {
-     font-size: 60px;
-     font-weight: bold;
-     font-family: 'Noto Sans'
+     font-size: 55px;
+     font-family: 'Sawarabi Mincho', sans-serif;
  }
 
+ .col-xs-8 {
+    margin-top: 30px;
+ }
 
  .table th,td {
      border-top: none !important;
  }
 
-
  p {
-     font-family: 'Noto Sans'
+     font-family: 'Sawarabi Mincho', sans-serif;
+     font-size: 15px;
+     color: #484848;
  }
 
+ .table th {
+    width: 5%;
+ }
+
+ #quote-icon {
+    color: #EBEBEB !important;
+    font-size: 25px !important;
+    font-weight: 700 !important;
+    margin: 20px 10px 10px 5px;
+ }
+
+ .who-i-am {
+    margin: 5px;
+
+ }
+
+ .who-i-am::after {
+    content: "";
+    display: block;
+    background: #EBEBEB;
+    height: 3px;
+    width: 30px;
+    margin: 20px 10px 10px 0;
+}
+
+ #map-pin-icon {
+    font-size: 17px;
+    padding-right: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+ }
+
+ #language-icon {
+    font-size: 17px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+
+ }
+
+ #image-zone {
+    padding-top: 20px;
+ }
 
  .portfolio-image-main {
+    width: 400px;
+    height: 400px;
 
  }
 
@@ -69,13 +117,139 @@ header{
 
  }
 
-
  .portfolio-image-4 {
  }
-
 
  .portfolio-image-5,
  .portfolio-image-6,
  .portfolio-image-7 {
 
  }
+
+
+/* 予約ボタン */
+
+.reserve-btn {
+    background:#1AAB8A;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+
+.reserve-btn:hover{
+    background:#fff;
+    color:#1AAB8A;
+}
+
+.reserve-btn:before,button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #1AAB8A;
+    transition:400ms ease all;
+}
+
+.reserve-btn:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.reserve-btn:hover:before,.reserve-btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+/* 【Only ユーザー側】 photographer show ページ */
+
+.container-fluid {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#sidebar {
+    padding-top: 3em;
+    padding-bottom: 40px;
+    padding-left: 6em;
+    width: 30%;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow-y: hidden;
+    z-index: 1001;
+}
+
+main {
+    width: 100%;
+    float: right;
+}
+
+li {
+    list-style: none
+}
+
+/* レビュー一覧 / レビュー投稿 / 編集 / 消去ボタン */
+
+.review {
+    margin-top: 40px;
+}
+
+/* SNS リンク */
+
+.sns-btn {
+    font-size: 30px;
+    text-decoration: none;
+    transition: .5s;
+}
+
+/* アイコンにマウスを乗せた時 */
+
+.sns-btn:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+/* Twitter */
+
+.sns-btn .fa-twitter-square {
+    color: #55acee;
+}
+
+/* Instagram */
+
+.sns-btn .fa-instagram {
+    color: #c6529a;
+}
+
+/* Facebook*/
+
+.sns-btn .fa-facebook-square {
+    color: #3b5998;
+}
+
+/* アイコン全体の位置 */
+
+.sns-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+/* アイコン同士の余白 */
+
+.sns-wrapper li{
+}
