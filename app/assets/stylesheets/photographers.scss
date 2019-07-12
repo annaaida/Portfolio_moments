@@ -103,72 +103,17 @@ header{
 
  #image-zone {
     padding-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
  }
 
- .portfolio-image-main {
-    width: 400px;
-    height: 400px;
-
- }
-
-
- .portfolio-image-2,
- .portfolio-image-3 {
-
- }
-
- .portfolio-image-4 {
- }
-
- .portfolio-image-5,
- .portfolio-image-6,
- .portfolio-image-7 {
-
- }
-
-
-/* 予約ボタン */
-
-.reserve-btn {
-    background:#1AAB8A;
-    color:#fff;
-    border:none;
-    position:relative;
-    height:60px;
-    font-size:1.6em;
-    padding:0 2em;
-    cursor:pointer;
-    transition:800ms ease all;
-    outline:none;
+.single_gallery_item {
+    width: 200px;
+    height: 200px;
 }
 
-.reserve-btn:hover{
-    background:#fff;
-    color:#1AAB8A;
-}
-
-.reserve-btn:before,button:after{
-    content:'';
-    position:absolute;
-    top:0;
-    right:0;
-    height:2px;
-    width:0;
-    background: #1AAB8A;
-    transition:400ms ease all;
-}
-
-.reserve-btn:after{
-    right:inherit;
-    top:inherit;
-    left:0;
-    bottom:0;
-}
-
-.reserve-btn:hover:before,.reserve-btn:hover:after{
-  width:100%;
-  transition:800ms ease all;
-}
 
 /* 【Only ユーザー側】 photographer show ページ */
 
