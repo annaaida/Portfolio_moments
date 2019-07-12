@@ -57,6 +57,10 @@ header{
      color: #484848;
  }
 
+ #fullname {
+    font-size: 24px !important;
+ }
+
  .table th {
     width: 5%;
  }
@@ -114,16 +118,14 @@ header{
 /* 【Only ユーザー側】 photographer show ページ */
 
 .container-fluid {
-    width: 100%;
     overflow: hidden;
     position: relative;
 }
 
-#sidebar {
+.col-xs-3 {
     padding-top: 3em;
     padding-bottom: 40px;
     padding-left: 6em;
-    width: 30%;
     position: fixed;
     bottom: 0;
     top: 0;
@@ -135,19 +137,24 @@ header{
 
 main {
     width: 100%;
-    float: right;
+    margin-top: 80px;
 }
 
 li {
     list-style: none
 }
 
+
 /* 【Only フォトグラファー側】 photographer show ページ */
 
 
 #photographer-mypage {
     background-color: #E8BB53;
-    height: 100%;
+    height: 1000px;
+}
+
+.updates {
+    margin: 20px;
 }
 
 /* レビュー一覧 / レビュー投稿 / 編集 / 消去ボタン */

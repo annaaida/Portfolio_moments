@@ -15,7 +15,7 @@
               <td><%= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
             </tr>
             <tr>
-              <td><p><%= @user.last_name %> <%= @user.first_name %></p></td>
+              <td><p id = "fullname"><%= @user.last_name %> <%= @user.first_name %></p></td>
             </tr>
             <tr>
               <td><p><%= @user.email %></p></td>
@@ -28,8 +28,14 @@
         <div class = "row">
           <div class = "side-bar">
             <ul class="nav nav-sidebar">
-              <li><%= link_to '予約一覧' %></li>
-              <li><li><%= link_to 'ユーザーからの問い合わせ（これどうやる？）' %></li></li>
+              <li><%= link_to do %>
+                   <p><i class="far fa-calendar-alt"></i> 予約一覧</p>
+                  <% end %>
+              </li>
+              <li><%= link_to do %>
+                   <p><i class="fas fa-inbox"></i> ユーザーからの問い合わせ </p>
+                  <% end %>
+              </li>
               <li><%= link_to photographer_path(current_user) do %> <!-- showページへ -->
                     <p><i class="fas fa-camera-retro"></i> ポートフォリオを確認 </p>
                   <% end %>
@@ -70,6 +76,7 @@
        </nav>
     </header>
       <!-- 新着メッセージ一覧 -->
+    <div class = "updates">
       <div class = "row">
         <div class = "main-upper">
           <h3>新着予約情報</h3>
@@ -95,5 +102,6 @@
           <h3>ランキング順位？</h3>
         </div>
       </div>
+    </div>
     </div>
   </div>

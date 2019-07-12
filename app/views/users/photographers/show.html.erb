@@ -1,6 +1,6 @@
 <div class = "container-fluid">
   <div class = "row">
-    <div id = "sidebar" class = "js-fullheight text-center">
+    <div class = "col-xs-3 js-fullheight text-center">
       <%= image_tag 'noimage.jpg' %>
       <%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %>
         <ul>
@@ -19,35 +19,9 @@
         <div class="form-btn">
           <%= link_to 'Book Now', new_photographer_book_path(@photographer), class: "btn btn-danger" %>
         </div>
-      </nav>
     </div>
-    <div class = "col-xs-offset-4">
-      <div class = "navbar">
-        <% if user_signed_in? %>
-         <nav>
-           <ul class = "nav navbar-nav navbar-right">
-             <li><%= link_to do %>
-                   <i class="far fa-heart"></i> Favorites
-                 <% end %>
-             </li>
-             <li><%#= link_to [user_path(current_user)] do %>
-                   <%#= attachment_image_tag @user, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: 10x10 %>
-                 <%# end %>
-             </li>
-             <li><%= link_to " Log Out", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out text-muted" %></li>
-           </ul>
-         </nav>
-       <% else %>
-         <nav>
-           <ul class = "nav navbar-nav navbar-right">
-            <li><%= link_to "フォトグラファーをはじめる", new_user_registration_path %></li>
-              <li><%= link_to " LOG IN", new_user_session_path, class: "glyphicon glyphicon-log-in" %></li>
-              <li><%= link_to " SIGN UP", new_user_registration_path %></li>
-           </ul>
-         </nav>
-       <% end %>
-      </div>
-      <div class = "col-xs-10">
+    <div class = "col-xs-8">
+      <main>
         <div class = "introduction">
           <p class = "hi-message"> Hello. I am <%= @photographer.user.first_name %></p>
           <p>Joained in <%= @photographer.created_at.strftime("%Y") %></p>
@@ -130,7 +104,8 @@
               </div>
           </div>
         </div>
-      </div>
+      </main>
+    </div>
     </div>
   </div>
 </div>
