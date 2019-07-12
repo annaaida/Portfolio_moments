@@ -1,2 +1,101 @@
-<h1>Photographers#top</h1>
-<p>Find me in app/views/photographers/top.html.erb</p>
+<!-- フォトグラファー トップページ -->
+
+<div class = "container-fluid">
+  <div class = "row">
+    <!-- header -->
+    <div class = "header-line">
+     <p class = "header-message">フォトグラファーページ</p>
+    </div>
+    <header class = "navbar navbar-light bg-light fixed-top">
+     <nav>
+      <ul class = "nav navbar-nav navbar-right">
+          <li><%= link_to photographer_top_path(current_user) do %>
+                <p><i class="fas fa-home"></i> Home</p>
+              <% end %>
+          </li>
+          <li><%= link_to about_path do %>
+                <p><i class="fas fa-question-circle"></i> このページの使い方</p>
+              <% end %>
+          </li>
+          <li><%= link_to users_users_path(current_user) do %>
+                <p><i class="fas fa-user-circle"></i> ユーザーページ </p>
+              <% end %>
+          </li>
+          <li><%= link_to do %>
+                <i class="fas fa-sign-out-alt"></i> ログアウト </p>
+              <% end %>
+          </li>
+      </ul>
+     </nav>
+    </header>
+  </div>
+  <div class = "row">
+    <div class="clearfix"></div>
+      <div class="col-xs-3 sidebar">
+       <div class = "photographer-info">
+        <table class =  "table">
+          <tbody>
+            <tr>
+              <td><%= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
+            </tr>
+            <tr>
+              <td><p><%= @user.last_name %> <%= @user.first_name %></p></td>
+            </tr>
+            <tr>
+              <td><p><%= @user.email %></p></td>
+            </tr>
+            <tr>
+              <!-- <td>number of reviews</td> -->
+            </tr>
+            <tr>
+              <td><%= link_to edit_user_registration_path(current_user) do %>
+                    <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
+                  <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       </div>
+        <ul class="nav nav-sidebar">
+            <li><%= link_to '予約一覧' %></li>
+            <li><li><%= link_to 'ユーザーからの問い合わせ（これどうやる？）' %></li></li>
+            <li><%= link_to photographer_path(current_user) do %> <!-- showページへ -->
+                  <p><i class="fas fa-camera-retro"></i> ポートフォリオを確認 </p>
+                <% end %>
+            </li>
+            <li><%= link_to edit_photographer_path(current_user) do %> <!-- editページへ -->
+                  <p><i class="far fa-edit"></i> ポートフォリオを編集 </p>
+              <% end %>
+            </li>
+        </ul>
+      </div>
+
+    <div class="col-xs-8 main">
+      <!-- 新着メッセージ一覧 -->
+      <div class = "row">
+        <div class = "main-upper">
+          <h3>新着予約情報</h3>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "main-lower">
+          <h3>最新のお問い合わせ</h3>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "main-lower">
+          <h3>最新のレビュー</h3>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "main-lower">
+          <h3>いいねしたユーザー</h3>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "main-lower">
+          <h3>ランキング順位？</h3>
+        </div>
+      </div>
+    </div>
+  </div>
