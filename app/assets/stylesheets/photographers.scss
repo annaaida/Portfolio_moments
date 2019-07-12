@@ -13,7 +13,7 @@ header{
 
  .header-line{
      height: 50px;
-     background-color: #199eae;
+     background-color: #E4A850;
  }
 
 
@@ -45,10 +45,6 @@ header{
  .hi-message {
      font-size: 55px;
      font-family: 'Sawarabi Mincho', sans-serif;
- }
-
- .col-xs-8 {
-    margin-top: 30px;
  }
 
  .table th,td {
@@ -144,6 +140,14 @@ main {
 
 li {
     list-style: none
+}
+
+/* 【Only フォトグラファー側】 photographer show ページ */
+
+
+#photographer-mypage {
+    background-color: #E8BB53;
+    height: 100%;
 }
 
 /* レビュー一覧 / レビュー投稿 / 編集 / 消去ボタン */

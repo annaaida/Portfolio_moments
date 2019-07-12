@@ -41,17 +41,21 @@
 </div>
 <!-- ヘッダーここまで -->
 <!-- メイン画像と検索フォーム -->
-<div class = "container">
+<div class = "container-fluid">
   <div class = "row">
-    <div clas  = "top-image">
+    <div clas  = "col-xs-12">
       <div class = "search-engine">
         <%= search_form_for @search, url: admins_cities_path do |f| %>
-          <%= f.search_field :city_name_cont, class: 'form-control' %>
+          <%= f.search_field :city_name_cont, class: 'form-control', placeholder: "都市名を検索する", id: "search-country-index" %>
           <%= f.submit "search", class: "btn btn-default" %>
         <% end %>
       </div>
     </div>
-    <!-- 国一覧 -->
+  </div>
+</div>
+<!-- 国一覧 -->
+<div class = "container">
+  <div class = "row">
     <main class = "clearfix">
       <div class = "country-wrapper">
 	    <% @countries.each do |country| %>
@@ -62,3 +66,5 @@
 	     <% end %>
       </div>
     </main>
+  </div>
+</div>
