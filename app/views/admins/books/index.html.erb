@@ -3,26 +3,31 @@
 	<h1>予約一覧</h1>
 	<table class = "table">
 		<tr>
+			<th> 予約番号</th>
 			<th> 予約者</th>
 			<th> 撮影者</th>
 			<th> 日付</th>
 			<th> 時間</th>
 			<th> 合計金額</th>
-			<th> 予約ステータス</th>
+			<th> 予約状況</th>
 			<th> 予約日</th>
+			<th></th>
 			<th></th>
 			<th></th>
 		</tr>
 		<% @bookings.each do |booking| %>
 			<tr>
+				<td> <%= booking.id %></td>
 				<td> <%= booking.user.last_name %> <%= booking.user.first_name %> </td>
+				<td> <%#=  %></td>
 				<td> <%#=  %></td>
 				<td> <%#=  %></td>
 				<td> <%= booking.total_price %></td>
 				<td> <%= booking.status %></td>
-				<td> <%= booking.created_at.strftime("%Y年%-m月%-d日") %></p>
+				<td> <%= booking.created_at.strftime("%Y/%-m/%-d") %></p>
 				<td> <%= link_to "詳細", admins_book_path(booking), class: "btn btn-success" %></td>
 				<td><%= link_to "編集", edit_admins_book_path(booking), class: "btn btn-warning" %>
+				<td><%= link_to "削除", admins_book_path(booking), method: :delete, class: "btn btn-danger" %>
 			</tr>
 		<% end %>
 		<%= paginate @bookings, class: "paginate" %>

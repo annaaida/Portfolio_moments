@@ -13,9 +13,20 @@ class Admins::BooksController < ApplicationController
   end
 
   def edit
+
+    @booking = Book.find(params[:id])
+
   end
 
   def update
+
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to admins_user_path(@user), notice: "編集しました"
+    else
+      render :template => "admin/users/edit"
+    end
+
   end
 
   def destroy
