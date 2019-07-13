@@ -1,2 +1,85 @@
-<h1>Users::Contacts#new</h1>
-<p>Find me in app/views/users/contacts/new.html.erb</p>
+<!-- ヘッダー部分テンプレート -->
+<%= render 'layouts/users-header' %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- メイン ビジュアル -->
+<div class = "container-fluid">
+  <div class = "row">
+    <p class = "main-visual">We're here to help</p>
+  </div>
+  <div class = "row" id = "contact-background">
+  	<h1 class = "care-info-title">Customer care team</h1>
+  	<p class = "thankyou-for-yourcontact"> お問い合わせありがとうございます</p>
+	<p class = "thankyou-for-yourcontact">ご返信には2〜3営業日いただいております。</p>
+  	<div class = "col-xs-4 col-xs-offset-2" >
+  		<h2 class = "contact-and-business-time clearfix">Contact us</h2>
+  		<%= form_for @contact, url: new_users_contact_path do |f| %>
+  			<%= f.text_field :last_name, placeholder: "姓" %><%= f.text_field :first_name, placeholder: "名" %><br>
+  			<%= f.email_field :mail, placeholder: "メールアドレス" %><br>
+		    <%= f.text_field :contact_title, placeholder: "件名" %><br>
+		    <%= f.text_area :contact_contents, placeholder: "お問い合わせ内容" %>
+	      	<%= f.submit '送信', class: "btn btn-success col-xs-2" %>
+	    <% end %>
+  	</div>
+  	<div class = "col-xs-6">
+  		<h2 class = "contact-and-business-time clearfix">Opening times</h2>
+  		<br>
+  		<p>Monay to Friday      8:00am-7:30pm</p>
+  		<p>Saturday             9:00am-5:30pm</p>
+  		<p>Sunday              10:00am-4:00pm</p>
+  	</div>
+  </div>
+</div>
+<div class = "container">
+  <div class = "row">
+  	<h1 class = "frequently">Frequently Asked</h1>
+  	<div class = "col-xs-3">
+     <div class = "tape-box">
+      <div class = "tape"></div>
+     </div>
+    </div>
+    <div class = "col-xs-3">
+     <div class = "tape-box">
+      <div class = "tape"></div>
+     </div>
+    </div>
+    <div class = "col-xs-3">
+     <div class = "tape-box">
+      <div class = "tape"></div>
+     </div>
+    </div>
+    <div class = "col-xs-3">
+     <div class = "tape-box">
+      <div class = "tape"></div>
+     </div>
+    </div>
+  </div>
+  <div class = "row">
+  	<div class = "col-xs-3">
+     <div class = "tape-box">
+      <div class = "tape"></div>
+     </div>
+    </div>
+    <div class = "col-xs-3">
+     <div class = "tape-box">
+      <div class = "tape"></div>
+     </div>
+    </div>
+    <div class = "col-xs-3">
+     <div class = "tape-box">
+      <div class = "tape"></div>
+     </div>
+    </div>
+    <div class = "col-xs-3">
+     <div class = "tape-box">
+      <div class = "tape"></div>
+     </div>
+    </div>
+  </div>
+</div>
+<!-- フッター部分テンプレート -->
+<%= render 'layouts/users-footer' %>
