@@ -1,14 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'photographers/top'
-  get 'photographers/new'
-  get 'photographers/create'
-  get 'photographers/about'
-  get 'photographers/show'
-  get 'photographers/edit'
-  get 'photographers/update'
-  get 'favorites/create'
-  get 'favorites/destroy'
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -32,6 +23,8 @@ Rails.application.routes.draw do
     resources :countries, only:[:index, :show]
     resources :cities, only:[:show]
     resources :photographers, only:[:show]
+    resources :contacts, only:[:new, :create]
+    resources :favorites, only:[:create, :destroy]
   end
 
   root to: "photographers#top"
