@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   namespace :admins do
     root to: "contacts#top"
+    esources :users
     resources :cities
     resources :countries, only:[:index, :edit, :update]
     resources :contacts, except:[:edit, :update]
