@@ -7,6 +7,9 @@ class Admins::BooksController < ApplicationController
   end
 
   def show
+
+    @booking = Book.find(params[:id])
+
   end
 
   def edit
