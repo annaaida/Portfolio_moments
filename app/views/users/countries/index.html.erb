@@ -1,65 +1,17 @@
-
 <!-- Location ページ -->
 <!-- ヘッダー -->
 <div class = "container-fluid">
   <div class = "row">
-    <header class = "navbar">
-	  <!-- ログイン前後 共通部分 -->
-      <nav>
-	    <ul class = "nav navbar-nav navbar-left">
-	      <li><%= link_to "Moments" %></li>
-	      <li><%= link_to "How it works" %></li>
-	      <li><%= link_to "Locations" %></li>
-	    </ul>
-	   </nav>
-       <!-- ヘッダー右 -->
-       <% if user_signed_in? %>
-         <nav>
-           <ul class = "nav navbar-nav navbar-right">
-             <li><%= link_to do %>
-                   <i class="far fa-heart"></i> Favorites
-                 <% end %>
-             </li>
-             <li><%#= link_to [user_path(current_user)] do %>
-                   <%#= attachment_image_tag @user, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: 10x10 %>
-                 <%# end %>
-             </li>
-             <li><%= link_to " Log Out", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out text-muted" %></li>
-           </ul>
-         </nav>
-       <% else %>
-         <nav>
-           <ul class = "nav navbar-nav navbar-right">
-        	  <li><%= link_to "フォトグラファーをはじめる", new_user_registration_path %></li>
-              <li><%= link_to " LOG IN", new_user_session_path, class: "glyphicon glyphicon-log-in" %></li>
-              <li><%= link_to " SIGN UP", new_user_registration_path %></li>
-           </ul>
-         </nav>
-       <% end %>
-    </header>
-  </div>
-</div>
-<!-- ヘッダーここまで -->
-<!-- メイン画像と検索フォーム -->
-<div class = "container-fluid">
-  <div class = "row">
-    <div clas  = "col-xs-12">
-      <div class = "search-engine">
-        <%= search_form_for @search, url: admins_cities_path do |f| %>
-          <%= f.search_field :city_name_cont, class: 'form-control', placeholder: "都市名を検索する", id: "search-country-index" %>
-          <%= f.submit "search", class: "btn btn-default" %>
-        <% end %>
-      </div>
-    </div>
+    <%= render 'layouts/users-header' %>
   </div>
 </div>
 <!-- 国一覧 -->
-<div class = "container">
+<div class = "container" id = "coutries-container">
   <div class = "row">
     <main class = "clearfix">
       <div class = "country-wrapper">
 	    <% @countries.each do |country| %>
-  		　　<div class = "country-index">
+  		　　<div class = "country-items">
   			　　　<%#= attachment_image_tag country, :country_img, :fill, 200, 200, format: 'jpeg', fallback: "no_img.jpg", size: "200x200" %><br>
   			　　　<span class = "country_name"> <%= link_to country.country_name, users_country_path(country) %></span><br>
   		　　</div>
