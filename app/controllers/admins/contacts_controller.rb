@@ -11,7 +11,7 @@ class Admins::ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
   end
 
-  def update
+  def create
     contact = Contact.find(params[:id])
     contact.update(contact_params)
     user = contact.user
