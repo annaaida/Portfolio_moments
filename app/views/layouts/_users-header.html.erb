@@ -24,7 +24,10 @@
                  <p>Hi <%= current_user.first_name %></p>
                <% end %>
            </li>
-           <li><%= link_to " Log Out", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out text-muted" %></li>
+           <li><%= link_to destroy_user_session_path, method: :delete do %>
+                  <p><i class="fas fa-sign-out-alt"></i> ログアウト </p>
+                <% end %>
+            </li>
          </ul>
      <% else %>
          <ul class = "nav navbar-nav navbar-right">
