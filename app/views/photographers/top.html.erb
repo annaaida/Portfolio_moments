@@ -1,24 +1,27 @@
-<!-- ユーザー マイページ トップページ -->
-<div class = "container-fluid" id = "user-mypage-back">
+<!-- フォトグラファー マイページ トップページ -->
+<div class = "container-fluid">
   <div class = "row">
     <!-- header -->
-    <div id = "head-line-user">
-     <p class = "header-message">my page</p>
+    <div class = "header-line">
+     <p class = "header-message">フォトグラファーページ</p>
     </div>
   </div>
   <div class = "row">
     <div class = "clearfix"></div>
-      <div class = "col-xs-3 js-fullheight text-center" id = "mypage-sidebar">
+      <div class = "col-xs-3 js-fullheight text-center" id = "photographer-mypage">
         <table class =  "table">
           <tbody>
             <tr>
-              <td><%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
+              <td><%= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
             </tr>
             <tr>
-              <td><p id = "fullname"><%= current_user.last_name %> <%= current_user.first_name %></p></td>
+              <td><p id = "fullname"><%= @user.last_name %> <%= @user.first_name %></p></td>
             </tr>
             <tr>
-              <td><p><%= current_user.email %></p></td>
+              <td><p><%= @user.email %></p></td>
+            </tr>
+            <tr>
+              <!-- <td>number of reviews</td> -->
             </tr>
           </tbody>
         </table>
@@ -30,10 +33,17 @@
                   <% end %>
               </li>
               <li><%= link_to do %>
-                   <p><i class="fas fa-inbox"></i>inbox</p>
+                   <p><i class="fas fa-inbox"></i> ユーザーからの問い合わせ </p>
                   <% end %>
               </li>
-              <li><%= link_to do %><i class="far fa-heart"></i>お気に入り一覧<% end %></li>
+              <li><%= link_to photographer_path(current_user) do %> <!-- showページへ -->
+                    <p><i class="fas fa-camera-retro"></i> ポートフォリオを確認 </p>
+                  <% end %>
+              </li>
+              <li><%= link_to edit_photographer_path(current_user) do %> <!-- editページへ -->
+                    <p><i class="far fa-edit"></i> ポートフォリオを編集 </p>
+                <% end %>
+              </li>
               <li><%= link_to edit_user_registration_path(current_user) do %>
                     <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
                   <% end %>
@@ -46,7 +56,7 @@
       <header class = "navbar navbar-light bg-light fixed-top">
        <nav>
         <ul class = "nav navbar-nav navbar-right">
-          <li><%= link_to users_users_path do %>
+          <li><%= link_to photographer_top_path(current_user) do %>
                 <p><i class="fas fa-home"></i> Home</p>
               <% end %>
           </li>
@@ -54,12 +64,12 @@
                 <p><i class="fas fa-question-circle"></i> このページの使い方</p>
               <% end %>
           </li>
-          <li><%= link_to users_countries_path do %>
-                <p><i class="fas fa-map-marked-alt"></i> 場所検索へ</p>
+          <li><%= link_to users_users_path(current_user) do %>
+                <p><i class="fas fa-user-circle"></i> ユーザーページ </p>
               <% end %>
           </li>
-          <li><%= link_to destroy_user_session_path, method: :delete do %>
-                <i class = "fas fa-sign-out-alt"></i> ログアウト </p>
+          <li><%= link_to do %>
+                <i class="fas fa-sign-out-alt"></i> ログアウト </p>
               <% end %>
           </li>
         </ul>
@@ -69,22 +79,27 @@
     <div class = "updates">
       <div class = "row">
         <div class = "main-upper">
-          <h3></h3>
+          <h3>新着予約情報</h3>
         </div>
       </div>
       <div class = "row">
         <div class = "main-lower">
-          <h3></h3>
+          <h3>最新のお問い合わせ</h3>
         </div>
       </div>
       <div class = "row">
         <div class = "main-lower">
-          <h3></h3>
+          <h3>最新のレビュー</h3>
         </div>
       </div>
       <div class = "row">
         <div class = "main-lower">
-          <h3></h3>
+          <h3>いいねしたユーザー</h3>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "main-lower">
+          <h3>ランキング順位？</h3>
         </div>
       </div>
     </div>

@@ -16,18 +16,55 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- * {
+* {
  	margin: 0;
  	padding: 0;
  	box-sizing: border-box;
- }
+}
 
- .clearfix::after {
+.clearfix::after {
  	content: "";
  	display: block;
  	clear: both;
- }
+}
 
+
+/* ヘッダー */
+
+html {
+  position: relative;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.5),transparent;
+  position: fixed;
+  justify-content: space-between;
+  position: fixed;
+  transition: .5s;
+  width: 100%;
+  z-index: 10;
+  height: 60px;
+  padding: 8px 60px 5px 60px;
+  border-bottom: 1px solid hsla(0, 0%, 100%, .1);
+}
+
+header.transform {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  padding: 20px;
+}
+
+.search-engine {
+  margin-left: 40px;
+  margin-top: 5px;
+}
+
+.search-engine input{
+  float:left;
+}
+
+#city-search {
+  width: 500px;
+}
 
  /*ユーザー　サインイン 兼 アカウント登録*/
 
@@ -232,4 +269,33 @@
 .user-edit-back {
   font-size: 13px;
   margin-top: 40px;
+}
+
+/* フッター */
+
+footer {
+  background-color: #242423;
+  height: 250px;
+  margin-top: 300px;
+  padding: 20px 50px 0 70px;
+  font-family: Arial, sans-serif;
+}
+
+footer h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+footer p {
+  color: #FFFFFF;
+  size: 10px;
+}
+
+.address {
+  color: rgba(255, 255, 255, 0.5)
+}
+
+.col-xs-3 {
+  padding: 20px;
 }

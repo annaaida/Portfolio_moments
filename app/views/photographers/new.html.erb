@@ -1,4 +1,3 @@
-
 <!-- ユーザー登録後、フォトグラファー権限カラムtrueの場合に、フォトグラファー情報登録画面として本画面に遷移 -->
 
 <section class = "mypage clearfix">
@@ -7,7 +6,7 @@
 </section>
 <div class = "container">
   <div class = "row">
-   <%= form_for @photographer, url: new_photographers_photographer_path do |f| %>
+   <%= form_for @photographer, url: new_photographer_path do |f| %>
      <div class = "input">
       <%= f.label :プロフィール画像 %>
       <%= f.attachment_field :profile_img %>
@@ -39,7 +38,7 @@
      <!-- images 追加 -->
      <h3> 画像追加 </h3>
 	   <div id = "images">
-	    <%= form_for @images, url: new_photographers_photographer_path do |i| %>
+	    <%= form_for @images, url: new_photographer_path do |i| %>
 	      <div class = "field">
 	       <%= i.attachment_field :image_1 %>
 	      </div>
@@ -66,3 +65,4 @@
     <% end %>
   </div>
 </div>
+

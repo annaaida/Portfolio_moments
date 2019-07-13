@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'photographers/top'
+  get 'photographers/new'
+  get 'photographers/create'
+  get 'photographers/about'
+  get 'photographers/show'
+  get 'photographers/edit'
+  get 'photographers/update'
   get 'favorites/create'
   get 'favorites/destroy'
   devise_for :admins, controllers: {
@@ -27,9 +34,10 @@ Rails.application.routes.draw do
     resources :photographers, only:[:show]
   end
 
-  root to: "photographers#index"
-  get 'photographers/about'
-  resources :photographers, except:[:destroy] do
+  root to: "photographers#top"
+  get "/about" => "photographers#about"
+  resources :photographers, except:[:index, :destroy] do
+    get "/top" => "photographers#top"
     resources :reviews
     resources :books, only:[:new, :create, :show]
     get "/books/:id/index" => "books#index", as: "books_index"
