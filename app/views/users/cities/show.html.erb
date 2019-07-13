@@ -5,13 +5,19 @@
 <br>
 <br>
 <br>
+<div class = "container">
+  <div class = "row">
+    <h1 id = "city-header-name"> <%= @city.city_name %>
+  </div>
+</div>
 <div class = container>
   <div class = "row">
     <% @photographer.each do |photo| %>
-      <table class = "table table-hover">
+      <table class = "table">
       <tbody>
           <tr>
-          <td class = "contents"><%#= attachment_image_tag photo.photographer, :profile_img, :fill, 50, 50, format: 'jpeg', fallback: "noimage.jpg", size:'50x50' %></td>
+            <td class = "contents"><%#= attachment_image_tag photo.photographer, :profile_img, :fill, 50, 50, format: 'jpeg', fallback: "noimage.jpg", size:'50x50' %></td>
+            <td class = "contents"><p><%#= photo.user.last_name %><%#= photo.user.first_name %></p></td>
             <td class = "contents"><p><%= link_to photo.photographer.area, users_photographer_path(photo) %></p></td>
           </tr>
         </tbody>
