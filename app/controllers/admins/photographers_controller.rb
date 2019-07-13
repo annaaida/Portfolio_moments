@@ -1,4 +1,5 @@
 class Admins::PhotographersController < ApplicationController
+
   def index
   end
 
@@ -13,4 +14,9 @@ class Admins::PhotographersController < ApplicationController
 
   def destroy
   end
+
+  def user_params
+    params.require(:user).permit(:last_name, :first_name, :kana_last_name, :kana_first_name, :email)
+  end
+
 end

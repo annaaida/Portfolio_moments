@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  namespace :admins do
+    get 'books/index'
+    get 'books/show'
+    get 'books/edit'
+    get 'books/update'
+    get 'books/destroy'
+  end
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -17,8 +24,9 @@ Rails.application.routes.draw do
     resources :users
     resources :cities
     resources :photographers
-    resources :countries, only:[:index, :edit, :update]
+    resources :books, except:[:new, :create]
     resources :contacts, except:[:edit, :update]
+    resources :countries, only:[:index, :edit, :update]
   end
 
   namespace :users do
