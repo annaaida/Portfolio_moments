@@ -1,0 +1,96 @@
+<!-- アドミン マイページ トップ -->
+<div class = "container-fluid">
+  <div class = "row">
+    <div class = "clearfix"></div>
+      <!-- サイドバー -->
+      <div class = "col-xs-3 js-fullheight" id = "admin-mypage">
+        <h3 class = "admin-title"> 管理者ページ</h3>
+        <ul class="nav nav-sidebar">
+          <li><%= link_to admins_contacts_path do %>
+               <p><i class="fas fa-inbox"></i> 問い合わせ一覧</p>
+              <% end %>
+          </li>
+          <li><%= link_to admins_countries_path do %>
+               <p><i class="fas fa-globe-americas"></i> 国一覧と管理</p>
+              <% end %>
+          </li>
+          <li><%= link_to admins_cities_path do %>
+               <p><i class="fas fa-passport"></i> 都市の追加・編集</p>
+              <% end %>
+          </li>
+          <li><%= link_to admins_users_path do %>
+               <p><i class="fas fa-user-cog"></i> ユーザーの編集・削除</p>
+              <% end %>
+          </li>
+          <li><%= link_to admins_photographers_path do %>
+                <p><i class="fas fa-camera-retro"></i> フォトグラファーの編集・削除</p>
+              <% end %>
+          </li>
+          <li><%= link_to  do %>
+                <p><i class="far fa-edit"></i> レビュー一覧 </p>
+            <% end %>
+          </li>
+          <li><%= link_to admins_books_path do %>
+                <p><i class="far fa-calendar-alt"></i> 予約一覧 </p>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class = "col-xs-9">
+        <!-- ヘッダー -->
+        <header class = "navbar navbar-light bg-light fixed-top">
+         <nav>
+          <ul class = "nav navbar-nav navbar-right">
+            <li><%= link_to admins_root_path do %>
+                  <p><i class="fas fa-home"></i> Home</p>
+                <% end %>
+            </li>
+            <li><%= link_to do %>
+                  <p><i class="fas fa-question-circle"></i> このページの使い方</p>
+                <% end %>
+            </li>
+            <li><%= link_to users_users_path do %>
+                  <p><i class="fas fa-user-circle"></i> サイトトップへ </p>
+                <% end %>
+            </li>
+            <li><%= link_to edit_admin_registration_path(current_admin) do %>
+                  <p><i class="fas fa-user-cog"></i> 設定 </p>
+                <% end %>
+            </li>
+            <li><%= link_to destroy_admin_session_path, method: :delete do %>
+                  <p><i class="fas fa-sign-out-alt"></i> ログアウト </p>
+                <% end %>
+            </li>
+          </ul>
+         </nav>
+        </header>
+        <!-- 新着メッセージ一覧 -->
+      <div class = "updates">
+        <div class = "row">
+          <div class = "main-upper">
+            <h3>新着予約情報</h3>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "main-lower">
+            <h3>最新のお問い合わせ</h3>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "main-lower">
+            <h3>最新のレビュー</h3>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "main-lower">
+            <h3>いいねしたユーザー</h3>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "main-lower">
+            <h3>ランキング順位？</h3>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

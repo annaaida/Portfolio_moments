@@ -1,0 +1,56 @@
+<div class = "container">
+  <div class = "row">
+	<h2>登録情報</h2>
+	<table class = "table">
+		<tr>
+			<th> お名前</th>
+			<th> よみがな</th>
+			<th> メールアドレス</th>
+			<th> パスワード</th>
+		</tr>
+		<tr>
+			<td> <%= @user.last_name %> <%= @user.first_name %> </td>
+			<td> <%= @user.kana_last_name %><%= @user.kana_first_name %></td>
+			<td> <%= @user.email %></td>
+			<td> <%= @user.encrypted_password %></td>
+		</tr>
+	</table>
+	<%= link_to "ユーザ削除", user_registration_path, method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
+	<h2> 予約履歴</h2>
+	<table class = "table">
+		<tr>
+			<th> 予約ID</th>
+			<th> ステータス</th>
+			<th> 予約日</th>
+			<th></th>
+		</tr>
+	<% @books.each do |booking| %>
+		<tr>
+			<td> <%= booking.id %></td>
+			<td> <%= booking.status %></td>
+			<td> <%= booking.created_at %></td>
+			<td> <%= link_to "予約詳細" %></td>
+		</tr>
+	<% end %>
+	</table>
+	<%= paginate @books %>
+
+	<h2> レビュー一覧</h2>
+	<table class = "table">
+		<tr>
+			<th> フォトグラファー名</th>
+			<th> タイトル</th>
+			<th> レビュー本文 </th>
+		</tr>
+		<% @reviews.each do |review| %>
+			<tr>
+				<td> <%= review.photographer.user.last_name %></td>
+				<td> <%= review.title %></td>
+				<td> <%= review.body %> </td>
+				<td> <%#= link_to "レビュー編集", edit_admin_review_path(review), class: "btn btn-warning" %></td>
+				<td> <%#= link_to "レビュー削除", admin_review_path(review), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %></td>
+			</tr>
+		<% end %>
+	</table>
+  </div>
+</div>
