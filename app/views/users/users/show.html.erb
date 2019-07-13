@@ -2,7 +2,7 @@
 <div class = "container-fluid" id = "user-mypage-back">
   <div class = "row">
     <!-- header -->
-    <div class = "header-line">
+    <div id = "head-line-user">
      <p class = "header-message">my page</p>
     </div>
   </div>
@@ -46,7 +46,7 @@
       <header class = "navbar navbar-light bg-light fixed-top">
        <nav>
         <ul class = "nav navbar-nav navbar-right">
-          <li><%= link_to photographer_top_path(current_user) do %>
+          <li><%= link_to users_users_path do %>
                 <p><i class="fas fa-home"></i> Home</p>
               <% end %>
           </li>
@@ -54,7 +54,7 @@
                 <p><i class="fas fa-question-circle"></i> このページの使い方</p>
               <% end %>
           </li>
-          <li><%= link_to users_country_path do %>
+          <li><%= link_to users_countries_path do %>
                 <p><i class="fas fa-map-marked-alt"></i> 場所検索へ</p>
               <% end %>
           </li>
