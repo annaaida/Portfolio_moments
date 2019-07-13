@@ -1,94 +1,45 @@
-<!-- ヘッダー -->
-<header class = "navbar">
-	<!-- ログイン前後 共通部分 -->
-    <nav>
-	   <ul class = "nav navbar-nav navbar-left">
-	     <li><%= link_to "Moments" %></li>
-	     <li><%= link_to "How it works" %></li>
-	     <li><%= link_to "Locations" %></li>
-	   </ul>
-	  </nav>
-    <!-- 検索フォーム -->
-    <nav class = "nav navbar-nav">
-      <div class = "search-engine">
-        <%= search_form_for @search, url: admins_cities_path do |f| %>
-          <%= f.search_field :city_name_cont, class: 'form-control' %>
-          <%= f.submit "search", class: "btn btn-default" %>
-        <% end %>
-      </div>
-    </nav>
-	   <!-- ヘッダー右 -->
-       <% if user_signed_in? %>
-         <nav>
-           <ul class = "nav navbar-nav navbar-right">
-             <li><%= link_to do %>
-                   <i class="far fa-heart"></i> Favorites
-                 <% end %>
-             </li>
-             <li><%#= link_to [user_path(current_user)] do %>
-                   <%#= attachment_image_tag @user, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: 10x10 %>
-                 <%# end %>
-             </li>
-             <li><%= link_to " Log Out", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out text-muted" %></li>
-           </ul>
-         </nav>
-       <% else %>
-         <nav>
-           <ul class = "nav navbar-nav navbar-right">
-        	  <li><%= link_to "フォトグラファーをはじめる", new_user_registration_path %></li>
-              <li><%= link_to " LOG IN", new_user_session_path, class: "glyphicon glyphicon-log-in" %></li>
-              <li><%= link_to " SIGN UP", new_user_registration_path %></li>
-           </ul>
-         </nav>
-       <% end %>
-</header>
-<!-- ヘッダーここまで -->
+
+<!-- ヘッダー部分テンプレート -->
+<%= render 'layouts/users-header' %>
 <!-- メイン flex-slider -->
-<div class = "flexslider">
-  <ul class = "slides">
-     <li><%= image_tag "slider1.jpg" %></li>
-     <li><%= image_tag "slider2.jpg" %></li>
-     <li><%= image_tag "slider3.jpg" %></li>
-  </ul>
+    <div class = "flexslider">
+      <ul class = "slides">
+         <li><%= image_tag "slider1.jpg" %></li>
+         <li><%= image_tag "slider2.jpg" %></li>
+      </ul>
+    </div>
+    <div class = "container">
+      <div class = "row">
+        <p class = "anything"> How it works </p>
+        <div class = "how-it-works">
+          <div class = "col-xs-3">
+            <%= image_tag 'noimage.jpg' %>
+            <p>Select your destination or city</p>
+          </div>
+          <div class = "col-xs-3">
+            <%= image_tag 'noimage.jpg' %>
+            <p>Enjoy your photo shoot</p>
+          </div>
+          <div class = "col-xs-3">
+            <%= image_tag 'noimage.jpg' %>
+            <p>Within 48 hours of your shoot, your edited photos will be delivered via the Snappr app, with one-click sharing or downloading.</p>
+          </div>
+        </div>
+        <% link_to "Choose Location" %>
+      </div>
+      <div class = "row">
+        <div class = "occasions">
+          <p class = "anything"> Book a photographer for Anything !</p>
+          <p class = "anything_2nd_line"> What is your occasion ? </p>
+          <p class = "anything_3rd_line"> We have local specialists for whatever you're shoothing. </p>
+        <!-- 写真を入れる -->
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "happy-reviews">
+        </div>
+      </div>
+    </div>
+    <%= render 'layouts/users-footer' %>
+  </div>
 </div>
-<div class = "container">
-  <div class = "row">
-    <p class = "anything"> How it works </p>
-    <div class = "how-it-works">
-      <div class = "col-xs-3">
-        <%= image_tag 'noimage.jpg' %>
-        <p>Select your destination or city</p>
-      </div>
-      <div class = "col-xs-3">
-        <%= image_tag 'noimage.jpg' %>
-        <p>Enjoy your photo shoot</p>
-      </div>
-      <div class = "col-xs-3">
-        <%= image_tag 'noimage.jpg' %>
-        <p>Within 48 hours of your shoot, your edited photos will be delivered via the Snappr app, with one-click sharing or downloading.</p>
-      </div>
-    </div>
-    <% link_to "Choose Location" %>
-  </div>
-  <div class = "row">
-    <div class = "occasions">
-      <p class = "anything"> Book a photographer for Anything !</p>
-      <p class = "anything_2nd_line"> What is your occasion ? </p>
-      <p class = "anything_3rd_line"> We have local specialists for whatever you're shoothing. </p>
-    <!-- 写真を入れる -->
-    </div>
-  </div>
-  <div class = "row">
-    <div class = "happy-reviews">
-    </div>
-  </div>
-</div>
-<footer class = "navbar navbar-dark bg-dark">
-   <nav class = "nav navbar-nav footer-statement">
-    <nav class = "nav navbar-nav">
-      <h4 class = "footer-contents-name" > Customer Care</h4>
-      <p><i class="fa fa-phone icon-white"></i> お問い合わせ 0120(XXX)XXX</p>
-      <h5 class = "contact-footer"><%=link_to "お問い合わせ", class: "text-muted" %></h5>
-      <p>お返事に3〜4営業日いただきます。</p>
-    </nav>
-</footer>

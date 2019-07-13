@@ -2,23 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* header */
-
-header {
-    background: rgba(255, 255, 255, 0.9);
-    position: fixed;
-    justify-content: space-between;
-    position: fixed;
-    padding: 40px;
-    transition: .5s;
-    width: 100%;
-}
-
-header.trabsform {
-	background-color: rgba(255, 255, 255, 0);
-	padding: 20px;
-}
-
+/* index page */
 /* scroll button */
 
 a {
@@ -127,35 +111,55 @@ a span::before {
 }
 
 
+/* show page (マイページ トップ) */
 
-
-/* footer */
-
-footer {
-  background-color: black;
-  height: 250px;
-  color: white;
-  margin-top: 300px;
-  padding: 20px 50px 0 70px;
+.container-fluid {
+    overflow: hidden;
+    position: relative;
 }
 
-.icon-white {
-  color: #FFFFFF;
+.user-mypage-back {
+	background-color: #e5dace;
 }
 
-.footer-statement {
-  margin-left: 40px;
+header{
+    height: 60px;
+    padding: 8px 60px 5px 60px;
+ }
+
+#head-line-user {
+	height: 50px;
+	background-color: #b2b2a2;
 }
 
-.contact-footer {
-  font-weight: bold;
+.header-message {
+    font-size: 11px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
 }
 
-.footer-contents-name {
-  margin-bottom: 20px;
+.col-xs-3 {
+    padding-top: 3em;
+    padding-bottom: 40px;
+    padding-left: 6em;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow-y: hidden;
+    z-index: 1001;
 }
 
-.company-name {
-  font-size: 16px;
-  font-weight: bold;
+.col-xs-3 p {
+	color: #FFF;
 }
+
+#mypage-sidebar {
+	background-color: #6d7973;
+    height: 1000px;
+}
+
+
+

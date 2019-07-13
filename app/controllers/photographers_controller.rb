@@ -1,9 +1,8 @@
-class Photographers::PhotographersController < ApplicationController
+class PhotographersController < ApplicationController
 
-  def index
+  def top
 
     @user = current_user
-    #@photographer = Photographer.find(params[:id])
 
   end
 

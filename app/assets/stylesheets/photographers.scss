@@ -1,6 +1,7 @@
-// Place all the styles related to the photographers/Photographers controller here.
+// Place all the styles related to the photographers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 
 /* header */
 
@@ -12,7 +13,7 @@ header{
 
  .header-line{
      height: 50px;
-     background-color: #199eae;
+     background-color: #E4A850;
  }
 
 
@@ -38,43 +39,181 @@ header{
      border-radius: 50%;
  }
 
- /* show page */
+ /* ユーザー側 / フォトグラファー側 show page 【共通部分】  */
 
 
  .hi-message {
-     font-size: 60px;
-     font-weight: bold;
-     font-family: 'Noto Sans'
+     font-size: 55px;
+     font-family: 'Sawarabi Mincho', sans-serif;
  }
-
 
  .table th,td {
      border-top: none !important;
  }
 
-
  p {
-     font-family: 'Noto Sans'
+     font-family: 'Sawarabi Mincho', sans-serif;
+     font-size: 15px;
+     color: #484848;
  }
 
+ #fullname {
+    font-size: 24px !important;
+ }
 
- .portfolio-image-main {
+ .table th {
+    width: 5%;
+ }
+
+ #quote-icon {
+    color: #EBEBEB !important;
+    font-size: 25px !important;
+    font-weight: 700 !important;
+    margin: 20px 10px 10px 5px;
+ }
+
+ .who-i-am {
+    margin: 5px;
 
  }
 
+ .who-i-am::after {
+    content: "";
+    display: block;
+    background: #EBEBEB;
+    height: 3px;
+    width: 30px;
+    margin: 20px 10px 10px 0;
+}
 
- .portfolio-image-2,
- .portfolio-image-3 {
+ #map-pin-icon {
+    font-size: 17px;
+    padding-right: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+ }
+
+ #language-icon {
+    font-size: 17px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
 
  }
 
-
- .portfolio-image-4 {
+ #image-zone {
+    padding-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
  }
 
+.single_gallery_item {
+    width: 200px;
+    height: 200px;
+}
 
- .portfolio-image-5,
- .portfolio-image-6,
- .portfolio-image-7 {
 
- }
+/* 【Only ユーザー側】 photographer show ページ */
+
+.container-fluid {
+    overflow: hidden;
+    position: relative;
+}
+
+.col-xs-3 {
+    padding-top: 3em;
+    padding-bottom: 40px;
+    padding-left: 6em;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow-y: hidden;
+    z-index: 1001;
+}
+
+.image-wrap {
+    margin-top: 40px;
+}
+
+main {
+    width: 100%;
+    margin-top: 80px;
+}
+
+li {
+    list-style: none
+}
+
+
+/* 【Only フォトグラファー側】 photographer show ページ */
+
+
+#photographer-mypage {
+    background-color: #E8BB53;
+    height: 1000px;
+}
+
+.updates {
+    margin: 20px;
+}
+
+#fullname-users {
+    font-size: 24px;
+}
+
+/* レビュー一覧 / レビュー投稿 / 編集 / 消去ボタン */
+
+.review {
+    margin-top: 40px;
+}
+
+/* SNS リンク */
+
+.sns-btn {
+    font-size: 30px;
+    text-decoration: none;
+    transition: .5s;
+}
+
+/* アイコンにマウスを乗せた時 */
+
+.sns-btn:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+/* Twitter */
+
+.sns-btn .fa-twitter-square {
+    color: #55acee;
+}
+
+/* Instagram */
+
+.sns-btn .fa-instagram {
+    color: #c6529a;
+}
+
+/* Facebook*/
+
+.sns-btn .fa-facebook-square {
+    color: #3b5998;
+}
+
+/* アイコン全体の位置 */
+
+.sns-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+/* アイコン同士の余白 */
+
+.sns-wrapper li{
+}
