@@ -1,0 +1,35 @@
+<!-- アドミン 予約編集・削除ページ -->
+<!-- ヘッダー部分テンプレート -->
+<%= render 'layouts/admins-header' %>
+<br>
+<br>
+<br>
+<div class = "container">
+  <div class = "row">
+	<h1>予約編集</h1>
+	<table class = "table">
+		<tr>
+			<th> 予約者</th>
+			<th> 撮影者</th>
+			<th> 日付</th>
+			<th> 時間</th>
+			<th> 合計金額</th>
+			<th> 予約状況</th>
+			<th> 予約日</th>
+		</tr>
+	<%= form_for ([:admins, @booking]) do |f| %>
+		<tr>
+			<td> <%#= f.text_field :last_name %> <%#= f.text_field :first_name %> </td>
+			<td> <%#= f.text_field :kana_last_name %> <%#= f.text_field :kana_first_name %></td>
+			<td> <%= f.text_field :date %></td>
+			<td> <%= f.text_field :time %></td>
+			<td> <%= f.text_field :total_price %></td>
+			<td> <%= f.text_field :status %></td>
+			<td> <%= f.text_field :created_at %></td>
+			<td><%= f.submit "編集完了", class: "btn btn-warning" %></td>
+			<td><%= link_to "削除", admins_book_path, method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %></td>
+		</tr>
+	<% end %>
+  </div>
+</div>
+

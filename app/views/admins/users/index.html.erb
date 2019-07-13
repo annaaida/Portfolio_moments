@@ -1,0 +1,24 @@
+<div class = "container">
+  <div class = "row">
+	<h1>お客様一覧</h1>
+	<table class = "table">
+		<tr>
+			<th> お名前</th>
+			<th> フォトグラファーアカウント</th>
+			<th> アカウント作成日</th>
+			<th></th>
+			<th></th>
+		</tr>
+		<% @users.each do |user| %>
+			<tr>
+				<td> <%= user.last_name %> <%= user.first_name %> </td>
+				<td> <%= user.photographer %></td>
+				<td> <%= user.created_at.strftime("%Y年%-m月%-d日") %></p>
+				<td> <%= link_to "詳細", admins_user_path(user), class: "btn btn-success" %></td>
+				<td><%= link_to "編集", edit_admins_user_path(user), class: "btn btn-warning" %>
+			</tr>
+		<% end %>
+		<%= paginate @users, class: "paginate" %>
+	</table>
+  </div>
+</div>

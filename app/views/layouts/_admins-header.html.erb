@@ -1,0 +1,26 @@
+<header class = "navbar" id = "admin-header">
+  <nav>
+    <ul class = "nav navbar-nav navbar-right">
+      <li><%= link_to admins_root_path do %>
+          <p><i class="fas fa-home"></i> Home</p>
+        <% end %>
+      </li>
+      <li><%= link_to do %>
+          <p><i class="fas fa-question-circle"></i> このページの使い方</p>
+        <% end %>
+      </li>
+      <li><%= link_to users_users_path do %>
+          <p><i class="fas fa-user-circle"></i> サイトトップへ </p>
+        <% end %>
+      </li>
+      <li><%= link_to edit_admin_registration_path(current_admin) do %>
+          <p><i class="fas fa-user-cog"></i> 設定 </p>
+        <% end %>
+      </li>
+      <li><%= link_to destroy_admin_session_path, method: :delete do %>
+          <p><i class="fas fa-sign-out-alt"></i> ログアウト </p>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</header>
