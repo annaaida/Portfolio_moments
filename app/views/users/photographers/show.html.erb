@@ -1,16 +1,17 @@
 <div class = "container-fluid">
   <div class = "row">
     <div class = "col-xs-3 js-fullheight text-center">
-      <%= image_tag 'noimage.jpg' %>
-      <%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %>
+      <div class = "image-wrap">
+       <%= image_tag 'noimage.jpg' %>
+       <%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %>
         <ul>
-          <li><p><%= @photographer.user.last_name %> <%= @photographer.user.first_name %></p></li>
+          <li><p id = "fullname-users"><%= @photographer.user.last_name %> <%= @photographer.user.first_name %></p></li>
           <li>Contact</li>
           <!-- SNS リンク -->
           <li><a href = "#" class = "sns-btn"><i class = "fab fa-twitter-square"></i></a></li>
           <li><a href = "#" class = "sns-btn"><i class = "fab fa-instagram"></i></a></li>
           <li><a href ="#" class = "sns-btn"><i class = "fab fa-facebook-square"></i></a></li>
-      <!-- いいねボタン -->
+          <!-- いいねボタン -->
           <li><span id = "favorite_buttons_<%= @photographer.id %>"></span>
             <%= render :partial => 'users/favorites/favorite', :locals => { photographer: @photographer} %>
           </li>
@@ -19,6 +20,7 @@
         <div class="form-btn">
           <%= link_to 'Book Now', new_photographer_book_path(@photographer), class: "btn btn-danger" %>
         </div>
+      </div>
     </div>
     <div class = "col-xs-8">
       <main>
@@ -45,18 +47,6 @@
           </div>
           <!-- Single Gallery Item -->
           <div class = "single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
               <div class="single-portfolio-content">
                   <%= image_tag 'noimage.jpg' %>
               </div>

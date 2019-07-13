@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+/* index page */
 /* scroll button */
 
 a {
@@ -110,6 +110,56 @@ a span::before {
 	margin-top: 40px;
 }
 
+
+/* show page (マイページ トップ) */
+
+.container-fluid {
+    overflow: hidden;
+    position: relative;
+}
+
+.user-mypage-back {
+	background-color: #e5dace;
+}
+
+header{
+    height: 60px;
+    padding: 8px 60px 5px 60px;
+ }
+
+.header-line{
+	height: 50px;
+	background-color: #b2b2a2;
+}
+
+.header-message {
+    font-size: 11px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+.col-xs-3 {
+    padding-top: 3em;
+    padding-bottom: 40px;
+    padding-left: 6em;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow-y: hidden;
+    z-index: 1001;
+}
+
+.col-xs-3 p {
+	color: #FFF;
+}
+
+#mypage-sidebar {
+	background-color: #6d7973;
+    height: 1000px;
+}
 
 
 
