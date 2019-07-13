@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :users do
+    get 'contacts/new'
+    get 'contacts/create'
+  end
   get 'photographers/top'
   get 'photographers/new'
   get 'photographers/create'
