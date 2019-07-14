@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admins do
-    get 'books/index'
-    get 'books/show'
-    get 'books/edit'
-    get 'books/update'
-    get 'books/destroy'
-  end
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -30,6 +23,7 @@ Rails.application.routes.draw do
   end
 
   namespace :users do
+    root to: "users#index"
     get 'users/about'
     resources :cities, only:[:show]
     resources :photographers, only:[:show]
@@ -39,13 +33,15 @@ Rails.application.routes.draw do
     resources :users, only:[:index, :show, :edit, :update]
   end
 
-  root to: "photographers#top"
-  get "/about" => "photographers#about"
-  resources :photographers, except:[:index, :destroy] do
+   root to: "photographers#top"
+   get "/about" => "photographers#about"
+   resources :photographers, except:[:index, :destroy] do
     get "/top" => "photographers#top"
     resources :reviews
     resource :favorites, only:[:create, :destroy]
-    resources :books, only:[:new, :create, :show]
+    resources :books, only:[:index, :new, :create, :show]
+    get "/", to: "photographers#top"
+    get "/confirm", to: "photographers#confirm"
     get "/books/:id/index" => "books#index", as: "books_index"
   end
 

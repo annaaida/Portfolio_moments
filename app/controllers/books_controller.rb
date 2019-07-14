@@ -15,7 +15,7 @@ class BooksController < ApplicationController
     @booking.photographer_id = @photographer.id
 
     if @booking.save
-      redirect_to photographer_books_index_path(@photographer.id,@booking.id)
+      redirect_to photographer_confirm_path(@photographer.id,@booking.id)
     else
       render :new
     end
@@ -30,7 +30,13 @@ class BooksController < ApplicationController
 
   def index
 
-    @book = Book.find(params[:id])
+    @bookings = Book.page(params[:page])
+
+  end
+
+  def confirm
+
+    @booking = Book.find(params[:id])
 
   end
 
