@@ -22,15 +22,16 @@ class BooksController < ApplicationController
 
   end
 
-  def show
-
-    @book = Book.find(params[:id])
-
-  end
 
   def index
 
     @bookings = Book.page(params[:page])
+
+  end
+
+  def show
+
+    @book = Book.find(params[:id])
 
   end
 
@@ -39,6 +40,16 @@ class BooksController < ApplicationController
     @booking = Book.find(params[:id])
 
   end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
 
   private
 
