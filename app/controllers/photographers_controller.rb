@@ -3,6 +3,7 @@ class PhotographersController < ApplicationController
   def top
 
     @user = current_user
+    @bookings = @user.books.page(params[:page]).per(10).order(id: "DESC")
 
   end
 
