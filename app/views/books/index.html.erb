@@ -1,7 +1,44 @@
+<!-- フォトグラファー 予約一覧ページ -->
+<!-- ヘッダー部分テンプレート -->
+<%= render 'layouts/photographers-header' %>
+<br>
+<br>
+<br>
 <div class = "container">
   <div class = "row">
-    <p class = "complete-message">予約申請が完了しました！</p><br>
-    <p class = "complete-message">フォトグラファーの承認後、当日の案内メールが来ます。必ずご確認ください。</p>
-    <p class = "jump-to-details">予約確認は<%= link_to 'こちら', photographer_book_path(@book) %></p>
+	<h1>予約一覧</h1>
+	<table class = "table">
+		<tr>
+			<th> 予約番号</th>
+			<th> 予約者</th>
+			<th> 撮影者</th>
+			<th> 日付</th>
+			<th> 時間</th>
+			<th> 合計金額</th>
+			<th> 予約状況</th>
+			<th> 予約日</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<% @bookings.each do |booking| %>
+			<tr>
+				<td> <%= booking.id %></td>
+				<td> <%= booking.user.last_name %> <%= booking.user.first_name %> </td>
+				<td> <%#=  %></td>
+				<td> <%#=  %></td>
+				<td> <%#=  %></td>
+				<td> <%= booking.total_price %></td>
+				<td> <%= booking.status %></td>
+				<td> <%= booking.created_at.strftime("%Y/%-m/%-d") %></p>
+				<td> <%#= link_to "詳細", photographer_book_path(booking), class: "btn btn-success" %></td>
+				<td><%#= link_to "編集", edit_photographer_book_path(booking), class: "btn btn-warning" %>
+				<td><%#= link_to "削除", photographer_book_path(booking), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
+			</tr>
+		<% end %>
+		<%= paginate @bookings, class: "paginate" %>
+	</table>
   </div>
 </div>
+
+
