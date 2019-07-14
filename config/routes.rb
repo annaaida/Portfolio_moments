@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'contacts/index'
+  get 'contacts/show'
+  get 'contacts/new'
+  get 'contacts/create'
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -38,10 +42,11 @@ Rails.application.routes.draw do
    resources :photographers, except:[:index, :destroy] do
       get "/", to: "photographers#top"
       get "/confirm", to: "photographers#confirm"
-      resources :reviews
-      resource :favorites, only:[:create, :destroy]
       resources :books
       get "/books/:id/index" => "books#index", as: "books_index"
+      resources :reviews
+      resource :favorites, only:[:create, :destroy]
+      resources :books, except:[:edit, :update, :destroy]
    end
 
 end
