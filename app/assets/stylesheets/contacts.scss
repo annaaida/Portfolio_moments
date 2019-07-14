@@ -1,3 +1,31 @@
 // Place all the styles related to the contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* new ページ */
+
+#right-header {
+	background-color: #ccb78f;
+	padding: 40px 0 40px 130px;
+	height: 200px;
+}
+
+#contact-new-right {
+	width: 80%;
+	float: right;
+}
+
+#contact-new-left {
+	background-color: rgba(0, 0, 0, 0.04);
+	height: 1000px;
+	width: 20%;
+	position: fixed;
+}
+
+#main-contents-contact{
+	padding: 20px;
+}
+
+#right-head-contents {
+	padding: 50px 0 0 70px;
+}
