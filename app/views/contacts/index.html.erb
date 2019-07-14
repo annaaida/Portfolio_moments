@@ -23,7 +23,7 @@
 				<td> <%= contact.last_name %> <%= contact.first_name %> </td>
 				<td> <%= contact.contact_title%></td>
 				<td> <%= contact.contact_contents%></td>
-				<td> <%= link_to "詳細", photographer_contact_path(booking), class: "btn btn-success" %></td>
+				<td> <%= link_to "詳細", photographer_contact_path(contact), class: "btn btn-success" %></td>
 			</tr>
 		<% end %>
 		<%= paginate @contacts, class: "paginate" %>
