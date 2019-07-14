@@ -10,42 +10,49 @@ header{
     padding: 8px 60px 5px 60px;
  }
 
+.header-line{
+    height: 50px;
+    background-color: #E4A850;
+}
 
- .header-line{
-     height: 50px;
-     background-color: #E4A850;
- }
-
-
- .header-message {
-     font-size: 11px;
-     text-align: center;
-     line-height: 50px;
-     font-weight: bold;
-     color: white;
- }
+.header-message {
+    font-size: 11px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    color: white;
+}
 
 
- /* index page */
+ /* マイページ トップ */
 
- .photographer-info {
-     margin: 2em auto;
-     padding: 1em;
-     width: 80%;
-     border: 1px solid #ccc; /* 枠線 */
- }
+#photographer-info {
+    text-align: center;
+}
 
- .profile_image {
-     border-radius: 50%;
- }
+.profile_image {
+    border-radius: 50%;
+}
+
+.main-boxes {
+    padding: 20px;
+    border: 1px solid #dce0e0;
+}
+
+.box-title {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
 
  /* ユーザー側 / フォトグラファー側 show page 【共通部分】  */
 
 
- .hi-message {
-     font-size: 55px;
-     font-family: 'Sawarabi Mincho', sans-serif;
- }
+.hi-message {
+    font-size: 55px;
+    font-family: 'Sawarabi Mincho', sans-serif;
+}
 
  .table th,td {
      border-top: none !important;
