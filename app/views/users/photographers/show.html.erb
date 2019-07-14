@@ -11,12 +11,11 @@
           <li><a href = "#" class = "sns-btn"><i class = "fab fa-twitter-square"></i></a></li>
           <li><a href = "#" class = "sns-btn"><i class = "fab fa-instagram"></i></a></li>
           <li><a href ="#" class = "sns-btn"><i class = "fab fa-facebook-square"></i></a></li>
-          <!-- いいねボタン -->
-          <li><span id = "favorite_buttons_<%= @photographer.id %>"></span>
-            <%= render :partial => 'users/favorites/favorite', :locals => { photographer: @photographer} %>
-          </li>
-          </span>
         </ul>
+        <!-- いいねボタン -->
+        <span id = "favorite_buttons_<%= @photographer.id %>">
+          <%= render :partial => 'favorites/favorite', :locals => { photographer: @photographer} %>
+        </span>
         <div class = "form-btn">
           <%= link_to '問い合わせ', new_photographer_contact_path(@photographer), class: "btn btn-danger" %>
         </div>

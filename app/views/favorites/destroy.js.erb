@@ -1,1 +1,1 @@
-$("#favorite_buttons_<%= @photographer.id %>").html("<%= j(render partial: 'users/favorites/favorite', locals: { photographer: @photographer }) %>");
+$("#favorite_buttons_<%= @photographer.id %>").html("<%= j(render partial: 'favorites/favorite', locals: { photographer: @photographer }) %>");

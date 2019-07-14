@@ -29,7 +29,6 @@ Rails.application.routes.draw do
     resources :photographers, only:[:show]
     resources :contacts, only:[:new, :create]
     resources :countries, only:[:index, :show]
-    resources :favorites, only:[:create, :destroy]
     resources :users, only:[:index, :show, :edit, :update]
   end
 
