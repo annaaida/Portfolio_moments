@@ -32,11 +32,11 @@
                    <p><i class="far fa-calendar-alt"></i> 予約一覧</p>
                   <% end %>
               </li>
-              <li><%= link_to do %>
+              <li><%= link_to photographer_contacts_path(current_user) do %>
                    <p><i class="fas fa-inbox"></i> ユーザーからの問い合わせ </p>
                   <% end %>
               </li>
-              <li><%= link_to photographer_path(current_user) do %> <!-- showページへ -->
+              <li><%= link_to users_photographer_path(current_user) do %> <!-- showページへ -->
                     <p><i class="fas fa-camera-retro"></i> ポートフォリオを確認 </p>
                   <% end %>
               </li>
