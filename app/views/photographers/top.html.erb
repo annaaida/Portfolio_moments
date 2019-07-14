@@ -8,7 +8,7 @@
   </div>
   <div class = "row">
     <div class = "clearfix"></div>
-      <div class = "col-xs-3 js-fullheight" id = "photographer-mypage">
+      <div class = "col-xs-3 js-fullheight text-center" id = "photographer-mypage">
         <table class =  "table" id = "photographer-info">
           <tbody>
             <tr>
@@ -97,7 +97,7 @@
                 <tbody>
                 <% @bookings.each do |booking| %>
                   <tr>
-                    <td><%#= link_to booking.user, order_path(order.id) %></td>
+                    <td><%#= attachment_image_tag , :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "noimage.jpg" %></td>
                     <td><%= booking.user.last_name %><%= booking.user.first_name %></td>
                     <td><%= booking.date %></td>
                     <td><%= booking.time %></td>
