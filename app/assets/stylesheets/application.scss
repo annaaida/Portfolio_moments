@@ -53,6 +53,10 @@ header.transform {
   z-index: 10;
 }
 
+.site-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+}
 .search-engine {
   margin-left: 40px;
   margin-top: 5px;
@@ -68,6 +72,7 @@ header.transform {
 
 .navbar-right p {
   color: #FFF;
+  line-height: 40px;
 }
 
 /* アドミン ヘッダー */

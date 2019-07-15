@@ -3,7 +3,7 @@
 <header>
   <nav class = "navbar">
     <ul class = "nav navbar-nav navbar-left">
-     <li><h1>MOMENTS</h1></li>
+     <li><h1 class = "site-title">MOMENTS</h1></li>
     </ul>
     <!-- ヘッダー右 -->
      <% if user_signed_in? %>
@@ -17,7 +17,7 @@
                <% end %>
            </li>
            <li><%= link_to users_user_path(current_user) do %>
-                 <%#= attachment_image_tag @user, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: 10x10 %>
+                 <%#= attachment_image_tag current_user, :profile_img, :fill, 100, 100, format: 'jpeg', fallback: "noimage.jpg", size: 100x100 %>
                  <p>こんにちは、<%= current_user.first_name %>さん</p>
                <% end %>
            </li>
@@ -45,8 +45,12 @@
 <div class = "container">
   <div class = "row">
     <div class = "about-moments">
-      <p class = "anything"> Moments </p>
-      <p class = "moments">「１枚の写真は1000の言葉の価値がある」ということわざが英語にはあります。<br>写真はその瞬間の感情を切り取る最高のツールであり、写真の中で動かなくなった"その時"は、たくさんの感情や思い出を引き起こします。<br>旅行先で美しい風景を背景に、卒業式で仲間と過ごした思い出のキャンパスを背景に、結婚写真は2人で初めて登ったあの山で<br>私たちはあなたのストーリーが聞こえてくるような写真を撮影します。もっと気軽にフォトグラファーに撮影してもらいませんか？</p>
+      <p class = "anything"> Moments ? </p>
+      <p class = "moments">「１枚の写真は1000の言葉の価値がある」ということわざが英語にはあります。<br>写真はその瞬間の感情を切り取る最高のツールであり、写真の中で動かなくなった"その時"は、たくさんの感情や思い出を引き起こします。<br>旅行先で美しい風景を背景に、卒業式で仲間と過ごした思い出のキャンパスを背景に、結婚写真は2人で初めて登ったあの山で<br>私たちはあなたのストーリーが聞こえてくるような写真を撮影します。もっと気軽にフォトグラファーに撮影してもらいませんか？
+      <br>
+      <br>
+      英語で <strong>' moment '</strong>には<strong> 「瞬間」 </strong>と<strong>「短いが素晴らしいひと時」</strong>という2つの意味があります。
+      </p>
     </div>
   </div>
   <div class = "row">
@@ -84,6 +88,29 @@
     </div>
   </div>
 </div>
+<div class= "slider">
+  <%#= image_tag("icon.png") %>
+  <%#= image_tag("icon.png") %>
+  <%#= image_tag("icon.png") %>
+  <%#= image_tag("icon.png") %>
+  <%#= image_tag("icon.png") %>
+  <%#= image_tag("icon.png") %>
+  <%#= image_tag("icon.png") %>
+  <%#= image_tag("icon.png") %>
+</div>
 <%= render 'layouts/users-footer' %>
-</div>
-</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.slider').slick({
+    autoplay: true,
+    arrows: false,
+    autoplaySpeed: 0,
+    cssEase: 'linear',
+    speed: 3000,
+    swipe: false,
+    slidesToShow: 14,
+    slidesToScroll: 1,
+  });
+});
+</script>
