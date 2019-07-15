@@ -5,7 +5,7 @@
 		<% end %>
 		<p><%= photographer.favorites.count %>人がお気に入りに登録</p>
 	<% else %>
-		<%= link_to photographer_favorites_path(photographer.id), url: photographer_favorites_path(photographer.id), method: :post do %>
+		<%= link_to photographer_favorites_path(photographer.id), url: photographer_favorites_path(photographer.id), method: :post, remote: true do %>
 			<i class = "far fa-heart" aria-hidden = "true" style = "color: rgb(255, 90, 95); font-size:20px"></i>
 		<% end %>
 		<p><%= photographer.favorites.count %>人がお気に入りに登録</p>

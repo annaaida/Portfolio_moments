@@ -4,49 +4,26 @@
     <title>Moments</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <!-- font awesome -->
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
     <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity = "sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin = "anonymous">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
     <!-- flexslider -->
     <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/flexslider.min.css">
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider.min.js"></script>
 
-      <script type="text/javascript">
-        $(window).on("load", function() {
-        $('.flexslider').flexslider({
-          speed: 500 });
-        });
-      </script>
-
     <!-- slick -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-    <!-- pickdate.js -->
-    <link rel="stylesheet" href="lib/themes/classic.css">
-    <link rel="stylesheet" href="lib/themes/classic.date.css">
-    <link rel="stylesheet" href="lib/themes/classic.time.css">
-
-    <script src="assets/pickadate/picker.js"></script>
-    <script src="assets/pickadate/picker.date.js"></script>
-    <script src="assets/pickadate/picker.time.js"></script>
-    <script src="assets/pickadate/legacy.js"></script>
-
-      <script type="text/javascript">
-        $(function() {
-        $('#datepicker').pickadate();
-        $("#timepicker").pickatime();
-        });
-      </script>
-    <!-- Ajax -->
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <!-- Owl-carousel -->
     <link rel = "stylesheet" href = "owl.carousel.css">
@@ -54,8 +31,7 @@
     <script src = "owl.carousel.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>

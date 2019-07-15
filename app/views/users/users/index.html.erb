@@ -101,16 +101,10 @@
 <%= render 'layouts/users-footer' %>
 
 <script type="text/javascript">
-$(document).ready(function(){
-  $('.slider').slick({
-    autoplay: true,
-    arrows: false,
-    autoplaySpeed: 0,
-    cssEase: 'linear',
-    speed: 3000,
-    swipe: false,
-    slidesToShow: 14,
-    slidesToScroll: 1,
-  });
-});
+    $(window).on("load", function() {
+    $('.flexslider').flexslider({
+      speed: 500 });
+    });
 </script>
+
+

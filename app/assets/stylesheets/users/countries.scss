@@ -5,11 +5,10 @@
 /* index page*/
 
 .main-image {
-  height: 300px;
-  background-image: url("teens.jpg");
+  height: 500px;
+  background-image: url("/assets/teens.jpg");
   background-size: cover;
   background-position: center;
-  margin-bottom: 40px;
 }
 
 .main-image h1 {
@@ -60,7 +59,7 @@ span {
 
 .top-image {
   height: 300px;
-	background-image: url("teens.jpg");
+	background-image: url("/assets/teens.jpg");
   background-size: cover;
   background-position: center;
   margin-bottom: 40px;
