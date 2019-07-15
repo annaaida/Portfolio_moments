@@ -27,7 +27,7 @@
   <div class = "row cities-box">
     <% @cities.each do |city| %>
       <div class = "city-index">
-        <%#= attachment_image_tag city, :city_img, :fill, 200, 200, format: 'jpeg', fallback: "no_img.jpg", size: "200x200" %><br>
+        <%#= attachment_image_tag city, :city_img, :fill, 200, 200, format: 'jpeg', fallback: "no_img.jpg", size: "300x200" %><br>
         <a class = "city_name"> <%= link_to city.city_name, users_city_path(city) %></a><br>
       </div>
     <% end %>

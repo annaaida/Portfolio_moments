@@ -1,3 +1,20 @@
 // Place all the styles related to the users/Cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top-image-for-city-show {
+	height: 200px;
+	background-image: url("teens.jpg");
+	background-size: cover;
+	background-position: center;
+	margin-bottom: 40px;
+}
+
+.top-title-city-show h1 {
+ 	margin: 90px;
+	font-size: 60px;
+}
+
+.about_city {
+	padding: 20px;
+}
