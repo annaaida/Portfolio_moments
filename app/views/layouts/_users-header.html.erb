@@ -3,7 +3,6 @@
   <nav class = "navbar">
     <ul class = "nav navbar-nav navbar-left">
      <li><%= link_to "MOMENTS" %></li>
-     <li><%= link_to "How it works" %></li>
      <li><%= link_to "Locations", users_countries_path %></li>
     </ul>
     <!-- 検索フォーム -->
@@ -18,7 +17,7 @@
     <!-- ヘッダー右 -->
      <% if user_signed_in? %>
          <ul class = "nav navbar-nav navbar-right">
-           <li><%= link_to do %><i class="far fa-heart"></i>Favorites<% end %></li>
+           <li><%= link_to do %><i class="far fa-heart"></i> お気に入り<% end %></li>
            <li><%= link_to users_user_path(current_user) do %>
                  <%#= attachment_image_tag @user, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: 10x10 %>
                  <p>Hi <%= current_user.first_name %></p>

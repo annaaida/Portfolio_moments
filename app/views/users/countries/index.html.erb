@@ -6,16 +6,21 @@
   </div>
 </div>
 <!-- 国一覧 -->
-<div class = "container" id = "coutries-container">
+<div class = "container-fluid" id = "coutries-container">
   <div class = "row">
     <main class = "clearfix">
+      <div class = "main-image">
+        <h1>LOCATION</h1>
+      </div>
       <div class = "country-wrapper">
-	    <% @countries.each do |country| %>
+	     <% @countries.each do |country| %>
   		　　<div class = "country-items">
-  			　　　<%#= attachment_image_tag country, :country_img, :fill, 200, 200, format: 'jpeg', fallback: "no_img.jpg", size: "200x200" %><br>
+            <div class = "country-items">
+  			　　　<%#= attachment_image_tag country, :country_img, :fill, 200, 200, format: 'jpeg', fallback: "no_img.jpg", size: "400x300" %><br>
   			　　　<span class = "country_name"> <%= link_to country.country_name, users_country_path(country) %></span><br>
-  		　　</div>
-	     <% end %>
+  		　　  </div>
+         </div>
+	      <% end %>
       </div>
     </main>
   </div>

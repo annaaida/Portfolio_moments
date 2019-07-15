@@ -1,29 +1,35 @@
-
 <!-- 国ごとの都市一覧 -->
-<!-- ヘッダー -->
 <!-- ヘッダー部分テンプレート -->
-<%= render 'layouts/users-header' %>
-<br>
-<br>
-<br>
-<br>
+<div class = "container-fluid">
+  <div class = "row">
+    <%= render 'layouts/users-header' %>
+  </div>
+</div>
 <!-- メイン画像と検索フォーム -->
 <div class = "container">
   <div class = "row">
     <div clas  = "top-image">
-      <div class = "search-engine">
-        <%= search_form_for @search, url: admins_cities_path do |f| %>
-          <%= f.search_field :city_name_cont, class: 'form-control', placeholder: "都市を検索" %>
-          <%= f.submit "search", class: "btn btn-default" %>
-        <% end %>
+      <div class = "top-title">
+        <h1><%= @countries.country_name %></h1>
       </div>
     </div>
-    <main class = "clearfix">
-  <div class = "country-wrapper">
+  </div>
+  <div class = "row">
+    <div class = "country-wrapper">
+      <div class = "search-engine">
+          <%= search_form_for @search, url: admins_cities_path do |f| %>
+            <%= f.search_field :city_name_cont, class: 'form-control', placeholder: "都市を検索", id: "search-engine-country-show" %>
+            <%= f.submit "search", class: "btn btn-default" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <div class = "row cities-box">
     <% @cities.each do |city| %>
       <div class = "city-index">
         <%#= attachment_image_tag city, :city_img, :fill, 200, 200, format: 'jpeg', fallback: "no_img.jpg", size: "200x200" %><br>
-        <span class = "city_name"> <%= link_to city.city_name, users_city_path(city) %></span><br>
+        <a class = "city_name"> <%= link_to city.city_name, users_city_path(city) %></a><br>
       </div>
     <% end %>
   </div>
+</div>
