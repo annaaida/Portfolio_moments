@@ -11,7 +11,6 @@
 		<tr>
 			<th> 予約番号</th>
 			<th> 予約者</th>
-			<th> 撮影者</th>
 			<th> 日付</th>
 			<th> 時間</th>
 			<th> 合計金額</th>
@@ -25,9 +24,8 @@
 			<tr>
 				<td> <%= booking.id %></td>
 				<td> <%= booking.user.last_name %> <%= booking.user.first_name %> </td>
-				<td> <%#=  %></td>
-				<td> <%#=  %></td>
-				<td> <%#=  %></td>
+				<td> <%= booking.date %></td>
+				<td> <%= booking.time %></td>
 				<td> <%= booking.total_price %></td>
 				<td> <%= booking.status %></td>
 				<td> <%= booking.created_at.strftime("%Y/%-m/%-d") %></p>

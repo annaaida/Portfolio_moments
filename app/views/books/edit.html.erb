@@ -9,14 +9,6 @@
 	<h1>予約編集</h1>
 	<%= form_for @booking, url: edit_photographer_book_path do |f| %>
 	    <div class = "input">
-	      <%= f.label :予約者 %>
-	      <%= f.text_field :user_id %>
-	    </div>
-	    <div class = "input">
-	      <%= f.label :撮影者 %>
-	      <%= f.text_field :photographer_id %>
-	    </div>
-	    <div class = "input">
 	      <%= f.label :日付 %>
 	      <%= f.text_field :date %>
 	    </div>
@@ -32,10 +24,8 @@
 	      <%= f.label :予約状況 %>
 	      <%= f.text_field :status %>
 	    </div>
+	      <%= f.submit "編集完了", class: "btn btn-warning" %></td>
 		<div><%#= link_to "削除", photographer_book_path(booking), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %></div>
 	<% end %>
-	<%= paginate @bookings, class: "paginate" %>
   </div>
 </div>
-
-
