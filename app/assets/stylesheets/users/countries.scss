@@ -9,12 +9,18 @@
   background-image: url("/assets/photographer.jpg");
   background-size: cover;
   background-position: center;
+  margin-bottom: 30px;
 }
 
 .main-image h1 {
   font-size: 60px;
   padding: 60px 60px;
   font-family: 'Sigmar One', cursive;
+}
+
+#city-search {
+  width: 500px;
+  margin: 0 auto;
 }
 
 #coutries-container {
@@ -54,6 +60,8 @@ span {
 #search-country-index {
   width: 70%;
 }
+
+
 
 /* show page*/
 
