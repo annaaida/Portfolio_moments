@@ -20,18 +20,37 @@
 	margin-top: 20px;
 }
 
-.anything_2nd_line,
-.anything_3rd_line {
+/* how it works */
+
+.how-it-works {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.process {
+	width: 300px;
+	height: 300px;
+	margin: 30px 30px 0 30px;
+}
+
+.process-explanation {
+	color: #292b2c;
+	width: 300px;
+	margin: 30px;
 	text-align: center;
 }
 
+#jump-to-country{
+	width: 100px;
+	margin: 20px;
+	text-align: center;
+}
 .occasions {
 	margin-top: 100px;
 }
 
-.how-it-works {
-	margin-top: 40px;
-}
+
 
 
 /* scroll button */
@@ -110,14 +129,6 @@ a span::before {
 	}
 }
 
-/* how it works */
-
-.how-it-works {
-	display: flex;
-	justify-content: center;
-	margin-top: 50px;
-}
-
 
 /* show page (マイページ トップ) */
 
@@ -145,23 +156,6 @@ header{
     text-align: center;
     line-height: 50px;
     font-weight: bold;
-}
-
-.col-xs-3 {
-    padding-top: 3em;
-    padding-bottom: 40px;
-    padding-left: 6em;
-    position: fixed;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    overflow-y: hidden;
-    z-index: 1001;
-}
-
-.col-xs-3 p {
-	color: #FFF;
 }
 
 #mypage-sidebar {
