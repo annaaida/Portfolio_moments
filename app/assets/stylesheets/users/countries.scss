@@ -5,16 +5,16 @@
 /* index page*/
 
 .main-image {
-  height: 500px;
-  background-image: url("/assets/teens.jpg");
+  height: 550px;
+  background-image: url("/assets/photographer.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .main-image h1 {
-  margin: 120px;
   font-size: 60px;
-  padding-top: 60px;
+  padding: 60px 60px;
+  font-family: 'Sigmar One', cursive;
 }
 
 #coutries-container {

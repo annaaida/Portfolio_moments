@@ -1,10 +1,6 @@
 <!-- Location ページ -->
 <!-- ヘッダー -->
-<div class = "container-fluid">
-  <div class = "row">
-    <%= render 'layouts/users-header' %>
-  </div>
-</div>
+<%= render 'layouts/users-header' %>
 <!-- 国一覧 -->
 <div class = "container-fluid" id = "coutries-container">
   <div class = "row">
@@ -12,6 +8,15 @@
       <div class = "main-image">
         <h1>LOCATION</h1>
       </div>
+      <!-- 検索フォーム -->
+      <nav class = "nav navbar-nav">
+        <div class = "search-engine">
+          <%= search_form_for @search, url: admins_cities_path do |f| %>
+            <%= f.search_field :city_name_cont, class: 'form-control', placeholder: "都市を検索", id: "city-search" %>
+            <%= f.submit "search", class: "btn btn-default" %>
+          <% end %>
+        </div>
+      </nav>
       <div class = "country-wrapper">
 	     <% @countries.each do |country| %>
   		　　<div class = "country-items">
