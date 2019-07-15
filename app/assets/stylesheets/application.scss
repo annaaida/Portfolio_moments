@@ -36,7 +36,7 @@ html {
 }
 
 header {
-  background: rgba(0, 0, 0, 0.5),transparent;
+  background: rgba(0, 0, 0, 0.8),transparent;
   position: fixed;
   justify-content: space-between;
   position: fixed;
@@ -45,12 +45,12 @@ header {
   z-index: 10;
   height: 60px;
   padding: 8px 60px 5px 60px;
-  border-bottom: 1px solid hsla(0, 0%, 100%, .1);
 }
 
 header.transform {
-  background-color: rgba(255, 255, 255, 0.9) !important;
+  background-color: rgba(255, 255, 255, 1) !important;
   padding: 20px;
+  z-index: 10;
 }
 
 .search-engine {
@@ -64,6 +64,10 @@ header.transform {
 
 #city-search {
   width: 500px;
+}
+
+.navbar-right p {
+  color: #FFF;
 }
 
 /* アドミン ヘッダー */

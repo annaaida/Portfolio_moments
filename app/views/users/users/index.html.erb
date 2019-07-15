@@ -1,45 +1,89 @@
-
-<!-- ヘッダー部分テンプレート -->
-<%= render 'layouts/users-header' %>
+<!-- トップページ -->
+<!-- ヘッダー -->
+<header>
+  <nav class = "navbar">
+    <ul class = "nav navbar-nav navbar-left">
+     <li><h1>MOMENTS</h1></li>
+    </ul>
+    <!-- ヘッダー右 -->
+     <% if user_signed_in? %>
+         <ul class = "nav navbar-nav navbar-right">
+           <li><%= link_to users_countries_path do %>
+                <p><i class="fas fa-map-marked-alt"></i> 撮影場所をえらぶ </p>
+               <% end %>
+           </li>
+           <li><%= link_to do %>
+                <p><i class="far fa-heart"></i> お気に入りリスト </p>
+               <% end %>
+           </li>
+           <li><%= link_to users_user_path(current_user) do %>
+                 <%#= attachment_image_tag @user, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: 10x10 %>
+                 <p>こんにちは、<%= current_user.first_name %>さん</p>
+               <% end %>
+           </li>
+           <li><%= link_to destroy_user_session_path, method: :delete do %>
+                  <p><i class="fas fa-sign-out-alt"></i> ログアウト </p>
+                <% end %>
+            </li>
+         </ul>
+     <% else %>
+         <ul class = "nav navbar-nav navbar-right">
+          <li><%= link_to "フォトグラファーをはじめる", new_user_registration_path %></li>
+            <li><%= link_to " LOG IN", new_user_session_path, class: "glyphicon glyphicon-log-in" %></li>
+            <li><%= link_to " SIGN UP", new_user_registration_path %></li>
+         </ul>
+     <% end %>
+  </nav>
+</header>
 <!-- メイン flex-slider -->
-    <div class = "flexslider">
-      <ul class = "slides">
-         <li><%= image_tag "slider1.jpg" %></li>
-         <li><%= image_tag "slider2.jpg" %></li>
-      </ul>
+<div class = "flexslider">
+  <ul class = "slides">
+     <li><%= image_tag "teens.jpg" %></li>
+     <li><%= image_tag "slider2.jpg" %></li>
+  </ul>
+</div>
+<div class = "container">
+  <div class = "row">
+    <div class = "about-moments">
+      <p class = "anything"> Moments </p>
+      <p class = "moments">「１枚の写真は1000の言葉の価値がある」ということわざが英語にはあります。<br>写真はその瞬間の感情を切り取る最高のツールであり、写真の中で動かなくなった"その時"は、たくさんの感情や思い出を引き起こします。<br>旅行先で美しい風景を背景に、卒業式で仲間と過ごした思い出のキャンパスを背景に、結婚写真は2人で初めて登ったあの山で<br>私たちはあなたのストーリーが聞こえてくるような写真を撮影します。もっと気軽にフォトグラファーに撮影してもらいませんか？</p>
     </div>
-    <div class = "container">
-      <div class = "row">
-        <p class = "anything"> How it works </p>
-        <div class = "how-it-works">
-          <div class = "col-xs-3">
-            <%= image_tag 'noimage.jpg' %>
-            <p>Select your destination or city</p>
-          </div>
-          <div class = "col-xs-3">
-            <%= image_tag 'noimage.jpg' %>
-            <p>Enjoy your photo shoot</p>
-          </div>
-          <div class = "col-xs-3">
-            <%= image_tag 'noimage.jpg' %>
-            <p>Within 48 hours of your shoot, your edited photos will be delivered via the Snappr app, with one-click sharing or downloading.</p>
-          </div>
-        </div>
-        <% link_to "Choose Location" %>
-      </div>
-      <div class = "row">
-        <div class = "occasions">
-          <p class = "anything"> Book a photographer for Anything !</p>
-          <p class = "anything_2nd_line"> What is your occasion ? </p>
-          <p class = "anything_3rd_line"> We have local specialists for whatever you're shoothing. </p>
-        <!-- 写真を入れる -->
-        </div>
-      </div>
-      <div class = "row">
-        <div class = "happy-reviews">
-        </div>
-      </div>
-    </div>
-    <%= render 'layouts/users-footer' %>
   </div>
+  <div class = "row">
+    <p class = "anything"> How it works </p>
+    <div class = "how-it-works">
+      <div class = "col-xs-3">
+        <%= image_tag 'noimage.jpg' %>
+        <p>Select your destination or city</p>
+        <%= link_to '場所検索', users_countries_path, class: "btn btn-warning"%>
+      </div>
+      <div class = "col-xs-3">
+        <%= image_tag 'noimage.jpg' %>
+        <p>Enjoy your photo shoot</p>
+      </div>
+      <div class = "col-xs-3">
+        <%= image_tag 'noimage.jpg' %>
+        <p>Within 48 hours of your shoot, your edited photos will be delivered via the Snappr app, with one-click sharing or downloading.</p>
+      </div>
+    </div>
+    <% link_to "Choose Location" %>
+  </div>
+  <div class = "row">
+    <p class = "anything"> Loved by our clients </p>
+  </div>
+  <div class = "row">
+    <div class = "occasions">
+      <p class = "anything"> Book a photographer for Anything !</p>
+      <p class = "anything_2nd_line"> What is your occasion ? </p>
+      <p class = "anything_3rd_line"> We have local specialists for whatever you're shoothing. </p>
+    <!-- 写真を入れる -->
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "happy-reviews">
+    </div>
+  </div>
+</div>
+<%= render 'layouts/users-footer' %>
+</div>
 </div>

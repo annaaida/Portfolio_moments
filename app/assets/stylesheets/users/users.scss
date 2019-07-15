@@ -3,6 +3,44 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* index page */
+
+.moments {
+	text-align: center;
+	padding: 40px;
+	font-size: 16px;
+	line-height: 35px;
+}
+
+.anything {
+	font-size: 35px;
+	font-weight: bold;
+	font-family: 'Noto Sans';
+	text-align: center;
+}
+
+.anything_2nd_line,
+.anything_3rd_line {
+	text-align: center;
+}
+
+.occasions {
+	margin-top: 100px;
+}
+
+.how-it-works {
+	margin-top: 40px;
+}
+
+.block-testimony {
+		margin: 0 auto;
+		max-width: 700px;
+		img {
+			margin: 0 auto 30px auto;
+			max-width: 100px;
+			border-radius: 50%;
+		}
+	}
+
 /* scroll button */
 
 a {
@@ -85,29 +123,6 @@ a span::before {
 	display: flex;
 	justify-content: center;
 	margin-top: 100px;
-}
-
-/* anything */
-
-.occasions {
-	margin-top: 100px;
-}
-
-.anything {
-	 font-size: 35px;
-	 font-weight: bold;
-	 font-family: 'Noto Sans';
-	 text-align: center;
-}
-
-.anything_2nd_line,
-.anything_3rd_line {
-	text-align: center;
-}
-
-
-.how-it-works {
-	margin-top: 40px;
 }
 
 

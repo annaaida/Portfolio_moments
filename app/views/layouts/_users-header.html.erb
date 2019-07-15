@@ -2,8 +2,7 @@
 <header>
   <nav class = "navbar">
     <ul class = "nav navbar-nav navbar-left">
-     <li><%= link_to "MOMENTS" %></li>
-     <li><%= link_to "Locations", users_countries_path %></li>
+     <li><h1>MOMENTS</h1></li>
     </ul>
     <!-- 検索フォーム -->
     <nav class = "nav navbar-nav">
@@ -17,10 +16,11 @@
     <!-- ヘッダー右 -->
      <% if user_signed_in? %>
          <ul class = "nav navbar-nav navbar-right">
-           <li><%= link_to do %><i class="far fa-heart"></i> お気に入り<% end %></li>
+           <li><p><%= link_to "Locations", users_countries_path %></p></li>
+           <li><p><%= link_to do %><i class="far fa-heart"></i> お気に入り<% end %></p></li>
            <li><%= link_to users_user_path(current_user) do %>
                  <%#= attachment_image_tag @user, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: 10x10 %>
-                 <p>Hi <%= current_user.first_name %></p>
+                 <p>こんにちは、<%= current_user.first_name %>さん</p>
                <% end %>
            </li>
            <li><%= link_to destroy_user_session_path, method: :delete do %>
@@ -38,3 +38,20 @@
   </nav>
 </header>
 <!-- ヘッダーここまで -->
+
+<script type="text/javascript">
+  $(function() {
+    var $win = $(window),
+        $header = $('header'),
+        animationClass = 'transform';
+
+    $win.on('load scroll', function() {
+      var value = $(this).scrollTop();
+      if ( value > 100 ) {
+        $header.addClass('transform');
+      } else {
+        $header.removeClass('transform');
+      }
+    });
+  });
+</script>
