@@ -129,6 +129,12 @@ height: 200px;
     position: relative;
 }
 
+.photographer-image {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
 .col-xs-3 {
     position: absolute;
     padding-top: 3em;
@@ -143,7 +149,7 @@ height: 200px;
 }
 
 .image-wrap {
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 main {
@@ -153,6 +159,10 @@ main {
 
 li {
     list-style: none
+}
+
+.portfolio-picture {
+    margin: 20px;
 }
 
 
