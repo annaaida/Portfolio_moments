@@ -51,7 +51,7 @@ header{
 
 .hi-message {
     font-size: 55px;
-    font-family: 'Sawarabi Mincho', sans-serif;
+    font-family: 'Kosugi', sans-serif;
 }
 
 .table th,td {
@@ -136,6 +136,11 @@ p {
     position: relative;
 }
 
+#user-photographer-show {
+    padding-top: 30px;
+    background-color: rgba(255,255,255,0.2);
+}
+
 .photographer-image {
     border-radius: 50%;
     height: 150px;
@@ -153,6 +158,10 @@ p {
     right: 0;
     overflow-y: hidden;
     z-index: 1001;
+}
+
+#book-and-contact {
+    margin: 30px;
 }
 
 .image-wrap {

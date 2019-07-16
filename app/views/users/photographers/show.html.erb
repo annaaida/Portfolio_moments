@@ -2,7 +2,7 @@
 <%= render 'layouts/users-header' %>
 <br>
 <br>
-<div class = "container-fluid">
+<div class = "container-fluid" id = "user-photographer-show">
   <div class = "row">
     <div class = "col-xs-3 text-center">
       <div class = "image-wrap">
@@ -13,7 +13,7 @@
           <a href = "#" class = "sns-btn"><i class = "fab fa-twitter-square"></i></a>
           <a href = "#" class = "sns-btn"><i class = "fab fa-instagram"></i></a>
           <a href ="#" class = "sns-btn"><i class = "fab fa-facebook-square"></i></a>
-        <div class = "form-btn">
+        <div class = "form-btn" id = "book-and-contact">
           <%= link_to '問い合わせ', new_photographer_contact_path(@photographer), class: "btn btn-primary" %>
           <%= link_to 'Book Now', new_photographer_book_path(@photographer), class: "btn btn-warning" %>
         </div>
@@ -26,16 +26,16 @@
     <div class = "col-xs-8">
       <main>
         <div class = "introduction">
-          <p class = "hi-message"> Hello. I am <%= @photographer.user.first_name %></p>
-          <p>Joained in <%= @photographer.created_at.strftime("%Y") %></p>
+          <p class = "hi-message"> こんにちは、 <%= @photographer.user.first_name %>です</p>
+          <p><%= @photographer.created_at.strftime("%Y") %>年からメンバー</p>
           <i class = "fas fa-quote-left" id = "quote-icon"></i>
           <p class = "who-i-am clearfix"><%= @photographer.introduction %></p>
         </div>
         <div class = "area">
-          <p><span class="fas fa-map-marked-alt" id = "map-pin-icon"></span> Lives in <%= @photographer.area %></p>
+          <p><span class="fas fa-map-marked-alt" id = "map-pin-icon"></span><strong> <%= @photographer.area %></strong> エリア対応</p>
         </div>
         <div class = "language">
-          <p><span class="fas fa-comments" id = "language-icon"></span>Speaks native <%= @photographer.mother_tongue %> / conversational <%= @photographer.language_1 %> <%= @photographer.language_2 %></p>
+          <p><span class="fas fa-comments" id = "language-icon"></span><strong><%= @photographer.mother_tongue %></strong> が母国語です。日常会話レベルの<strong> <%= @photographer.language_1 %></strong> <strong> <%= @photographer.language_2 %> </strong>を話します。</p>
         </div>
         <div class = "row">
           <div class = "col-xs-3">
