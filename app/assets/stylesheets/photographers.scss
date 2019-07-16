@@ -46,8 +46,8 @@ header{
     font-weight: bold;
 }
 
- /* ユーザー側 / フォトグラファー側 show page 【共通部分】  */
 
+ /* ユーザー側 / フォトグラファー側 show page 【共通部分】  */
 
 .hi-message {
     font-size: 55px;
@@ -177,7 +177,7 @@ li {
 
 
 #photographer-mypage {
-    background-color: #E8BB53;
+    background-color: #90B44B;
     height: 1000px;
 }
 
@@ -237,9 +237,4 @@ li {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-}
-
-/* アイコン同士の余白 */
-
-.sns-wrapper li{
 }
