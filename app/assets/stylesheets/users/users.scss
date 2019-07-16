@@ -41,13 +41,26 @@
 	text-align: center;
 }
 
-#jump-to-country{
-	width: 100px;
-	margin: 20px;
-	text-align: center;
-}
 .occasions {
 	margin-top: 100px;
+}
+
+
+/* flex slider */
+
+.slides li {
+	position: relative;
+}
+
+.slides p {
+  position: absolute;/*絶対配置*/
+  color: white;/*文字は白に*/
+  top: 100px;
+  left: 100px;
+}
+
+.slides {
+	width: 100%;
 }
 
 /* scroll button */
