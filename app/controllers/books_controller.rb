@@ -15,24 +15,44 @@ class BooksController < ApplicationController
     @booking.photographer_id = @photographer.id
 
     if @booking.save
-      redirect_to photographer_books_index_path(@photographer.id,@booking.id)
+      redirect_to photographer_confirm_path(@photographer.id,@booking.id)
     else
       render :new
     end
 
   end
 
-  def show
-
-    @book = Book.find(params[:id])
-
-  end
 
   def index
 
-    @book = Book.find(params[:id])
+    @bookings = Book.page(params[:page])
 
   end
+
+  def show
+
+    @booking = Book.find(params[:id])
+
+  end
+
+  def confirm
+
+    @booking = Book.find(params[:id])
+
+  end
+
+  def edit
+
+    @booking = Book.find(params[:id])
+
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
 
   private
 

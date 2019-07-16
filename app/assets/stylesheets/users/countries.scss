@@ -4,19 +4,53 @@
 
 /* index page*/
 
-.col-xs-12 {
-	height: 300px;
-	background-image: url("teens.jpg");
-    background-size: cover;
-    background-position: center;
+.main-image {
+  height: 550px;
+  background-image: url("/assets/photographer.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 30px;
+}
+
+.main-image h1 {
+  font-size: 60px;
+  padding: 60px 60px;
+  font-family: 'Sigmar One', cursive;
+}
+
+#city-search {
+  height: 40px;
+}
+
+#search-engine-countries-index input{
+  float: left;
+  height: 40px;
+  margin-left: 10px;
+}
+
+#coutries-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+span {
+  display: block;
+  text-align: center;
+}
+
+.country-items {
+  width: 400px;
+  height: 400px;
 }
 
 .country-wrapper {
-  float: left;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 35px 20px;
+  margin: 0 auto;
 }
 
 .country_name {
@@ -28,7 +62,37 @@
   padding: 20px;
 }
 
-#search-country-index {
-	width: 70%;
+
+/* show page*/
+
+.top-image {
+  height: 300px;
+	background-image: url("/assets/teens.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 40px;
 }
 
+.top-title h1 {
+  margin: 120px;
+  font-size: 60px;
+  padding-top: 60px;
+}
+
+#search-engine-country-show {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.search-engine input{
+  float:left;
+}
+
+.cities-box {
+  margin: 70px 50px;
+}
+
+.city-index {
+  width: 300px;
+  height: 200px;
+}

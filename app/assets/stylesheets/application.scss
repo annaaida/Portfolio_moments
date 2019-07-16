@@ -36,21 +36,30 @@ html {
 }
 
 header {
-  background: rgba(0, 0, 0, 0.5),transparent;
+  background: rgba(0, 0, 0, 0.8),transparent;
   position: fixed;
   justify-content: space-between;
   position: fixed;
   transition: .5s;
   width: 100%;
-  z-index: 10;
-  height: 60px;
+  z-index: 12;
+  height: 70px;
   padding: 8px 60px 5px 60px;
-  border-bottom: 1px solid hsla(0, 0%, 100%, .1);
 }
 
 header.transform {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  padding: 20px;
+  background-color: rgba(255, 255, 255, 1) !important;
+  height: 80px;
+  z-index: 12;
+    p {
+      color: #000000;
+      line-height: 60px;
+    }
+}
+
+.site-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
 }
 
 .search-engine {
@@ -66,6 +75,11 @@ header.transform {
   width: 500px;
 }
 
+.navbar-right p {
+  color: #000000;
+  line-height: 40px;
+}
+
 /* アドミン ヘッダー */
 
 #admin-header {
@@ -74,6 +88,12 @@ header.transform {
 
 #admin-header p {
   color: #FFF;
+}
+
+/* フォトグラファー ヘッダー*/
+
+#photographer-header {
+  background-color: #E8BB53;
 }
 
  /*ユーザー　サインイン 兼 アカウント登録*/
