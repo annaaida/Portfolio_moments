@@ -24,7 +24,6 @@ Rails.application.routes.draw do
 
   namespace :users do
     root to: "users#index"
-    get 'users/about'
     resources :cities, only:[:show]
     resources :photographers, only:[:show]
     resources :contacts, only:[:new, :create]

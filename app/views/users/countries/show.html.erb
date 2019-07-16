@@ -13,6 +13,7 @@
 <div class = "container">
   <div class = "row">
     <div clas  = "main-image">
+      <%#= attachment_image_tag @cities, :country_img, :fill, 200, 200, format: 'jpeg', fallback: "no_img.jpg", size: "1000x500" %>
       <h1><%= @countries.country_name %></h1>
     </div>
   </div>

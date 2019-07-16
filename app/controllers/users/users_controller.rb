@@ -6,9 +6,6 @@ class Users::UsersController < ApplicationController
 
   end
 
-  def about
-  end
-
   def show
 
     @user = current_user

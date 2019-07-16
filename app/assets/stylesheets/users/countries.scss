@@ -19,12 +19,13 @@
 }
 
 #city-search {
-  width: 500px;
-  margin: 0 auto;
+  height: 40px;
 }
 
-#city-search input{
+#search-engine-countries-index input{
   float: left;
+  height: 40px;
+  margin-left: 10px;
 }
 
 #coutries-container {
@@ -60,11 +61,6 @@ span {
 .country-index {
   padding: 20px;
 }
-
-#search-country-index {
-  width: 70%;
-}
-
 
 
 /* show page*/

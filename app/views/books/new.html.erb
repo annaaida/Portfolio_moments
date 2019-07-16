@@ -40,7 +40,8 @@
 				</div>
 				<div class="col-md-6">
 				  <div class="form-group">
-					<input class="form-control" type="date" required>
+					<div class="form-group">
+				  	<%= booking.text_field :time, id: "timepicker", class: "form-control"%>
 					<span class="form-label">時間を選択</span>
 				  </div>
 				</div>
@@ -115,6 +116,11 @@
 <script type="text/javascript">
 	$(function() {
 	$('#datepicker').pickadate();
-	$("#timepicker").pickatime();
+	$("#timepicker").pickatime({
+		format: 'HH:i', //24時間表記
+		interval: 60, // 表示感覚
+		min: [08,00],
+		max: [18,00]
+	  });
 	});
 </script>
