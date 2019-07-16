@@ -8,25 +8,19 @@
       <div class = "image-wrap">
        <%= image_tag 'noimage.jpg' , class: "photographer-image"%>
        <%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %>
-        <ul>
-          <li><p id = "fullname-users"><%= @photographer.user.last_name %> <%= @photographer.user.first_name %></p></li>
-          <li>Contact</li>
-          <!-- SNS リンク -->
-          <li><a href = "#" class = "sns-btn"><i class = "fab fa-twitter-square"></i></a></li>
-          <li><a href = "#" class = "sns-btn"><i class = "fab fa-instagram"></i></a></li>
-          <li><a href ="#" class = "sns-btn"><i class = "fab fa-facebook-square"></i></a></li>
-        </ul>
-        <!-- いいねボタン -->
-        <span id = "favorite_buttons_<%= @photographer.id %>">
-          <%= render :partial => 'favorites/favorite', :locals => { photographer: @photographer} %>
-        </span>
+       <p id = "fullname-users"><%= @photographer.user.last_name %> <%= @photographer.user.first_name %></p></li>
+        <!-- SNS リンク -->
+          <a href = "#" class = "sns-btn"><i class = "fab fa-twitter-square"></i></a>
+          <a href = "#" class = "sns-btn"><i class = "fab fa-instagram"></i></a>
+          <a href ="#" class = "sns-btn"><i class = "fab fa-facebook-square"></i></a>
         <div class = "form-btn">
           <%= link_to '問い合わせ', new_photographer_contact_path(@photographer), class: "btn btn-primary" %>
-        </div>
-        <br>
-        <div class = "form-btn">
           <%= link_to 'Book Now', new_photographer_book_path(@photographer), class: "btn btn-warning" %>
         </div>
+        <!-- いいねボタン -->
+          <span id = "favorite_buttons_<%= @photographer.id %>">
+           <%= render :partial => 'favorites/favorite', :locals => { photographer: @photographer} %>
+          </span>
       </div>
     </div>
     <div class = "col-xs-8">

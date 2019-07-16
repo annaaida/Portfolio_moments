@@ -1,3 +1,21 @@
 // Place all the styles related to the favorites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.favorites-count {
+	margin-bottom: 20px;
+	font-size: 11px;
+}
+
+.favorites-list {
+	display: inline-block;
+	padding: 0.5em 1em;
+	font-weight: bold;
+	margin: 10px 0 0 5px;
+	padding-top: 20px;
+}
+
+.favorites-list p {
+	font-size: 13px;
+	line-height: 14px;
+}

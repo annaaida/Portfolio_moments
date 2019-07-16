@@ -55,70 +55,71 @@ header{
 }
 
 .table th,td {
- border-top: none !important;
+    border-top: none !important;
 }
 
 p {
- font-family: 'Sawarabi Mincho', sans-serif;
- font-size: 15px;
- color: #484848;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-size: 15px;
+    color: #484848;
 }
 
 #fullname {
-font-size: 24px !important;
+    font-size: 24px !important;
+
 }
 
 .table th {
-width: 5%;
+    width: 5%;
 }
 
 #quote-icon {
-color: #EBEBEB !important;
-font-size: 25px !important;
-font-weight: 700 !important;
-margin: 20px 10px 10px 5px;
+    color: #EBEBEB !important;
+    font-size: 25px !important;
+    font-weight: 700 !important;
+    margin: 20px 10px 10px 5px;
 }
 
 .who-i-am {
-margin: 5px;
+    margin: 5px;
 
 }
 
 .who-i-am::after {
-content: "";
-display: block;
-background: #EBEBEB;
-height: 3px;
-width: 30px;
-margin: 20px 10px 10px 0;
+    content: "";
+    display: block;
+    background: #EBEBEB;
+    height: 3px;
+    width: 30px;
+    margin: 20px 10px 10px 0;
 }
 
 #map-pin-icon {
-font-size: 17px;
-padding-right: 5px;
-margin-top: 10px;
-margin-left: 10px;
+    font-size: 17px;
+    padding-right: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 #language-icon {
-font-size: 17px;
-padding-right: 10px;
-margin-top: 10px;
-margin-left: 10px;
+    font-size: 17px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
 
 }
 
 #image-zone {
-padding-top: 20px;
-display: flex;
-align-items: flex-start;
-flex-wrap: wrap;
-justify-content: space-between;
+    padding-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .single_gallery_item {
-width: 200px;
-height: 200px;
+    width: 200px;
+    height: 200px;
 }
 
 /* レビュー index */
@@ -186,6 +187,7 @@ li {
 
 #fullname-users {
     font-size: 24px;
+    margin: 15px;
 }
 
 /* レビュー一覧 / レビュー投稿 / 編集 / 消去ボタン */
@@ -200,6 +202,7 @@ li {
     font-size: 30px;
     text-decoration: none;
     transition: .5s;
+    margin: 8px;
 }
 
 /* アイコンにマウスを乗せた時 */
