@@ -15,6 +15,7 @@ class BooksController < ApplicationController
     @booking.photographer_id = @photographer.id
 
     if @booking.save
+      BookMailer.send_when_user_book(@booking).deliver
       redirect_to photographer_confirm_path(@photographer.id,@booking.id)
     else
       render :new
