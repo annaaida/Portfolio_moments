@@ -1,6 +1,7 @@
 class Users::PhotographersController < ApplicationController
 
   def show
+
   	@user = current_user
   	@photographer = Photographer.find(params[:id])
   	@reviews = @photographer.reviews.page(params[:page]).per(10)

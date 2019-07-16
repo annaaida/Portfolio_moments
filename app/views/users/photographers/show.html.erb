@@ -1,28 +1,26 @@
+<!-- ヘッダー -->
+<%= render 'layouts/users-header' %>
+<br>
+<br>
 <div class = "container-fluid">
   <div class = "row">
-    <div class = "col-xs-3 js-fullheight text-center">
+    <div class = "col-xs-3 text-center">
       <div class = "image-wrap">
-       <%= image_tag 'noimage.jpg' %>
+       <%= image_tag 'noimage.jpg' , class: "photographer-image"%>
        <%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %>
-        <ul>
-          <li><p id = "fullname-users"><%= @photographer.user.last_name %> <%= @photographer.user.first_name %></p></li>
-          <li>Contact</li>
-          <!-- SNS リンク -->
-          <li><a href = "#" class = "sns-btn"><i class = "fab fa-twitter-square"></i></a></li>
-          <li><a href = "#" class = "sns-btn"><i class = "fab fa-instagram"></i></a></li>
-          <li><a href ="#" class = "sns-btn"><i class = "fab fa-facebook-square"></i></a></li>
-          <!-- いいねボタン -->
-          <li><span id = "favorite_buttons_<%= @photographer.id %>"></span>
-            <%= render :partial => 'users/favorites/favorite', :locals => { photographer: @photographer} %>
-          </li>
+       <p id = "fullname-users"><%= @photographer.user.last_name %> <%= @photographer.user.first_name %></p></li>
+        <!-- SNS リンク -->
+          <a href = "#" class = "sns-btn"><i class = "fab fa-twitter-square"></i></a>
+          <a href = "#" class = "sns-btn"><i class = "fab fa-instagram"></i></a>
+          <a href ="#" class = "sns-btn"><i class = "fab fa-facebook-square"></i></a>
+        <div class = "form-btn">
+          <%= link_to '問い合わせ', new_photographer_contact_path(@photographer), class: "btn btn-primary" %>
+          <%= link_to 'Book Now', new_photographer_book_path(@photographer), class: "btn btn-warning" %>
+        </div>
+        <!-- いいねボタン -->
+          <span id = "favorite_buttons_<%= @photographer.id %>">
+           <%= render :partial => 'favorites/favorite', :locals => { photographer: @photographer} %>
           </span>
-        </ul>
-        <div class = "form-btn">
-          <%= link_to '問い合わせ', new_photographer_contact_path(@photographer), class: "btn btn-danger" %>
-        </div>
-        <div class = "form-btn">
-          <%= link_to 'Book Now', new_photographer_book_path(@photographer), class: "btn btn-danger" %>
-        </div>
       </div>
     </div>
     <div class = "col-xs-8">
@@ -39,124 +37,63 @@
         <div class = "language">
           <p><span class="fas fa-comments" id = "language-icon"></span>Speaks native <%= @photographer.mother_tongue %> / conversational <%= @photographer.language_1 %> <%= @photographer.language_2 %></p>
         </div>
-
-        <div class = "row" id = "image-zone">
-          <!-- メイン flex-slider -->
-          <div class = "flexslider">
-            <ul class = "slides">
-               <li><%= image_tag "slider1.jpg" %></li>
-               <li><%= image_tag "slider2.jpg" %></li>
-            </ul>
+        <div class = "row">
+          <div class = "col-xs-3">
+            <div class = "row">
+              <%= image_tag 'noimage.jpg', class: "portfolio-picture" %>
+            </div>
+            <div class = "row">
+              <%= image_tag 'noimage.jpg', class: "portfolio-picture" %>
+            </div>
           </div>
-          <!-- Single Gallery Item -->
-          <div class = "single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
+          <div class = "col-xs-3">
+            <div class = "row">
+              <%= image_tag 'noimage.jpg', class: "portfolio-picture" %>
+            </div>
+            <div class = "row">
+              <%= image_tag 'noimage.jpg', class: "portfolio-picture" %>
+            </div>
           </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
+          <div class = "col-xs-3">
+            <div class = "row">
+              <%= image_tag 'noimage.jpg', class: "portfolio-picture" %>
+            </div>
+            <div class = "row">
+              <%= image_tag 'noimage.jpg', class: "portfolio-picture" %>
+            </div>
           </div>
         </div>
+        <div class = "row">
+        <div id = "review-post">
+          <% if user_signed_in? %>
+            <% unless @photographer.reviewed_by?(current_user) %>
+              <%= link_to "レビューを投稿する", new_photographer_review_path(@photographer), class: "review-button btn btn-success" %>
+            <% else %>
+              <% review = Review.find_by(user_id: current_user.id, photographer_id: @photographer.id) %>
+              <%= link_to "レビューを編集する", edit_photographer_review_path(@photographer, @review), class: "review-button btn btn-success" %>
+              <%= link_to "レビューを削除する", photographer_review_path(@photographer, @review), method: :delete, data:{confirm:"本当に削除しますか?"}, class: "review-button btn btn-warning" %>
+            <% end %>
+          <% else %>
+             <p>レビューを書くにはログインしてください。</p>
+          <% end %>
+        </div>
+        <div class = "review-index">
+         <table class = "table review_table">
+           <tr style = "background-color: #86A697;">
+             <th style = "width:100px;"> 投稿者</th>
+             <th style = "width:200px;"> タイトル</th>
+             <th style = "width:600px;"> 本文</th>
+           </tr>
+           <% @reviews.each do |r| %>
+           <tr>
+             <td><%= r.name %></td>
+             <td><%= r.title %></td>
+             <td class = "review_body"><%= r.body %></td>
+           </tr>
+           <% end %>
+           <%= paginate @reviews, class: "paginate" %>
+         </table>
+        </div>
       </main>
-    </div>
-    </div>
   </div>
 </div>
-<div class = "container">
-  <div class = "row">
-    <div class = "review col-xs-offset-10">
-      <% if user_signed_in? %>
-        <% unless @photographer.reviewed_by?(current_user) %>
-          <%= link_to "レビューを投稿する", new_photographer_review_path(@photographer), class: "review-button btn btn-success" %>
-        <% else %>
-          <% review = Review.find_by(user_id: current_user.id, photographer_id: @photographer.id) %>
-          <%= link_to "レビューを編集する", edit_photographer_review_path(@photographer, @review), class: "review-button btn btn-success" %>
-          <%= link_to "レビューを削除する", photographer_review_path(@photographer, @review), method: :delete, data:{confirm:"本当に削除しますか?"}, class: "review-button btn btn-warning" %>
-        <% end %>
-      <% else %>
-         <p>レビューを書くにはログインしてください。</p>
-      <% end %>
-    </div>
-    <div class = "review-index">
-     <table class = "table review_table">
-       <tr style = "background-color: #DDDDDD;">
-         <th style = "width:100px;"> 投稿者</th>
-         <th style = "width:200px;"> タイトル</th>
-         <th style = "width:600px;"> 本文</th>
-       </tr>
-     <% @reviews.each do |r| %>
-       <tr>
-         <td><%= r.name %></td>
-         <td><%= r.title %></td>
-         <td class = "review_body"><%= r.body %></td>
-       </tr>
-     <% end %>
-     <%= paginate @reviews, class: "paginate" %>
-     </table>
-    </div>
-
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
-
-<script type="text/javascript">
-$(document).ready(function(){
-  $('.slider-for').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: '.slider-nav'
-  });
-  $('.slider-nav').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: '.slider-for',
-    dots: true,
-    centerMode: true,
-    focusOnSelect: true
-  });
-</script>

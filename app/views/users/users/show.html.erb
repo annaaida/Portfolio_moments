@@ -1,21 +1,20 @@
 <!-- ユーザー マイページ トップページ -->
-<div class = "container-fluid" id = "user-mypage-back">
+<div class = "container-fluid">
   <div class = "row">
-    <!-- header -->
-    <div id = "head-line-user">
-     <p class = "header-message">my page</p>
-    </div>
+    <!-- ヘッダー部分テンプレート -->
+    <%= render 'layouts/users-header' %>
   </div>
   <div class = "row">
     <div class = "clearfix"></div>
       <div class = "col-xs-3 js-fullheight text-center" id = "mypage-sidebar">
+        <h1 class = "mypage-title"> My Page</h1>
         <table class =  "table">
           <tbody>
             <tr>
               <td><%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
             </tr>
             <tr>
-              <td><p id = "fullname"><%= current_user.last_name %> <%= current_user.first_name %></p></td>
+              <td><p id = "fullname"><%= current_user.last_name %> <%= current_user.first_name %>さん</p></td>
             </tr>
             <tr>
               <td><p><%= current_user.email %></p></td>
@@ -30,10 +29,13 @@
                   <% end %>
               </li>
               <li><%= link_to do %>
-                   <p><i class="fas fa-inbox"></i>inbox</p>
+                   <p><i class="fas fa-inbox"></i> inbox</p>
                   <% end %>
               </li>
-              <li><%= link_to do %><i class="far fa-heart"></i>お気に入り一覧<% end %></li>
+              <li><%= link_to do %>
+                   <p><i class="far fa-heart"></i> お気に入りリスト</p>
+                  <% end %>
+              </li>
               <li><%= link_to edit_user_registration_path(current_user) do %>
                     <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
                   <% end %>
@@ -42,51 +44,41 @@
           </div>
         </div>
       </div>
-    <div class = "col-xs-9">
-      <header class = "navbar navbar-light bg-light fixed-top">
-       <nav>
-        <ul class = "nav navbar-nav navbar-right">
-          <li><%= link_to users_users_path do %>
-                <p><i class="fas fa-home"></i> Home</p>
-              <% end %>
-          </li>
-          <li><%= link_to about_path do %>
-                <p><i class="fas fa-question-circle"></i> このページの使い方</p>
-              <% end %>
-          </li>
-          <li><%= link_to users_countries_path do %>
-                <p><i class="fas fa-map-marked-alt"></i> 場所検索へ</p>
-              <% end %>
-          </li>
-          <li><%= link_to destroy_user_session_path, method: :delete do %>
-                <i class = "fas fa-sign-out-alt"></i> ログアウト </p>
-              <% end %>
-          </li>
-        </ul>
-       </nav>
-    </header>
       <!-- 新着メッセージ一覧 -->
-    <div class = "updates">
-      <div class = "row">
-        <div class = "main-upper">
-          <h3></h3>
+      <div class = "col-xs-9">
+        <div class = "updates">
+          <div class = "row">
+            <div class = "box-title"><p class = "history">新着予約情報</p></div>
+              <div class = "main-boxes">
+                <table class = "table table-hover">
+                  <thead>
+                     <tr>
+                      <th>image</th>
+                      <th>フォトグラファー</th>
+                      <th>日付</th>
+                      <th>時間</th>
+                      <th>待ち合わせ場所</th>
+                      <th>メッセージ</th>
+                      <th>予約状況</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                  <% #@bookings.each do |booking| %>
+                    <tr>
+                      <td><%#= attachment_image_tag , :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "noimage.jpg" %></td>
+                      <td><%#= booking.photographer_id %></td>
+                      <td><%#= booking.date %></td>
+                      <td><%#= booking.time %></td>
+                      <td><%#= booking.meeting_spot %></td>
+                      <td><%#= booking.message %></td>
+                      <td><%#= booking.status %></td>
+                    </tr>
+                  <%# end %>
+                  </tbody>
+                </table>
+                <%#= paginate @bookings %>
+              </div>
         </div>
-      </div>
-      <div class = "row">
-        <div class = "main-lower">
-          <h3></h3>
-        </div>
-      </div>
-      <div class = "row">
-        <div class = "main-lower">
-          <h3></h3>
-        </div>
-      </div>
-      <div class = "row">
-        <div class = "main-lower">
-          <h3></h3>
-        </div>
-      </div>
-    </div>
+　　　 </div>
     </div>
   </div>

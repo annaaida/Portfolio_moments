@@ -2,6 +2,12 @@ class FavoritesController < ApplicationController
 
   before_action :set_photographer
 
+  def index
+
+    @favorites = Favorites.page(params[:page])
+
+  end
+
   def create
 
     photographer = Photographer.find(params[:photographer_id])

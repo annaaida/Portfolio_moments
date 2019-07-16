@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* new page */
+
 .section {
 	position: relative;
 	height: 100vh;
@@ -165,4 +167,15 @@
 	display: block;
 	width: 100%;
 	text-transform: capitalize;
+}
+
+/* index page */
+
+.complete-message {
+	text-align: center;
+	font-weight: 700;
+	font-size: 35px;
+	text-transform: uppercase;
+	color: #181818;
+	margin-top: 60px;
 }
