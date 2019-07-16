@@ -3,80 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* index page */
-/* scroll button */
 
-a {
-	padding-top: 60px;
+.moments {
+	text-align: center;
+	padding: 40px;
+	font-size: 16px;
+	line-height: 35px;
 }
-a span {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 46px;
-	height: 46px;
-	margin-left: -23px;
-	border: 1px solid #fff;
-	border-radius: 100%;
-	box-sizing: border-box;
+
+.anything {
+	font-size: 45px;
+	font-weight: 500;
+	font-family: 'Permanent Marker', cursive;
+	text-align: center;
+	padding: 5px;
+	margin-top: 20px;
 }
-a span::after {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	content: '';
-	width: 16px;
-	height: 16px;
-	margin: -12px 0 0 -8px;
-	border-left: 1px solid #fff;
-	border-bottom: 1px solid #fff;
-	-webkit-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-	box-sizing: border-box;
-}
-a span::before {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	content: '';
-	width: 44px;
-	height: 44px;
-	box-shadow: 0 0 0 0 rgba(255,255,255,.1);
-	border-radius: 100%;
-	opacity: 0;
-	-webkit-animation: sdb 3s infinite;
-	animation: sdb 3s infinite;
-	box-sizing: border-box;
-}
-@-webkit-keyframes sdb {
-	0% {
-	opacity: 0;
-	}
-	30% {
-	opacity: 1;
-	}
-	60% {
-	box-shadow: 0 0 0 60px rgba(255,255,255,.1);
-	opacity: 0;
-	}
-	100% {
-	opacity: 0;
-	}
-}
-@keyframes sdb {
-	0% {
-	opacity: 0;
-	}
-	30% {
-	opacity: 1;
-	}
-	60% {
-	box-shadow: 0 0 0 60px rgba(255,255,255,.1);
-	opacity: 0;
-	}
-	100% {
-	opacity: 0;
-	}
+
+.happy-review {
+	font-size: 45px;
+	font-weight: 500;
+	font-family: 'Permanent Marker', cursive;
+	text-align: center;
+	padding-top: 100px;
+	padding-bottom: 50px;
 }
 
 /* how it works */
@@ -84,32 +34,53 @@ a span::before {
 .how-it-works {
 	display: flex;
 	justify-content: center;
-	margin-top: 100px;
+	margin-top: 50px;
 }
 
-/* anything */
+.process {
+	width: 300px;
+	height: 300px;
+	margin: 30px 30px 0 30px;
+}
+
+.process-explanation {
+	color: #292b2c;
+	width: 300px;
+	margin: 30px;
+	text-align: center;
+}
 
 .occasions {
 	margin-top: 100px;
 }
 
-.anything {
-	 font-size: 35px;
-	 font-weight: bold;
-	 font-family: 'Noto Sans';
-	 text-align: center;
+
+/* flex slider */
+
+.slides li {
+	position: relative;
 }
 
-.anything_2nd_line,
-.anything_3rd_line {
+.slides p {
+  position: absolute;/*絶対配置*/
+  color: white;/*文字は白に*/
+  top: 100px;
+  left: 100px;
+}
+
+.slides {
+	width: 100%;
+}
+
+/* review-slider */
+
+.review-slider {
+	background-image: url('assets/city-life.jpg');
+}
+
+.review-slider li {
 	text-align: center;
 }
-
-
-.how-it-works {
-	margin-top: 40px;
-}
-
 
 /* show page (マイページ トップ) */
 
@@ -117,15 +88,6 @@ a span::before {
     overflow: hidden;
     position: relative;
 }
-
-.user-mypage-back {
-	background-color: #e5dace;
-}
-
-header{
-    height: 60px;
-    padding: 8px 60px 5px 60px;
- }
 
 #head-line-user {
 	height: 50px;
@@ -139,27 +101,34 @@ header{
     font-weight: bold;
 }
 
-.col-xs-3 {
-    padding-top: 3em;
-    padding-bottom: 40px;
-    padding-left: 6em;
-    position: fixed;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    overflow-y: hidden;
-    z-index: 1001;
-}
-
-.col-xs-3 p {
-	color: #FFF;
+.mypage-title {
+	font-family: 'Permanent Marker', cursive;
+    font-size: 40px;
 }
 
 #mypage-sidebar {
-	background-color: #6d7973;
+	background-color: #F6C555;
     height: 1000px;
 }
 
+.slider {
+	width: 100px;
+	height: 100px;
+}
 
+.main-boxes {
+    padding: 20px;
+    border: 1px solid #dce0e0;
+}
+
+.box-title {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.updates {
+	margin-top: 60px;
+}
 

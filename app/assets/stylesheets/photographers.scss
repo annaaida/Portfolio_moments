@@ -54,37 +54,38 @@ header{
     font-family: 'Sawarabi Mincho', sans-serif;
 }
 
- .table th,td {
-     border-top: none !important;
- }
+.table th,td {
+    border-top: none !important;
+}
 
- p {
-     font-family: 'Sawarabi Mincho', sans-serif;
-     font-size: 15px;
-     color: #484848;
- }
+p {
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-size: 15px;
+    color: #484848;
+}
 
- #fullname {
+#fullname {
     font-size: 24px !important;
- }
 
- .table th {
+}
+
+.table th {
     width: 5%;
- }
+}
 
- #quote-icon {
+#quote-icon {
     color: #EBEBEB !important;
     font-size: 25px !important;
     font-weight: 700 !important;
     margin: 20px 10px 10px 5px;
- }
+}
 
- .who-i-am {
+.who-i-am {
     margin: 5px;
 
- }
+}
 
- .who-i-am::after {
+.who-i-am::after {
     content: "";
     display: block;
     background: #EBEBEB;
@@ -93,32 +94,38 @@ header{
     margin: 20px 10px 10px 0;
 }
 
- #map-pin-icon {
+#map-pin-icon {
     font-size: 17px;
     padding-right: 5px;
     margin-top: 10px;
     margin-left: 10px;
- }
+}
 
- #language-icon {
+#language-icon {
     font-size: 17px;
     padding-right: 10px;
     margin-top: 10px;
     margin-left: 10px;
 
- }
+}
 
- #image-zone {
+#image-zone {
     padding-top: 20px;
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-between;
- }
+}
 
 .single_gallery_item {
     width: 200px;
     height: 200px;
+}
+
+/* レビュー index */
+
+#review-post {
+    margin: 20px;
 }
 
 
@@ -129,11 +136,17 @@ header{
     position: relative;
 }
 
+.photographer-image {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
 .col-xs-3 {
+    position: absolute;
     padding-top: 3em;
     padding-bottom: 40px;
     padding-left: 6em;
-    position: fixed;
     bottom: 0;
     top: 0;
     left: 0;
@@ -143,7 +156,7 @@ header{
 }
 
 .image-wrap {
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 main {
@@ -153,6 +166,10 @@ main {
 
 li {
     list-style: none
+}
+
+.portfolio-picture {
+    margin: 20px;
 }
 
 
@@ -170,6 +187,7 @@ li {
 
 #fullname-users {
     font-size: 24px;
+    margin: 15px;
 }
 
 /* レビュー一覧 / レビュー投稿 / 編集 / 消去ボタン */
@@ -184,6 +202,7 @@ li {
     font-size: 30px;
     text-decoration: none;
     transition: .5s;
+    margin: 8px;
 }
 
 /* アイコンにマウスを乗せた時 */

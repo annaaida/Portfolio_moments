@@ -6,12 +6,10 @@ class Users::UsersController < ApplicationController
 
   end
 
-  def about
-  end
-
   def show
 
     @user = current_user
+    @bookings = @user.books.page(params[:page]).per(10).order(id: "DESC")
 
   end
 

@@ -5,17 +5,34 @@
 <br>
 <br>
 <br>
-<div class = container>
+<!-- メイン画像と検索フォーム -->
+<div class = "container">
   <div class = "row">
+    <div clas  = "top-image-city-show">
+      <div class = "top-title-city-show">
+        <h1><%= @city.city_name %></h1>
+      </div>
+    </div>
+  </div>
+  <div class = container>
+  <div class = "row">
+    <div class = "about_city">
+      <h3><%= @city.about_city %></h3>
+    </div>
     <% @photographer.each do |photo| %>
-      <table class = "table table-hover">
-      <tbody>
+      <table class = "table">
+        <tbody>
           <tr>
-          <td class = "contents"><%#= attachment_image_tag photo.photographer, :profile_img, :fill, 50, 50, format: 'jpeg', fallback: "noimage.jpg", size:'50x50' %></td>
+            <td class = "contents"><%#= attachment_image_tag photo, :profile_img, :fill, 50, 50, format: 'jpeg', fallback: "noimage.jpg", size:'50x50' %></td>
+          </tr>
+          <tr>
+            <td class = "contents"><p><%#= photo.user.last_name %><%#= photo.user.first_name %></p></td>
             <td class = "contents"><p><%= link_to photo.photographer.area, users_photographer_path(photo) %></p></td>
           </tr>
         </tbody>
-         </table>
+      </table>
     <% end %>
   </div>
 </div>
+</div>
+
