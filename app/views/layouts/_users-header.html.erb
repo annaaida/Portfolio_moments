@@ -27,9 +27,18 @@
          </ul>
      <% else %>
          <ul class = "nav navbar-nav navbar-right">
-            <li><p><%= link_to "フォトグラファーをはじめる", new_user_registration_path %></p></li>
-            <li><p><%= link_to " LOG IN", new_user_session_path, class: "glyphicon glyphicon-log-in" %></p></li>
-            <li><p><%= link_to " SIGN UP", new_user_registration_path %></p></li>
+           <li><%= new_user_registration_path do %>
+                 <p><i class="fas fa-camera"></i>フォトグラファーをはじめる</p>
+               <% end %>
+           </li>
+           <li><%= new_user_session_path do %>
+                 <p><i class="fas fa-sign-in-alt"></i>ログイン</p>
+               <% end %>
+           </li>
+           <li><%= new_user_registration_path do %>
+                 <p><i class="fas fa-user-plus"></i>アカウント登録</p>
+               <% end %>
+           </li>
          </ul>
      <% end %>
   </nav>
