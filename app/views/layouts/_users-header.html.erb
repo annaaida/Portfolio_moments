@@ -7,6 +7,10 @@
     <!-- ヘッダー右 -->
      <% if user_signed_in? %>
          <ul class = "nav navbar-nav navbar-right">
+          <li><%= link_to users_users_path do %>
+                <p><i class="far fa-smile"></i> トップページへ </p>
+               <% end %>
+           </li>
            <li><%= link_to users_countries_path do %>
                 <p><i class="fas fa-map-marked-alt"></i> 撮影場所をえらぶ </p>
                <% end %>

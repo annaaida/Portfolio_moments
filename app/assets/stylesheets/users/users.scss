@@ -20,6 +20,15 @@
 	margin-top: 20px;
 }
 
+.happy-review {
+	font-size: 45px;
+	font-weight: 500;
+	font-family: 'Permanent Marker', cursive;
+	text-align: center;
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+
 /* how it works */
 
 .how-it-works {
@@ -63,6 +72,15 @@
 	width: 100%;
 }
 
+/* review-slider */
+
+.review-slider {
+	background-image: url('assets/city-life.jpg');
+}
+
+.review-slider li {
+	text-align: center;
+}
 
 /* show page (マイページ トップ) */
 

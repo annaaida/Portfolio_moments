@@ -90,20 +90,27 @@
     <div><%= link_to '場所検索', users_countries_path, class: "btn btn-warning col-xs-3 col-xs-offset-4"%></div>
   </div>
   <div class = "row">
-    <p class = "anything"> Loved by our clients </p>
+    <p class = "happy-review"> Loved by our clients </p>
+    <div class = "review-slider">
+      <ul class = "slides">
+        <li>
+          <h4>NEVER LET LET YOUR FRIENDSHIP AWAY</h4>
+          <span></span>
+        </li>
+        <li>
+          <%= image_tag "" %>
+          <h4>NEVER LET YOUR FRIENDSHIP AWAY</h4>
+      </li>
+      </ul>
+    </div>
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 </div>
-<div class= "slider">
-  <%#= image_tag("icon.png") %>
-  <%#= image_tag("icon.png") %>
-  <%#= image_tag("icon.png") %>
-  <%#= image_tag("icon.png") %>
-  <%#= image_tag("icon.png") %>
-  <%#= image_tag("icon.png") %>
-  <%#= image_tag("icon.png") %>
-  <%#= image_tag("icon.png") %>
-</div>
-<%= render 'layouts/users-footer' %>
 
 <script type="text/javascript">
     $(window).on("load", function() {
@@ -114,4 +121,12 @@
     });
 </script>
 
+
+<script type="text/javascript">
+    $(window).on("load", function() {
+    $('.review-slider').flexslider({
+      animation: "slide",
+      });
+    });
+</script>
 
