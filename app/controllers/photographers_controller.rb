@@ -3,6 +3,8 @@ class PhotographersController < ApplicationController
   def top
 
     @user = current_user
+    @photographer = Photographer.find_by(user_id: current_user.id)
+    @bookings = @photographer.books.page(params[:page]).per(10).order(id: "DESC")
 
   end
 

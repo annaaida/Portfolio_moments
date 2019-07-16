@@ -1,4 +1,6 @@
 <!-- フォトグラファー "ポートフォリオを確認" ページ -->
+<!-- ヘッダー部分テンプレート -->
+<%= render 'layouts/photographers-header' %>
 <div class = "container-fluid">
   <div class = "row">
     <div class = "col-xs-3 js-fullheight text-center">
@@ -34,76 +36,6 @@
         </div>
         <div class = "language">
           <p><span class="fas fa-comments" id = "language-icon"></span>Speaks native <%= @photographer.mother_tongue %> / conversational <%= @photographer.language_1 %> <%= @photographer.language_2 %></p>
-        </div>
-
-        <div class = "row" id = "image-zone">
-          <!-- メイン flex-slider -->
-          <div class = "flexslider">
-            <ul class = "slides">
-               <li><%= image_tag "slider1.jpg" %></li>
-               <li><%= image_tag "slider2.jpg" %></li>
-            </ul>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class = "single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
-          <!-- Single Gallery Item -->
-          <div class="single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-              <div class="single-portfolio-content">
-                  <%= image_tag 'noimage.jpg' %>
-              </div>
-          </div>
         </div>
       </main>
     </div>
