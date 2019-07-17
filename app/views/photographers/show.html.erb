@@ -6,19 +6,19 @@
     <div class = "col-xs-3 js-fullheight text-center">
       <%= image_tag 'noimage.jpg' %>
       <%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %>
-        <ul>
-          <li><p><%= @photographer.user.last_name %> <%= @photographer.user.first_name %></p></li>
-          <li>Contact</li>
-          <!-- SNS リンク -->
-          <li><a href = "#" class = "sns-btn"><i class = "fab fa-twitter-square"></i></a></li>
-          <li><a href = "#" class = "sns-btn"><i class = "fab fa-instagram"></i></a></li>
-          <li><a href ="#" class = "sns-btn"><i class = "fab fa-facebook-square"></i></a></li>
-      <!-- いいねボタン -->
-          <li><span id = "favorite_buttons_<%= @photographer.id %>"></span>
-            <%= render :partial => 'users/favorites/favorite', :locals => { photographer: @photographer} %>
-          </li>
-          </span>
-        </ul>
+        <p id = "fullname-users"><%= @photographer.user.last_name %> <%= @photographer.user.first_name %></p></li>
+        <!-- SNS リンク -->
+          <a href = "#" class = "sns-btn"><i class = "fab fa-twitter-square"></i></a>
+          <a href = "#" class = "sns-btn"><i class = "fab fa-instagram"></i></a>
+          <a href ="#" class = "sns-btn"><i class = "fab fa-facebook-square"></i></a>
+        <div class = "form-btn" id = "book-and-contact">
+          <%= link_to '問い合わせ', new_photographer_contact_path(@photographer), class: "btn btn-primary" %>
+          <%= link_to 'Book Now', new_photographer_book_path(@photographer), class: "btn btn-warning" %>
+        </div>
+        <!-- いいねボタン -->
+        <span id = "favorite_buttons_<%= @photographer.id %>">
+         <%= render :partial => 'favorites/favorite', :locals => { photographer: @photographer} %>
+        </span>
         <div class="form-btn">
           <%= link_to 'Book Now', new_photographer_book_path(@photographer), class: "btn btn-danger" %>
         </div>

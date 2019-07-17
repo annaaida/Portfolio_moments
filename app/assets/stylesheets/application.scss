@@ -88,7 +88,7 @@ header.transform {
   color: #FFF;
 }
 
- /*ユーザー　サインイン 兼 アカウント登録*/
+/*ユーザー　サインイン 兼 アカウント登録 */
 
 .main-section{
     background:url('../demo/imgpsh_fullsize.jpg') no-repeat;
@@ -115,8 +115,13 @@ header.transform {
     font-weight: 600;
 }
 
+.login-title {
+  font-family: 'Carter One', cursive;
+  font-size: 40px;
+}
+
 .login-image-main{
-    padding: 10px;
+    padding: 20px;
     border: 2px solid #ccc;
     border-radius:30px;
     box-shadow: 0 0 5px 0 #fff;
@@ -129,7 +134,8 @@ header.transform {
 }
 
 .input-group-text {
-  margin: 0 auto;
+  margin: 20px 0 20px 30px;
+  float: left;
 }
 
 .user-login-box,.last-part{
@@ -138,13 +144,13 @@ header.transform {
 
 .login-button {
   position: relative;
-  background-color: #f7d034;
+  background-color: #F9BF45;
   border-radius: 4px;
   color: #fff;
   line-height: 52px;
   -webkit-transition: none;
   transition: none;
-  box-shadow: 0 3px 0 #f7ba59;
+  box-shadow: 0 3px 0 #FFC408;
   text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
   width: 220px;
 }
