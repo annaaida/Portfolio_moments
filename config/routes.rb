@@ -35,7 +35,7 @@ Rails.application.routes.draw do
    get "/about" => "photographers#about"
    resources :photographers, except:[:index, :destroy] do
       get "/", to: "photographers#top"
-      get "/confirm", to: "photographers#confirm"
+      get "/confirm", to: "books#confirm"
       resources :books
       get "/books/:id/index" => "books#index", as: "books_index"
       resources :reviews

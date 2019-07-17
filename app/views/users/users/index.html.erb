@@ -28,15 +28,15 @@
          </ul>
      <% else %>
          <ul class = "nav navbar-nav navbar-right">
-           <li><%= new_user_registration_path do %>
+           <li><%= link_to new_user_registration_path do %>
                  <p><i class="fas fa-camera"></i>フォトグラファーをはじめる</p>
                <% end %>
            </li>
-           <li><%= new_user_session_path do %>
+           <li><%= link_to new_user_session_path do %>
                  <p><i class="fas fa-sign-in-alt"></i>ログイン</p>
                <% end %>
            </li>
-           <li><%= new_user_registration_path do %>
+           <li><%= link_to new_user_registration_path do %>
                  <p><i class="fas fa-user-plus"></i>アカウント登録</p>
                <% end %>
            </li>

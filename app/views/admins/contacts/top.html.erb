@@ -65,30 +65,92 @@
          </nav>
         </header>
         <!-- 新着メッセージ一覧 -->
-      <div class = "updates">
-        <div class = "row">
-          <div class = "main-upper">
-            <h3>新着予約情報</h3>
+        <div class = "updates">
+          <div class = "row">
+            <div class = "box-title"><p class = "history">新着予約情報</p></div>
+              <div class = "main-boxes">
+                <table class = "table table-hover">
+                  <thead>
+                     <tr>
+                      <th>image</th>
+                      <th>予約者</th>
+                      <th>日付</th>
+                      <th>時間</th>
+                      <th>待ち合わせ場所</th>
+                      <th>メッセージ</th>
+                      <th>予約状況</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                  <%# @bookings.each do |booking| %>
+                    <tr>
+                      <td><%#= attachment_image_tag , :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "noimage.jpg" %></td>
+                      <td><%#= booking.user.last_name %><%#= booking.user.first_name %></td>
+                      <td><%#= booking.date %></td>
+                      <td><%#= booking.time %></td>
+                      <td><%#= booking.meeting_spot %></td>
+                      <td><%#= booking.message %></td>
+                      <td><%#= booking.status %></td>
+                    </tr>
+                  <%# end %>
+                  </tbody>
+                </table>
+                <%#= paginate @bookings %>
+              </div>
           </div>
-        </div>
-        <div class = "row">
-          <div class = "main-lower">
-            <h3>最新のお問い合わせ</h3>
+        <!-- 新着問い合わせ一覧 -->
+          <div class = "row">
+            <div class = "box-title"><p class = "history">最新のお問い合わせ</p></div>
+              <div class = "main-boxes">
+                  <table class = "table">
+                    <thead>
+                       <tr>
+                        <th>image</th>
+                        <th>受信時刻</th>
+                        <th>ユーザー名</th>
+                        <th>タイトル</th>
+                        <th>内容</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                    <%# .each do |order| %>
+                      <tr>
+                        <td><%#= link_to order.id, order_path(order.id) %></td>
+                        <td><%#= order.shipping_status %></td>
+                        <td><%#= order.created_at.to_date %></td>
+                      </tr>
+                    <%# end %>
+                    </tbody>
+                  </table>
+                  <%#= paginate @#orders %>
+              </div>
           </div>
-        </div>
-        <div class = "row">
-          <div class = "main-lower">
-            <h3>最新のレビュー</h3>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "main-lower">
-            <h3>いいねしたユーザー</h3>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "main-lower">
-            <h3>ランキング順位？</h3>
+          <!-- 新着問い合わせ一覧 -->
+          <div class = "row">
+            <div class = "box-title"><p class = "history">新着ユーザー一覧</p></div>
+              <div class = "main-boxes">
+                  <table class = "table">
+                    <thead>
+                       <tr>
+                        <th>image</th>
+                        <th>受信時刻</th>
+                        <th>ユーザー名</th>
+                        <th>タイトル</th>
+                        <th>内容</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                    <%# .each do |order| %>
+                      <tr>
+                        <td><%#= link_to order.id, order_path(order.id) %></td>
+                        <td><%#= order.shipping_status %></td>
+                        <td><%#= order.created_at.to_date %></td>
+                      </tr>
+                    <%# end %>
+                    </tbody>
+                  </table>
+                  <%#= paginate @#orders %>
+              </div>
           </div>
         </div>
       </div>

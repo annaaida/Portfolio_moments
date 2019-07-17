@@ -5,7 +5,7 @@
 <br>
 <div class = "container">
   <div class = "row">
-   <%= form_for @country, url: edit_admins_country_path do |f| %>
+   <%= form_for @country, url: admins_country_path(@country) do |f| %>
     <div class = "row col-xs-offset-2">
      <div class = "img_form">
 	  <%= f.label "国の写真" %>

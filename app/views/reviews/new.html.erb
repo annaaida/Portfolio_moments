@@ -13,7 +13,7 @@
   <div class = "row">
     <div class = "col-xs-9">
       <div class = "review-form">
-        <%= form_for @review, url: new_photographer_review_path do |r| %>
+        <%= form_for @review, url: photographer_reviews_path do |r| %>
   　　       <div class = "form-group-name">
             <%= r.label :name, '投稿者名'  %>
             <%= r.text_field :name, class: 'form-control' %>

@@ -63,20 +63,20 @@
                      </tr>
                   </thead>
                   <tbody>
-                  <% #@bookings.each do |booking| %>
+                  <% @bookings.each do |booking| %>
                     <tr>
                       <td><%#= attachment_image_tag , :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "noimage.jpg" %></td>
-                      <td><%#= booking.photographer_id %></td>
-                      <td><%#= booking.date %></td>
-                      <td><%#= booking.time %></td>
-                      <td><%#= booking.meeting_spot %></td>
-                      <td><%#= booking.message %></td>
-                      <td><%#= booking.status %></td>
+                      <td><%= booking.photographer_id %></td>
+                      <td><%= booking.date %></td>
+                      <td><%= booking.time %></td>
+                      <td><%= booking.meeting_spot %></td>
+                      <td><%= booking.message %></td>
+                      <td><%= booking.status %></td>
                     </tr>
-                  <%# end %>
+                  <% end %>
                   </tbody>
                 </table>
-                <%#= paginate @bookings %>
+                <%= paginate @bookings %>
               </div>
         </div>
 　　　 </div>

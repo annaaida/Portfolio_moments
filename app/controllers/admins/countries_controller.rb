@@ -22,7 +22,7 @@ class Admins::CountriesController < ApplicationController
   private
 
   def country_params
-    params.require(:country).permit(:country_name)
+    params.require(:country).permit(:country_name, :country_img)
   end
 
 end
