@@ -1,31 +1,51 @@
-<header class = "navbar" id = "photographer-header">
-  <nav>
-    <ul class = "nav navbar-nav navbar-right">
-      <li><%= link_to root_path(current_user) do %>
-          <p><i class="fas fa-home"></i> マイページへ</p>
-        <% end %>
-      </li>
-      <li><%= link_to photographer_books_path(current_user) do %>
-           <p><i class="far fa-calendar-alt"></i> 予約一覧</p>
-          <% end %>
-      </li>
-      <li><%= link_to do %>
-           <p><i class="fas fa-inbox"></i> ユーザーからの問い合わせ </p>
-          <% end %>
-      </li>
-      <li><%= link_to edit_user_registration_path(current_user) do %>
-            <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
-          <% end %>
-      </li>
-      <li><%= link_to edit_admin_registration_path(current_admin) do %>
-          <p><i class="fas fa-user-cog"></i> 設定 </p>
-        <% end %>
-      </li>
-      <li><%= link_to destroy_admin_session_path, method: :delete do %>
-          <p><i class="fas fa-sign-out-alt"></i> ログアウト </p>
-        <% end %>
-      </li>
+<div class = "container-fluid">
+  <div class = "row">
+    <header class = "navbar" id = "photographer-mypage-header">
+      <nav>
+        <ul class = "nav navbar-nav navbar-right">
+          <li><%= link_to root_path(current_user) do %>
+              <p><i class="fas fa-home"></i> マイページへ</p>
+            <% end %>
+          </li>
+          <li><%= link_to photographer_books_path(current_user) do %>
+               <p><i class="far fa-calendar-alt"></i> 予約一覧</p>
+              <% end %>
+          </li>
+          <li><%= link_to do %>
+               <p><i class="fas fa-inbox"></i> ユーザーからの問い合わせ </p>
+              <% end %>
+          </li>
+          <li><%= link_to edit_user_registration_path(current_user) do %>
+                <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
+              <% end %>
+          </li>
+          <li><%= link_to edit_admin_registration_path(current_admin) do %>
+              <p><i class="fas fa-user-cog"></i> 設定 </p>
+            <% end %>
+          </li>
+          <li><%= link_to destroy_admin_session_path, method: :delete do %>
+              <p><i class="fas fa-sign-out-alt"></i> ログアウト </p>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+</div>
 
-    </ul>
-  </nav>
-</header>
+<script type="text/javascript">
+  $(function() {
+    var $win = $(window),
+        $header = $('header'),
+        animationClass = 'transform';
+
+    $win.on('load scroll', function() {
+      var value = $(this).scrollTop();
+      if ( value > 100 ) {
+        $header.addClass('transform');
+      } else {
+        $header.removeClass('transform');
+      }
+    });
+  });
+</script>
