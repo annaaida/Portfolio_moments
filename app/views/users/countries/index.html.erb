@@ -33,7 +33,10 @@
   	      <% end %>
         </div>
       </div>
-      <%= paginate @countries %>
+      <div class = "col-xs-offset-1">
+       <%= paginate @countries, class: "country-paginate" %>
+      </div>
     </main>
   </div>
 </div>
+<%= render 'layouts/users-footer' %>

@@ -7,4 +7,6 @@ class City < ApplicationRecord
   attachment :city_img
   attachment :profile_img
 
+  validates :city_name, presence: true
+
 end

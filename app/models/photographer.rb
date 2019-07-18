@@ -12,8 +12,10 @@ class Photographer < ApplicationRecord
   has_many :images, dependent: :destroy, inverse_of: :photographer
   accepts_nested_attributes_for :images, allow_destroy: true
 
-
   attachment :profile_img
+
+  validates :price, numericality: { only_integer: true }
+
 
  # フルネームを表示するためメソッドを定義
 
