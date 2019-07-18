@@ -1,7 +1,6 @@
 class Photographer < ApplicationRecord
 
   has_one :user, dependent: :destroy
-  has_one :image, dependent: :destroy
   has_many :users, through: :favorites
 
   has_many :city_photographers
@@ -9,6 +8,10 @@ class Photographer < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :books
   has_many :reviews, dependent: :destroy
+
+  has_many :images, dependent: :destroy, inverse_of: :photographer
+  accepts_nested_attributes_for :images, allow_destroy: true
+
 
   attachment :profile_img
 

@@ -11,7 +11,10 @@ class PhotographersController < ApplicationController
   def new
 
     @photographer = Photographer.new
-    @images = Image.new(photographer_id: @photographer.id)
+    @images = @photographer.images.build
+    # @images = Image.new(photographer_id: @photographer.id)
+
+    6.times { @photographer.images.build }
 
   end
 
@@ -40,7 +43,10 @@ class PhotographersController < ApplicationController
   def edit
 
     @photographer = Photographer.find(params[:id])
-    @images = Image.new(photographer_id: @photographer.id)
+    @images = @photographer.images.build
+    #@images = Image.new(photographer_id: @photographer.id)
+
+    6.times { @photographer.images.build }
 
   end
 
@@ -52,7 +58,7 @@ class PhotographersController < ApplicationController
   def photographer_params
     params.require(:photographer).permit(
       :price, :area, :mother_tongue, :language_1, :language_2, :introduction, :profile_img,
-      images_attributes:[:id, :image_1, :image_2, :image_3, :image_4, :image_5, :image_6]
+      images_attributes:[:id, :image, :image_number]
       )
   end
 
