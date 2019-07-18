@@ -91,7 +91,6 @@ header.transform {
 /*ユーザー　サインイン 兼 アカウント登録 */
 
 .main-section{
-    background:url('../demo/imgpsh_fullsize.jpg') no-repeat;
     background-size:100% 100%;
     margin: 0px;
     width: 100%;
@@ -172,9 +171,13 @@ header.transform {
 
 /*ユーザー 新規アカウント登録 (users/registrations/new.html.erb) */
 
-.new-account-address {
-  width: 250px;
-  height: 50px;
+
+.new-account-people {
+  text-align: center;
+}
+
+.photographer-check {
+  text-align: center;
 }
 
 .new-account-email {
@@ -182,25 +185,26 @@ header.transform {
 }
 
 .new-account-info1 {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .new-account-info2, .new-account-info4, .new-account-info5,
 .new-account-info6, .new-account-info7, .new-account-info8 {
   margin-bottom: 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .new-account-info3 {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .new-account-button {
   margin-top: 20px;
+  margin-left: 110px;
 }
 
 .new-account-box {
@@ -216,7 +220,6 @@ header.transform {
 .user-edit-form {
   width: 200px;
   height: 40px;
-
 }
 
 .user-edit {
@@ -232,7 +235,6 @@ header.transform {
   height: 3px;
   width: 50px;
   margin: 30px 0;
-
 }
 
 .col-xs-6 {

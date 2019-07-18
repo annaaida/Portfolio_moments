@@ -65,20 +65,22 @@ span {
 #country-show-img-box{
   position: relative;
   margin-bottom: 40px;
+  opacity: 0.6;
 }
 
 #country-show-img-box h1 {
   position: absolute;
   top: 120px;
-  left: 60px;
-  font-size: 60px;
+  left: 80px;
+  font-size: 80px;
+  font-family: 'Sigmar One', cursive;
+  color: #FFF;
 }
 
 .country-show-img {
-  height: 500px;
+  height: 400px;
   width: 100%;
   background-size: cover;
-  background-position: center;
 }
 
 #search-engine-country-show {

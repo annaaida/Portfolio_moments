@@ -2,7 +2,7 @@ class Users::CountriesController < ApplicationController
 
   def index
 
-  	@countries = Country.page(params[:page])
+  	@countries = Country.page(params[:page]).per(21)
 
   end
 
