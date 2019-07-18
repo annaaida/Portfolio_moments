@@ -9,7 +9,14 @@ class Admins::CitiesController < ApplicationController
   def create
 
     @city = City.new(city_params)
-    @city.save
+    @country = Country.find(params[:country_id])
+    @city.country_id = @country.id
+
+    if @city.save
+      redirect_to admins_cities_path(@country)
+    else
+      render :template => "admins/cities/new"
+    end
 
   end
 
@@ -32,7 +39,7 @@ class Admins::CitiesController < ApplicationController
   private
 
   def city_params
-    params.require(:city).permit(:city_name, :city_img, :about_city)
+    params.require(:city).permit(:country_id, :city_name, :city_img, :about_city)
   end
 
 end

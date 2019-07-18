@@ -11,7 +11,7 @@
         <table class =  "table">
           <tbody>
             <tr>
-              <td><%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
+              <td><%= attachment_image_tag @user, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
             </tr>
             <tr>
               <td><p id = "fullname"><%= current_user.last_name %> <%= current_user.first_name %>さん</p></td>
@@ -67,8 +67,9 @@
                     <tr>
                       <td><%#= attachment_image_tag , :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "noimage.jpg" %></td>
                       <td><%= booking.photographer_id %></td>
-                      <td><%= booking.date %></td>
-                      <td><%= booking.time %></td>
+                      <td><%= booking.date.strftime("%Y年%-m月%-d日") %></td>
+                      <td><%= booking.time %></td> 
+                      <!-- .strftime("%-H時%-M分%") -->
                       <td><%= booking.meeting_spot %></td>
                       <td><%= booking.message %></td>
                       <td><%= booking.status %></td>

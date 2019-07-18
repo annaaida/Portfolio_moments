@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 
 	 # ログイン後のリダイレクト先
      def after_sign_in_path_for(resource)
-    #    if photographer?
+    #    if 8?
 	   #   photographer_top_path
 	   # else
 	  	 users_users_path

@@ -1,38 +1,33 @@
 <!-- 国ごとの都市一覧 -->
-<!-- ヘッダー部分テンプレート -->
 <div class = "container-fluid">
   <div class = "row">
+    <!-- ヘッダー部分テンプレート -->
     <%= render 'layouts/users-header' %>
-  </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<!-- メイン画像と検索フォーム -->
-<div class = "container">
-  <div class = "row">
-    <div clas  = "main-image">
-        <%#= attachment_image_tag @country, :country_img, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size: "1000x500" %>
+    <!-- メイン背景イメージ -->
+    <div id  = "country-show-img-box">
+      <%= attachment_image_tag @country, :country_img, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", class: "country-show-img" %>
       <h1><%= @countries.country_name %></h1>
     </div>
   </div>
+</div>
+<!-- メイン画像と検索フォーム -->
+<div class = "container">
   <div class = "row">
-    <div class = "country-wrapper">
-      <div class = "search-engine">
-          <%= search_form_for @search, url: admins_cities_path do |f| %>
-            <%= f.search_field :city_name_cont, class: 'form-control', placeholder: "都市を検索", id: "search-engine-country-show" %>
-            <%= f.submit "search", class: "btn btn-default" %>
-          <% end %>
-      </div>
+    <div class = "search-engine">
+        <%= search_form_for @search, url: admins_cities_path do |f| %>
+          <%= f.search_field :city_name_cont, class: 'form-control', placeholder: "都市を検索", id: "search-engine-country-show" %>
+          <%= f.submit "search", class: "btn btn-default" %>
+        <% end %>
     </div>
   </div>
-  <div class = "row cities-box">
-    <% @cities.each do |city| %>
-      <div class = "city-index">
-        <%#= attachment_image_tag city, :city_img, :fill, 200, 200, format: 'jpeg', fallback: "no_img.jpg", size: "300x200" %><br>
-        <a class = "city_name"> <%= link_to city.city_name, users_city_path(city) %></a><br>
-      </div>
-    <% end %>
-  </div>
+  <div class = "country-wrapper">
+     <% @cities.each do |city| %>
+    　　<div class = "country-items-box">
+          <div class = "country-items">
+      　　　<%= attachment_image_tag city, :city_img, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size: "300x200" %><br>
+           <span class = "country_name"> <%= link_to city.city_name, users_city_path(city) %></span>
+    　　  </div>
+       </div>
+      <% end %>
+    </div>
 </div>
