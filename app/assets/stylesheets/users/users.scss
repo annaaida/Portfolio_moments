@@ -56,7 +56,6 @@
 	height: 400px;
 }
 
-
 .process-explanation {
 	color: #292b2c;
 	width: 300px;
@@ -64,25 +63,18 @@
 	text-align: center;
 }
 
-.occasions {
-	margin-top: 100px;
-}
-
-
-/* flex slider */
-
-.slides {
-	width: 100%;
-}
-
-/* review-slider */
-
-.review-slider {
-	background-image: url('assets/city-life.jpg');
-}
-
-.review-slider li {
-	text-align: center;
+.how-it-works-button {
+	position: relative;
+	background-color: #FC9F4D;
+	border-radius: 4px;
+	color: #fff;
+	line-height: 52px;
+	-webkit-transition: none;
+	transition: none;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
+	width: 220px;
+	margin-left: 80px;
+	margin-top: 20px;
 }
 
 /* show page (マイページ トップ) */

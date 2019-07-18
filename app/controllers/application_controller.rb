@@ -16,24 +16,24 @@ class ApplicationController < ActionController::Base
      # 新規登録後のリダイレクト先
      def after_sign_up_path_for(resource)
 	   # if photographer?
-	     # redirect_to new_photographer_path
+	     # new_photographer_path
 	   # else
-	  	 redirect_to users_users_path
+	  	 users_users_path
 	   # end
 	 end
 
 	 # ログイン後のリダイレクト先
      def after_sign_in_path_for(resource)
        # if photographer?
-	     # redirec_to photographer_top_path
+	     # photographer_top_path
 	   # else
-	  	 redirect_to users_users_path
+	  	 users_users_path
 	   #end
 	 end
 
 	 # ログアウト後のリダイレクト先
 	 def after_sign_out_path_for(resource)
-	 	redirect_to users_users_path
+	 	users_users_path
 	 end
 
 	 def configure_permitted_parameters

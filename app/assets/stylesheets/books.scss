@@ -121,33 +121,6 @@
 	transform: rotate(90deg);
 }
 
-.booking-form .form-label {
-	color: rgba(0, 0, 0, 0.2);
-	font-weight: 700;
-	position: absolute;
-	top: 20px;
-	left: 0px;
-	text-transform: uppercase;
-	line-height: 24px;
-	height: 23px;
-	font-size: 16px;
-	pointer-events: none;
-	-webkit-transition: 0.2s all;
-	transition: 0.2s all;
-}
-
-.booking-form .form-group .form-control:focus+.form-label {
-	top: 0px;
-	color: #2b9328;
-	font-size: 14px;
-}
-
-.booking-form .form-group.input-not-empty .form-label {
-	top: 0px;
-	color: #2b9328;
-	font-size: 14px;
-}
-
 .booking-form .submit-btn {
 	color: #fff;
 	background-color: #2b9328;
@@ -159,6 +132,7 @@
 	display: block;
 	width: 100%;
 	text-transform: capitalize;
+	margin-top: 10px;
 }
 
 /* index page */

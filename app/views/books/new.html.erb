@@ -10,13 +10,13 @@
 		    <!-- 左下 フォトグラファー情報 -->
             <div class = "row">
               <div class = "col-md-3">
-			    <%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %>
+			    <%= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120' %>
 		  	  </div>
 		  	  <div class = "col-md-2">
 		  	    <table class = "table">
 		          <tbody>
 		          	<tr>
-		  	          <th><%#= @photographer.user.last_name %> <%#= @photographer.user.first_name %></th>
+		  	          <th><%#= @photographer.users.last_name %> <%#= @photographer.user.first_name %></th>
 			        </tr>
 					<tr>
 		  			  <th><%#= @photographer.price %></th>
@@ -34,51 +34,33 @@
 			  <div class="row">
 				<div class="col-md-6">
 				  <div class="form-group">
-				  	<%= booking.text_field :date, id: "datepicker", class: "form-control"%>
-					<span class = "form-label">日付を選択</span>
+				  	<%= booking.text_field :date, id: "datepicker", placeholder: "日付を選択", class: "form-control"%>
 				  </div>
 				</div>
 				<div class="col-md-6">
 				  <div class="form-group">
-					<div class="form-group">
-				  	<%= booking.text_field :time, id: "timepicker", class: "form-control"%>
-					<span class="form-label">時間を選択</span>
+				  	<%= booking.text_field :time, id: "timepicker", placeholder: "時間を選択", class: "form-control"%>
 				  </div>
 				</div>
 			  </div>
 			  <div class="row">
-				<div class="col-md-12">
+			　　<div class="col-md-6">
+				　<div class="form-group">
+					<%= booking.text_field :contact_number, placeholder: "当日つながる電話番", class: "form-control"%>
+				　　</div>
+				</div>
+		      </div>
+		      <div class="row">
+				<div class="col-md-11">
 				  <div class="form-group">
-					<%= booking.text_field :meeting_spot, class: "form-control"%>
-					<span class="form-label">待ち合わせ場所</span>
+					<%= booking.text_area :meeting_spot, placeholder: "待ち合わせ場所", class: "form-control"%>
 				  </div>
 				</div>
 			  </div>
-			　<div class="row">
-			　　<div class="col-md-6">
-				　<div class="form-group">
-					<%= booking.text_field :contact_number, class: "form-control"%>
-					<span class="form-label">当日つながる電話番号</span>
-				　　</div>
-				</div>
-				<div class = "col-md-3 col-sm-6">
-				　<div class = "form-group">
-					<span class = "form-label">撮影人数</span>
-					<%= booking.select :people, [["1", "1"], ["2", "2"],  ["3", "3"], ["4", "4"],["5", "5"],["6", "6"],["7", "7"],["8", "8"],["9", "9"],["10", "10"],["10人以上", "10人以上"] ], class: "form-control", :include_blank => true %>
-					<!-- <select class="form-control"> -->
-					<!-- <option>1</option> -->
-					<!-- <option>2</option> -->
-					<!-- <option>3</option> -->
-					<!-- </select> -->
-					<!-- <span class="select-arrow"></span> -->
-				  </div>
-				</div>
-		      </div>
 			  <div class = "row">
-				<div class = "col-md-12">
+				<div class = "col-md-11">
 				  <div class = "form-group" >
-					<input class = "form-control" type = "text">
-					<span class = "form-label">メッセージ</span>
+					<%= booking.text_area :message, placeholder: "簡単な自己紹介と当日について", class: "form-control"%>
 				  </div>
 				</div>
 			  </div>
