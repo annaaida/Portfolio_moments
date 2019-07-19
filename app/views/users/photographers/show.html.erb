@@ -81,12 +81,14 @@
          <table class = "table review_table">
            <tr style = "background-color: #86A697;">
              <th style = "width:100px;"> 投稿者</th>
+             <th style = "width:200px;"></th>
              <th style = "width:200px;"> タイトル</th>
              <th style = "width:600px;"> 本文</th>
            </tr>
            <% @reviews.each do |r| %>
            <tr>
              <td><%= r.name %></td>
+             <td><%= r.created_at.strftime("%Y年%-m月%-d日") %> </td>
              <td><%= r.title %></td>
              <td class = "review_body"><%= r.body %></td>
            </tr>
