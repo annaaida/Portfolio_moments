@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :users do
-    get 'books/index'
-    get 'books/show'
-  end
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -31,6 +27,7 @@ Rails.application.routes.draw do
     resources :cities, only:[:show]
     resources :favorites, only:[:index]
     resources :photographers, only:[:show]
+    resources :books, only:[:index, :show]
     resources :contacts, only:[:new, :create]
     resources :countries, only:[:index, :show]
     resources :users, only:[:index, :show, :edit, :update]

@@ -9,8 +9,8 @@ class BooksController < ApplicationController
 
   def create
 
+    @booking = Book.new(booking_params)
   	@photographer = Photographer.find(params[:photographer_id])
-  	@booking = Book.new(booking_params)
     @booking.user_id = current_user.id
     @booking.photographer_id = @photographer.id
 
