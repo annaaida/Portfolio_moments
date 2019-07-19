@@ -25,7 +25,8 @@ class BooksController < ApplicationController
 
   def index
 
-    @bookings = Book.page(params[:page])
+    @photographer = Photographer.find_by(user_id: current_user.id)
+    @bookings = @photographer.books.page(params[:page]).per(50).order(id: "DESC")
 
   end
 
@@ -37,7 +38,6 @@ class BooksController < ApplicationController
 
   def confirm
 
-    # @booking = Book.find(params[:id])
     @bookid = params[:format]
     @photographerid = params[:photographer_id]
 
@@ -46,13 +46,25 @@ class BooksController < ApplicationController
   def edit
 
     @booking = Book.find(params[:id])
+    @photographer = Photographer.find(params[:photographer_id])
 
   end
 
   def update
+
+    booking = Book.find(params[:id])
+    booking.update(booking_params)
+    #redirect_to users_photographer_path(review.photographer)
+
   end
 
   def destroy
+
+    booking = Book.find(params[:id])
+    booking.destroy
+    photographer = Photographer.find(params[:photographer_id])
+    #redirect_to users_photographer_path(photographer)
+
   end
 
 

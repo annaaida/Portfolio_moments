@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   namespace :users do
-    get 'favorites/index'
+    get 'books/index'
+    get 'books/show'
   end
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
   namespace :users do
     root to: "users#index"
     resources :cities, only:[:show]
+    resources :favorites, only:[:index]
     resources :photographers, only:[:show]
     resources :contacts, only:[:new, :create]
     resources :countries, only:[:index, :show]

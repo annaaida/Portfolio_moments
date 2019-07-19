@@ -1,2 +1,38 @@
-<h1>Users::Favorites#index</h1>
-<p>Find me in app/views/users/favorites/index.html.erb</p>
+<!-- フォトグラファー 予約一覧ページ -->
+<!-- ヘッダー部分テンプレート -->
+<%= render 'layouts/users-header' %>
+<br>
+<br>
+<br>
+<br>
+<div class = "container">
+  <div class = "row">
+	<h1>お気に入り一覧</h1>
+	<table class = "table">
+		<tr>
+			<th></th>
+			<th> フォトグラファー</th>
+			<th> エリア</th>
+			<th> 値段</th>
+			<th> 自己紹介</th>
+			<th></th>
+		</tr>
+		<%# @favorites.each do |f| %>
+			<tr>
+				<td> <%#= %></td>
+				<td> <%#= .user.last_name %> <%#= booking.user.first_name %> </td>
+				<td> <%#= f.price %></td>
+				<td> <%#= .status %></td>
+				<td> <%#= booking.created_at.strftime("%Y/%-m/%-d") %></p>
+				<td> <%#= link_to "詳細", photographer_book_path(booking.photographer_id, booking), class: "btn btn-success" %></td>
+				<td><%#= link_to "編集", edit_photographer_book_path(booking.photographer_id, booking), class: "btn btn-warning" %></td>
+				<td><%#= link_to "削除", photographer_book_path(booking.photographer_id, booking), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %></td>
+			</tr>
+		<%# end %>
+		<%#= paginate @bookings, class: "paginate" %>
+	</table>
+  </div>
+</div>
+<%= render 'layouts/users-footer' %>
+
+
