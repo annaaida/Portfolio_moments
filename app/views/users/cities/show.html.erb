@@ -24,10 +24,10 @@
             <tbody>
             <% @photographer.each do |photo| %>
               <tr>
-                <td class = "contents"><%#= attachment_image_tag photo, :profile_img, :fill, 50, 50, format: 'jpeg', fallback: "noimage.jpg", size:'50x50' , users_photographer_path(photo) %></td>
-                <td class = "contents"><%= photo.photographer.user.last_name %><%= photo.photographer.user.first_name %></td>
-                <td class = "contents"><%= link_to photo.photographer.area, users_photographer_path(photo) %></td>
-                <td class = "contents"><%= photo.photographer.price %></td>
+                <td style = "width:150px;"><%= attachment_image_tag photo.photographer, :profile_img, :fill, 50, 50, format: 'jpeg', fallback: "noimage.jpg", size:'100x100' %></td>
+                <td style = "width:100px;"><%= link_to photo.photographer.user.last_name, users_photographer_path(photo) %><%= link_to photo.photographer.user.first_name, users_photographer_path(photo) %></td>
+                <td style = "width:100px;"><%= photo.photographer.price %></td>
+                <td class = "contents"><%= photo.photographer.introduction %></td>
               </tr>
             <% end %>
             </tbody>
