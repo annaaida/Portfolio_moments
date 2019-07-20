@@ -5,14 +5,17 @@
 /* new page */
 
 .main-visual {
-	background-image: url("<%= asset-path("help-desk") %>");
- 	height: 400px;
+	background-image: url("/asstes/helpdesk.jpg");
+ 	height: 500px;
  	background-size: cover;
- 	font-weight: 900;
-	font-size: 90px;
-	text-transform: uppercase;
-	color: #181818;
-	text-align: center;
+}
+
+.main-visual p {
+  font-weight: 900;
+  font-size: 90px;
+  text-transform: uppercase;
+  color: #181818;
+  text-align: center;
 }
 
 #contact-background {
@@ -55,7 +58,7 @@ textarea {
 .tape-box{
   margin: 1em 0;
   padding: 1em;
-  background-color: #ffce00;
+  background-color: #EBC073;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
 }
 

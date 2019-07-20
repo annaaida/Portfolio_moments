@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   namespace :users do
     root to: "users#index"
-    resources :cities, only:[:show]
+    resources :cities, only:[:index, :show]
     resources :favorites, only:[:index]
     resources :photographers, only:[:show]
     resources :books, only:[:index, :show]

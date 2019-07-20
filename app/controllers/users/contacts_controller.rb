@@ -9,12 +9,12 @@ class Users::ContactsController < ApplicationController
   def create
 
   	@contact = Contact.new(contact_params)
-	@contact.user_id = current_user.user_id
+	  @contact.user_id = current_user.user_id
 
-	if @contact.save!
+  	if @contact.save!
   		flash[:notice] = "送信に成功しました"
   		redirect_to user_path(current_user)
-  	else
+    else
   		flash[:notice] = "送信に失敗しました"
   		render("contacts/new")
     end

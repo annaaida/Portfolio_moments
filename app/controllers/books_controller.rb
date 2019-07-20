@@ -54,7 +54,7 @@ class BooksController < ApplicationController
 
     booking = Book.find(params[:id])
     booking.update(booking_params)
-    #redirect_to users_photographer_path(review.photographer)
+    redirect_to photographer_book_path(booking)
 
   end
 

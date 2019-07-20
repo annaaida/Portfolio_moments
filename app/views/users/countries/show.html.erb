@@ -14,7 +14,7 @@
     <!-- 検索フォーム -->
     <div class = "col-xs-offset-3">
       <div id = "search-engine-countries-index" >
-        <%= search_form_for @search, url: admins_cities_path do |f| %>
+        <%= search_form_for @search, url: users_cities_path do |f| %>
           <%= f.search_field :city_name_cont, class: 'form-control', placeholder: "都市を検索", id: "city-search" %>
           <%= f.submit "search", class: "btn btn-default" %>
         <% end %>

@@ -32,7 +32,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-  	params.require(:book).permit(:date, :time, :message, :meeting_spot, :total_price)
+  	params.require(:contacts).permit(:user_id, :photographer_id, :first_name, :last_name, :mail, :contact_title, :contact_contents)
   end
 
   def photographer_params

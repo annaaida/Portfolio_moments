@@ -7,7 +7,7 @@
 <div class = "container">
   <div class = "row">
 	<h1>予約編集</h1>
-	<%= form_for @booking, url: edit_photographer_book_path do |f| %>
+	<%= form_for @booking, url: photographer_book_path do |f| %>
 	    <div class = "input">
 	      <%= f.label :予約者 %>
 	      <%= f.text_field :user_id %>
@@ -22,7 +22,7 @@
 	    </div>
 	    <div class = "input">
 	      <%= f.label :時間 %>
-	      <%= f.text_field :time %>
+	      <%= f.text_field :start_time %><%= f.text_field :end_time %>
 	    </div>
 	    <div class = "input">
 	      <%= f.label :合計金額 %>
@@ -33,6 +33,7 @@
 	      <%= f.text_field :status %>
 	    </div>
 		<div><%#= link_to "削除", photographer_book_path(@booking.photographer_id, booking), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %></div>
+		<%= f.submit '編集完了', class: "btn btn-primary col-xs-2" %>
 	<% end %>
   </div>
 </div>
