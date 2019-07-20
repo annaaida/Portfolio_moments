@@ -39,14 +39,14 @@
 				</div>
 			  </div>
 			  <div class = "row">
-				<div class="col-md-5">
+				<div class="col-md-6">
 				  <div class="form-group">
-					<%= booking.text_field :start_time, id: "timepicker", placeholder: "開始時間を選択", class: "form-control"%>
+					<%= booking.text_field :start_time, id: "timepicker_start", placeholder: "開始時間を選択", class: "form-control"%>
 			      </div>
 			    </div>
-  				<div class="col-md-5">
+  				<div class="col-md-6">
 			      <div class="form-group">
-					<%= booking.text_field :end_time, id: "timepicker", placeholder: "終了時間を選択", class: "form-control"%>
+					<%= booking.text_field :end_time, id: "timepicker_end", placeholder: "終了時間を選択", class: "form-control"%>
 			      </div>
 				</div>
 			  </div>
@@ -58,14 +58,14 @@
 				</div>
 		      </div>
 		      <div class="row">
-				<div class="col-md-11">
+				<div class="col-md-12">
 				  <div class="form-group">
 					<%= booking.text_area :meeting_spot, placeholder: "待ち合わせ場所 ※ 住所で入力)", class: "form-control"%>
 				  </div>
 				</div>
 			  </div>
 			  <div class = "row">
-				<div class = "col-md-11">
+				<div class = "col-md-12">
 				  <div class = "form-group" >
 					<%= booking.text_area :message, placeholder: "簡単な自己紹介と当日について", class: "form-control"%>
 				  </div>
@@ -85,7 +85,13 @@
 <script type="text/javascript">
 	$(function() {
 	$('#datepicker').pickadate();
-	$("#timepicker").pickatime({
+	$("#timepicker_start").pickatime({
+		format: 'HH:i', //24時間表記
+		interval: 60, // 表示感覚
+		min: [08,00],
+		max: [18,00]
+	  });
+	$("#timepicker_end").pickatime({
 		format: 'HH:i', //24時間表記
 		interval: 60, // 表示感覚
 		min: [08,00],
