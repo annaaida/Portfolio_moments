@@ -5,8 +5,8 @@
   <div class = "row">
     <!-- メイン背景イメージ -->
     <div id  = "country-show-img-box">
-      <%= attachment_image_tag @countries, :country_img, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", class: "country-show-img" %>
-      <h1><%= @countries.country_name %></h1>
+      <%= attachment_image_tag @country, :country_img, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", class: "country-show-img" %>
+      <h1><%= @country.country_name %></h1>
     </div>
   </div>
   <!-- メイン画像と検索フォーム -->
@@ -14,7 +14,7 @@
     <!-- 検索フォーム -->
     <div class = "col-xs-offset-3">
       <div id = "search-engine-countries-index" >
-        <%= search_form_for @search, url: users_cities_path do |f| %>
+        <%= search_form_for @search, url: users_country_path(@country.id) do |f| %>
           <%= f.search_field :city_name_cont, class: 'form-control', placeholder: "都市を検索", id: "city-search" %>
           <%= f.submit "search", class: "btn btn-default" %>
         <% end %>

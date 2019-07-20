@@ -3,7 +3,8 @@ class BooksController < ApplicationController
   def new
 
   	@booking = Book.new
-    @photographer = @booking.photographer
+    @photographer = Photographer.find(params[:photographer_id])
+    @booking.photographer_id = params[:photographer_id]
 
   end
 

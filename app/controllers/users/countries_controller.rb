@@ -8,8 +8,16 @@ class Users::CountriesController < ApplicationController
 
   def show
 
-  	@countries = Country.find(params[:id])
-  	@cities = @countries.cities.page(params[:page]).per(21)
+  	@country = Country.find(params[:id])
+              @search = City.ransack(params[:q]) #(params[:q])に検索パラメーターが入る 検索する@searchオブジェクトを生成
+
+    if params[:q]
+    @cities = @search.result(distinct: true).page(params[:page]).per(20) #検索結果を表示する@resultオブジェクトを生成
+
+    else
+          @cities = @country.cities.page(params[:page]).per(21)
+
+    end
 
   end
 
