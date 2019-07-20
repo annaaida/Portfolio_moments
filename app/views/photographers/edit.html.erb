@@ -7,7 +7,7 @@
     <section class = "mypage clearfix">
       <h4 class = "photographer-edit">ポートフォリオ編集</h4>
     </section>
-   <%= form_for @photographer, url: photographers_path(@photographer) do |f| %>
+   <%= form_for @photographer do |f| %>
      <div class = "input">
       <%= f.label :プロフィール画像 %>
       <%= f.attachment_field :profile_img %>
@@ -40,7 +40,7 @@
      <!-- images 追加 -->
      <h3 class = "photographer-edit"> 画像追加 </h3>
      <div id = "images">
-      <%= form_for @images, url: admins_photographers_path do |i| %>
+      <%= f.fields_for :images do |i| %>
         <div class = "field">
          <%= i.attachment_field :image %>
         </div>

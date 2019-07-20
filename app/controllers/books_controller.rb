@@ -10,12 +10,12 @@ class BooksController < ApplicationController
   def create
 
     @booking = Book.new(booking_params)
-  	@photographer = Photographer.find(params[:photographer_id])
     @booking.user_id = current_user.id
-    @booking.photographer_id = @photographer.id
+    @booking.photographer_id = (params[:photographer_id])
+    @booking.status = "未撮影"
 
     if @booking.save
-      redirect_to photographer_confirm_path(@photographer.id,@booking.id)
+      redirect_to photographer_confirm_path((params[:photographer_id]),@booking.id)
     else
       render :new
     end
@@ -71,7 +71,7 @@ class BooksController < ApplicationController
   private
 
   def booking_params
-  	params.require(:book).permit(:date, :time, :message, :meeting_spot, :total_price)
+  	params.require(:book).permit(:date, :start_time, :end_time, :status, :message, :meeting_spot, :total_price)
   end
 
   def photographer_params

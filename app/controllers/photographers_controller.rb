@@ -51,6 +51,11 @@ class PhotographersController < ApplicationController
   end
 
   def update
+
+    @photographer = Photographer.find(params[:id])
+    @photographer.update(photographer_params)
+    # redirect_to
+
   end
 
   private

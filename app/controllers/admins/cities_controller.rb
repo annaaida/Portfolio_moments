@@ -39,7 +39,7 @@ class Admins::CitiesController < ApplicationController
 
     city = City.find(params[:id])
 
-    if @city.city.update(city_params)
+    if city.update(city_params)
       redirect_to admins_cities_path
     else
       render :template => "admins/cities/edit"
@@ -48,6 +48,12 @@ class Admins::CitiesController < ApplicationController
   end
 
   def destroy
+
+    city = City.find(params[:id])
+
+    if city.destroy
+      redirect_to admins_cities_path
+    end
   end
 
   private

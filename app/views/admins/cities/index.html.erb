@@ -17,7 +17,8 @@
       	<% @cities.each do |c| %>
       	 <tr>
       	  <td class = "countents"><%= c.city_name %></td>
-      	  <td class = "contents"><%= link_to 'edit', edit_admins_city_path(c.id), class: "review-button btn btn-success" %></td>
+      	  <td class = "contents"><%= link_to '編集', edit_admins_city_path(c.id), class: "review-button btn btn-success" %></td>
+          <td class = "contents"><%= link_to '削除', admins_city_path(c.id), method: :delete, class: "review-button btn btn-danger" %></td>
       	 </tr>
       	<% end %>
       	<%= paginate @cities, class: "paginate" %>

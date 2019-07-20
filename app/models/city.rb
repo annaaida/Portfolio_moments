@@ -5,7 +5,6 @@ class City < ApplicationRecord
   has_many :photographers, through: :city_photographers
 
   attachment :city_img
-  attachment :profile_img
 
   validates :city_name, presence: true
 
