@@ -21,7 +21,7 @@
 		<% @bookings.each do |booking| %>
 			<tr>
 				<td> <%= booking.id %></td>
-				<td> <%#= booking.user.last_name %> <%#= booking.user.first_name %> </td>
+				<td> <%= booking.user.last_name %> <%#= booking.user.first_name %> </td>
 				<td> <%= booking.date %></td>
 				<td> <%= booking.time %></td>
 				<td> <%= booking.total_price %></td>

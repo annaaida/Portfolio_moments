@@ -17,18 +17,16 @@
 			<th> 自己紹介</th>
 			<th></th>
 		</tr>
-		<%# @favorites.each do |f| %>
+		<% @favorites.each do |f| %>
 			<tr>
-				<td> <%#= %></td>
-				<td> <%#= .user.last_name %> <%#= booking.user.first_name %> </td>
-				<td> <%#= f.price %></td>
-				<td> <%#= .status %></td>
-				<td> <%#= booking.created_at.strftime("%Y/%-m/%-d") %></p>
-				<td> <%#= link_to "詳細", photographer_book_path(booking.photographer_id, booking), class: "btn btn-success" %></td>
-				<td><%#= link_to "編集", edit_photographer_book_path(booking.photographer_id, booking), class: "btn btn-warning" %></td>
-				<td><%#= link_to "削除", photographer_book_path(booking.photographer_id, booking), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %></td>
+				<td> <%= attachment_image_tag f.photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
+				<td> <%= f.user.last_name %> <%= f.user.first_name %> </td>
+				<td> <%= f.photographer.area %></td>
+				<td> <%= f.photographer.price %></td>
+				<td> <%= f.photographer.introduction %></td>
+				<td> <%#= link_to "詳細", users_photographer_path(photographer_id), class: "btn btn-success" %></td>
 			</tr>
-		<%# end %>
+		<% end %>
 		<%#= paginate @bookings, class: "paginate" %>
 	</table>
   </div>

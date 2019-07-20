@@ -17,12 +17,11 @@
                     <p><i class="fas fa-map-marked-alt"></i> 撮影場所をえらぶ </p>
                    <% end %>
                </li>
-               <li><%= link_to do %>
+               <li><%= link_to users_favorites_path(current_user) do %>
                     <p><i class="far fa-heart"></i> お気に入りリスト </p>
                    <% end %>
                </li>
                <li><%= link_to users_user_path(current_user) do %>
-                     <%#= attachment_image_tag current_user, :profile_img, :fill, 100, 100, format: 'jpeg', fallback: "noimage.jpg", size: 100x100 %>
                      <p>こんにちは、<%= current_user.first_name %>さん</p>
                    <% end %>
                </li>
