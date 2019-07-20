@@ -6,7 +6,7 @@
   	  <table class = "table history-details">
   	    <tr>
           <th>撮影日時</th>
-          <td><p><%= @booking.date %> <%= @booking.time %></td>
+          <td><p><%= @booking.date %> <%= @booking.start_time %>〜<%= @booking.end_time %></td>
         </tr>
         <tr>
           <th>発送したメッセージ</th>
@@ -15,10 +15,6 @@
         <tr>
           <th>待ち合わせ希望場所</th>
           <td><%= @booking.meeting_spot %></td>
-        </tr>
-        <tr>
-          <th>人数</th>
-          <td> <%= @booking.people %>人 </td>
         </tr>
         <tr>
           <th>合計金額</th>
