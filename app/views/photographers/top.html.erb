@@ -87,7 +87,7 @@
                     <td><%#= attachment_image_tag , :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "noimage.jpg" %></td>
                     <td><%= booking.user.last_name %><%= booking.user.first_name %></td>
                     <td><%= booking.date %></td>
-                    <td><%= booking.time %></td>
+                    <td><%#= booking.time %></td>
                     <td><%= booking.meeting_spot %></td>
                     <td><%= booking.message %></td>
                     <td><%= booking.status %></td>

@@ -31,16 +31,23 @@
 		<div class="col-md-6 col-md-offset-1">
 		  <div class="booking-form">
 		   <%= form_for @booking, url: photographer_books_path do |booking| %>
-			  <div class="row">
-				<div class="col-md-6">
-				  <div class="form-group">
+			  <div class = "row">
+				<div class= "col-md-12">
+				  <div class = "form-group">
 				  	<%= booking.text_field :date, id: "datepicker", placeholder: "日付を選択", class: "form-control"%>
 				  </div>
 				</div>
-				<div class="col-md-6">
+			  </div>
+			  <div class = "row">
+				<div class="col-md-5">
 				  <div class="form-group">
-				  	<%= booking.text_field :time, id: "timepicker", placeholder: "時間を選択", class: "form-control"%>
-				  </div>
+					<%= booking.text_field :start_time, id: "timepicker", placeholder: "開始時間を選択", class: "form-control"%>
+			      </div>
+			    </div>
+  				<div class="col-md-5">
+			      <div class="form-group">
+					<%= booking.text_field :end_time, id: "timepicker", placeholder: "終了時間を選択", class: "form-control"%>
+			      </div>
 				</div>
 			  </div>
 			  <div class="row">

@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     resources :books, only:[:index, :show]
     resources :contacts, only:[:new, :create]
     resources :countries, only:[:index, :show]
-    resources :users, only:[:index, :show, :edit, :update]
+    resources :user, only:[:index, :show, :edit, :update]
   end
 
    root to: "photographers#top"

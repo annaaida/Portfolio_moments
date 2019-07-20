@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 	# ユーザ登録、ログイン認証などが実行される前に、configure_permitted_parametersを実行
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	before_action :search
+	respond_to :html, :json
 
 	# ransack
 
@@ -24,11 +25,11 @@ class ApplicationController < ActionController::Base
 
 	 # ログイン後のリダイレクト先
      def after_sign_in_path_for(resource)
-       # if photographer?
-	     # photographer_top_path
-	   # else
+       if User.find(resource.id).photographer?
+	     photographer_path(resource.id)
+       else
 	  	 users_users_path
-	   #end
+       end
 	 end
 
 	 # ログアウト後のリダイレクト先

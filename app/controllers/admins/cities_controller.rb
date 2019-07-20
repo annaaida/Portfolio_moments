@@ -9,7 +9,7 @@ class Admins::CitiesController < ApplicationController
   def create
 
     @city = City.new(city_params)
-    @country = Country.find(params[:country_id])
+    @country = Country.find(params[:city][:country_id])
     @city.country_id = @country.id
 
     if @city.save

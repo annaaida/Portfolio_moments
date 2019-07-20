@@ -68,7 +68,7 @@
                       <td><%#= attachment_image_tag , :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "noimage.jpg" %></td>
                       <td><%= booking.photographer_id %></td>
                       <td><%= booking.date.strftime("%Y年%-m月%-d日") %></td>
-                      <td><%= booking.time %></td>
+                      <td><%#= booking.time %></td>
                       <!-- .strftime("%-H時%-M分%") -->
                       <td><%= booking.meeting_spot %></td>
                       <td><%= booking.message %></td>
