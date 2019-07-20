@@ -4,6 +4,7 @@
 <br>
 <br>
 <div class = "container">
+  <%= link_to '都市の一覧へ', admins_cities_path, class: "review-button btn btn-success" %>
   <div class = "row">
     <h2>都市を追加</h2>
   	  <%= form_for @city, url: admins_cities_path do |c| %>
@@ -22,7 +23,8 @@
        	 <%= c.label "都市の説明" %>
        	 <%= c.text_area :about_city %>
        </div>
-       <%= c.submit '追加' %>
+       <br>
+       <%= c.submit '追加', class: "btn btn-warning" %>
       <% end %>
   </div>
 </div>

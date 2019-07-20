@@ -22,15 +22,29 @@ class Admins::CitiesController < ApplicationController
 
   def index
 
+    @cities = City.page(params[:page])
+
   end
 
   def show
   end
 
   def edit
+
+    @city = City.find(params[:id])
+
   end
 
   def update
+
+    city = City.find(params[:id])
+
+    if @city.city.update(city_params)
+      redirect_to admins_cities_path
+    else
+      render :template => "admins/cities/edit"
+    end
+
   end
 
   def destroy
