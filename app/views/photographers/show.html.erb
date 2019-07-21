@@ -45,10 +45,9 @@
             </div>
           </div>
           <% end %>
-          </div>
         </div>
         <div class = "row">
-        <div id = "review-post">
+          <div id = "review-post">
           <% if user_signed_in? %>
             <% unless @photographer.reviewed_by?(current_user) %>
               <%= link_to "レビューを投稿する", new_photographer_review_path(@photographer), class: "review-button btn btn-success" %>
