@@ -4,8 +4,8 @@
 <br>
 <br>
 <div class = "container">
-  <%= link_to '都市の一覧へ', admins_cities_path, class: "review-button btn btn-success" %>
   <div class = "row">
+    <%= link_to '都市の一覧', admins_cities_path, class: "review-button btn btn-success" %>
     <h2>都市を追加</h2>
   	  <%= form_for @city, url: admins_cities_path do |c| %>
        <%= c.label :country_id %>
@@ -20,11 +20,13 @@
 	     <%= c.attachment_field :city_img %>
 	     </div>
 	     <div class = "input">
-       	 <%= c.label "都市の説明" %>
-       	 <%= c.text_area :about_city %>
+         <p><strong>都市の説明</strong></p>
+       	 <%= c.text_area :about_city, class: "about-city-form" %>
        </div>
-       <br>
-       <%= c.submit '追加', class: "btn btn-warning" %>
-      <% end %>
+  </div>
+  <div class = "row">
+    <%= c.submit '追加', class: "btn btn-warning city-add" %>
+    <% end %>
+  </div>
   </div>
 </div>

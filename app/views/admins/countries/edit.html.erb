@@ -8,9 +8,9 @@
    <%= form_for @country, url: admins_country_path(@country) do |f| %>
     <div class = "row col-xs-offset-2">
      <div class = "img_form">
-	  <%= f.label "国の写真" %>
+	  <%= f.label "国の写真", class: "country-image" %>
 	  <%= f.attachment_field :country_img %>
-	  <%= f.submit "編集完了", class: "btn btn-warning" %>
+	  <%= f.submit "編集完了", class: "btn btn-warning country-add" %>
    <% end %>
   </div>
 </div>

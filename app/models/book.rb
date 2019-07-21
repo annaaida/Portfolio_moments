@@ -8,6 +8,6 @@ class Book < ApplicationRecord
 	validates :end_time, presence:true
 	validates :message, presence:true
 	validates :meeting_spot, presence:true
-	# validates :contact_number, numericality: { only_integer: true }
+	validates :contact_number, numericality: { only_integer: true }
 
 end
