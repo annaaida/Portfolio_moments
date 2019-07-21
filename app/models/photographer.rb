@@ -14,7 +14,7 @@ class Photographer < ApplicationRecord
 
   attachment :profile_img
 
-  validates :price, numericality: { only_integer: true }
+  #validates :price, numericality: { only_integer: true }
 
 
  # フルネームを表示するためメソッドを定義

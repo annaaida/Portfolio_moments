@@ -1,7 +1,6 @@
 class Users::PhotographersController < ApplicationController
 
   def show
-
   	@user = current_user
   	@photographer = Photographer.find(params[:id])
   	@images = @photographer.images.each_with_object({}) { |i, hash| hash[i.image_number] = i }

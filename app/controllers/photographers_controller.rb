@@ -12,9 +12,9 @@ class PhotographersController < ApplicationController
 
     @photographer = Photographer.new
     @images = @photographer.images.build
-    # @images = Image.new(photographer_id: @photographer.id)
+    @images = Image.new(photographer_id: @photographer.id)
 
-    6.times { @photographer.images.build }
+    5.times { @photographer.images.build }
 
   end
 
@@ -22,10 +22,9 @@ class PhotographersController < ApplicationController
 
     @photographer = Photographer.new(photographer_params)
     @photographer.user_id = current_user.id
-
     if @photographer.save
       flash[:notice] = "フォトグラファー情報の登録が完了しました"
-      redirect_to photographers_photographers_path(@photographer)
+      redirect_to photographer_path(@photographer.id)
     end
 
   end
@@ -34,15 +33,18 @@ class PhotographersController < ApplicationController
 
     @user = current_user
     @photographer = Photographer.find(params[:id])
+    @photographer.user = User.find(@photographer.user_id)
+    # @images = @photographer.images.each_with_object({}) { |i, hash| hash[i.image_number] = i }
+    @images = @photographer.images.order(image_number: :DESC)
+    @reviews = @photographer.reviews.page(params[:page]).per(10)
+
 
   end
 
   def edit
 
     @photographer = Photographer.find(params[:id])
-    @images = @photographer.images.build
-    #@images = Image.new(photographer_id: @photographer.id)
-
+    #@images = @photographer.images.build
     #6.times { @photographer.images.build }
 
   end
@@ -51,7 +53,7 @@ class PhotographersController < ApplicationController
 
     @photographer = Photographer.find(params[:id])
     @photographer.update(photographer_params)
-    redirect_to edit_photographer_path(@photographer)
+    redirect_to controller: 'photographers', action: 'show', id: params[:id]
 
   end
 

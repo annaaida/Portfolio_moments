@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
    root to: "photographers#top"
    resources :photographers, except:[:index, :destroy] do
-      get "/", to: "photographers#top"
+      get "/top", to: "photographers#top"
       get "/confirm", to: "books#confirm"
       resources :books
       get "/books/:id/index" => "books#index", as: "books_index"
