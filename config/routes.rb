@@ -29,7 +29,6 @@ Rails.application.routes.draw do
   end
 
    root to: "photographers#top"
-   get "/about" => "photographers#about"
    resources :photographers, except:[:index, :destroy] do
       get "/", to: "photographers#top"
       get "/confirm", to: "books#confirm"

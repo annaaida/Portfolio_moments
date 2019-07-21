@@ -38,7 +38,7 @@
      <!-- images 追加 -->
      <h3> 画像追加 </h3>
 	   <div id = "images">
-	    <%= form_for @images, url: new_photographer_path do |i| %>
+	    <%= fields_for @images do |i| %>
 	      <div class = "field">
 	       <%= i.attachment_field :image %>
 	      </div>

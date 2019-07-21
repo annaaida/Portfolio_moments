@@ -30,9 +30,6 @@ class PhotographersController < ApplicationController
 
   end
 
-  def about
-  end
-
   def show
 
     @user = current_user
@@ -46,7 +43,7 @@ class PhotographersController < ApplicationController
     @images = @photographer.images.build
     #@images = Image.new(photographer_id: @photographer.id)
 
-    6.times { @photographer.images.build }
+    #6.times { @photographer.images.build }
 
   end
 
@@ -54,7 +51,7 @@ class PhotographersController < ApplicationController
 
     @photographer = Photographer.find(params[:id])
     @photographer.update(photographer_params)
-    # redirect_to
+    redirect_to edit_photographer_path(@photographer)
 
   end
 

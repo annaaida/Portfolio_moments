@@ -30,7 +30,7 @@
 	    </div>
 	    <div class = "input">
 	      <%= f.label :予約状況 %>
-	      <%= f.text_field :status %>
+	      <%= f.select :status, [["予約承認完了", "予約承認完了"],["撮影完了", "撮影完了"],["キャンセル", "キャンセル"]] %>
 	    </div>
 		<div><%#= link_to "削除", photographer_book_path(@booking.photographer_id, booking), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %></div>
 		<%= f.submit '編集完了', class: "btn btn-primary col-xs-2" %>

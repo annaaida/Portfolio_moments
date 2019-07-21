@@ -4,7 +4,7 @@ class Users::PhotographersController < ApplicationController
 
   	@user = current_user
   	@photographer = Photographer.find(params[:id])
-  	@images = @photographer.images
+  	@images = @photographer.images.each_with_object({}) { |i, hash| hash[i.image_number] = i }
   	@reviews = @photographer.reviews.page(params[:page]).per(10)
 
   end

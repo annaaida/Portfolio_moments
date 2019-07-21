@@ -24,7 +24,7 @@
 				<td> <%= f.photographer.area %></td>
 				<td> <%= f.photographer.price %></td>
 				<td> <%= f.photographer.introduction %></td>
-				<td> <%= link_to "詳細", users_photographer_path(@favorites), class: "btn btn-success" %></td>
+				<td> <%= link_to "詳細", users_photographer_path(f.photographer_id), class: "btn btn-success" %></td>
 			</tr>
 		<% end %>
 		<%= paginate @favorites, class: "paginate" %>

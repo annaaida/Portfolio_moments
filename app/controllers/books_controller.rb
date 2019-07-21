@@ -13,7 +13,7 @@ class BooksController < ApplicationController
     @booking = Book.new(booking_params)
     @booking.user_id = current_user.id
     @booking.photographer_id = (params[:photographer_id])
-    @booking.status = "未撮影"
+    @booking.status = "予約申請中"
 
     if @booking.save
       redirect_to photographer_confirm_path((params[:photographer_id]),@booking.id)
