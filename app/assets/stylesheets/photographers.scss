@@ -146,6 +146,14 @@ p {
     width: 150px;
 }
 
+.images_wrapper {
+    width: 750px;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .col-xs-3 {
     position: absolute;
     padding-top: 3em;

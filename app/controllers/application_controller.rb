@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
      # 新規登録後のリダイレクト先
      def after_sign_up_path_for(resource)
 	   if User.find(resource.id).photographer?
-	     new_photographer_path
+	     new_photographer_path(resource.id)
 	   else
 	  	 users_root_path
 	   end
