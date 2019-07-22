@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'photographer_contacts/new'
-  get 'photographer_contacts/create'
-  get 'photographer_contacts/index'
-  get 'photographer_contacts/show'
   devise_for :users
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
@@ -40,7 +36,8 @@ Rails.application.routes.draw do
       get "/books/:id/index" => "books#index", as: "books_index"
       resources :reviews
       resource :favorites, only:[:create, :destroy]
-      resources :contacts, except:[:edit, :update, :destroy]
+      resources :photographer_contacts, except:[:edit, :update, :destroy]
+
    end
 
 end
