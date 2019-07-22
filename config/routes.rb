@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'photographer_contacts/new'
+  get 'photographer_contacts/create'
+  get 'photographer_contacts/index'
+  get 'photographer_contacts/show'
   devise_for :users
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
