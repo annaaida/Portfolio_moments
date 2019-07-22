@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     root to: "contacts#top"
     resources :users
     resources :cities
-    resources :photographers
     resources :books, except:[:new, :create]
     resources :contacts, except:[:edit, :update]
+    resources :photographers, except:[:edit, :update]
     resources :countries, only:[:index, :edit, :update]
   end
 

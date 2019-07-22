@@ -5,6 +5,19 @@ class ApplicationController < ActionController::Base
 
     # 合計価格関数
 
+    def calculation
+
+		@book = current_user.book
+
+		@book.each do |book|
+		  @get_total_price = (book.start_time + book.end_time) * book.photographer.price
+		end
+
+		@tax = (@get_total_price * 0.08).floor
+		@final_price = @get_total_price + @tax
+
+	end
+
     protected
 
      # 新規登録後のリダイレクト先

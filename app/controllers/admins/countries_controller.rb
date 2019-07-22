@@ -16,6 +16,7 @@ class Admins::CountriesController < ApplicationController
 
   	country = Country.find(params[:id])
   	country.update(country_params)
+    redirect_to admins_countries_path(country)
 
   end
 

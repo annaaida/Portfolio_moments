@@ -6,13 +6,8 @@
 
 #right-header {
 	background-color: #ccb78f;
-	padding: 40px 0 40px 130px;
-	height: 200px;
-}
-
-#contact-new-right {
-	width: 80%;
-	float: right;
+	padding: 100px 0 40px 130px;
+	height: 250px;
 }
 
 #contact-new-left {
@@ -27,13 +22,9 @@
 }
 
 #right-head-contents {
-	padding: 50px 0 0 70px;
-}
-
-.contact-new-boxes {
-	padding: 4rem !important;
-	margin: 20px;
-	background-color: #f8f9fa;
+	padding: 100px 0 0 100px;
+	background-color: #e5dace;
+	height: 500px;
 }
 
 .breadcrumbs{
@@ -60,10 +51,13 @@ p, span {
     border-radius: 0px !important;
 }
 
-.btn.btn-primary {
-    background: #ccb78f;
-    border: 1px solid #ccb78f;
-    color: #fff;
+.contact-information {
+  margin: 3px;
+}
+
+textarea {
+	width: 400px;
+	height: 100px;
 }
 
 

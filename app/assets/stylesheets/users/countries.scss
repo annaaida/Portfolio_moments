@@ -9,7 +9,6 @@
   background-image: url("/assets/photographer.jpg");
   background-size: cover;
   background-position: center;
-  margin-bottom: 30px;
 }
 
 .main-image h1 {
@@ -17,16 +16,6 @@
   padding: 60px 80px;
   font-family: 'Sigmar One', cursive;
   color: #FFF;
-}
-
-#city-search {
-  height: 40px;
-}
-
-#search-engine-countries-index input{
-  float: left;
-  height: 40px;
-  margin-left: 10px;
 }
 
 span {
@@ -44,6 +33,7 @@ span {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 30px;
 }
 
 .country-items-box {
@@ -87,12 +77,14 @@ span {
   background-size: cover;
 }
 
-#search-engine-country-show {
-  width: 1000px;
-  margin: 0 auto;
+#search-engine-countries-index {
+  margin-left: 370px;
 }
 
-.search-engine input{
-  float:left;
+#search-engine-countries-index input{
+  float: left;
+  height: 40px;
+  margin-left: 10px;
 }
+
 

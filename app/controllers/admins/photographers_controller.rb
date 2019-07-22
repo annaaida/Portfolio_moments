@@ -1,22 +1,26 @@
 class Admins::PhotographersController < ApplicationController
 
   def index
+
+    @photographers = Photographer.page(params[:page]).per(50)
+
   end
 
   def show
-  end
 
-  def edit
-  end
+    @photographers = Photographer.find(params[:id])
 
-  def update
   end
 
   def destroy
+
+    photographer = Photographer.find(params[:id])
+    photographer.destroy
+    redirect_to admins_photographers_path, notice: "削除しました"
   end
 
   def user_params
-    params.require(:user).permit(:last_name, :first_name, :kana_last_name, :kana_first_name, :email)
+    params.require(:photographer).permit(:user_id, :price, :area, :mother_tongue, :language_1, :language_2, :introduction, :profile_img)
   end
 
 end

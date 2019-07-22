@@ -1,17 +1,6 @@
+<%= render 'layouts/users-header' %>
 <div class = "container-fluid">
   <div class = "row">
-    <div class = "js-fullheight" id = "contact-new-left">
-    	<table class =  "table" id = "photographer-info">
-          <tbody>
-            <tr>
-              <td><%= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
-            </tr>
-            <tr>
-              <td><p id = "fullname"><%#= @photographer.user.last_name %> <%#= @photographer.user.first_name %></p></td>
-            </tr>
-          </tbody>
-        </table>
-    </div>
 	<div id = "contact-new-right">
 		<div class = "container-fluid" id = "right-header">
 		  <p class = "breadcrumbs">
@@ -20,23 +9,25 @@
 		  </p>
 		  <h1 class = "bread"> Contact </h1>
 		</div>
-		<div class = "container" id = "right-head-contents">
-	       <div class = "row">
-			 <div class = "col-xs-5 contact-new-boxes">
-				<div class="form-group">
-				  <%= form_for @contact, url: photographer_contacts_path do |f| %>
-  			          <%= f.text_field :last_name, placeholder: "姓" %>
-  			          <%= f.text_field :first_name, placeholder: "名" %><br>
-				      <%= f.email_field :mail, placeholder: "メールアドレス" %><br>
-		    		  <%= f.text_field :contact_title, placeholder: "件名" %><br>
-		    		  <%= f.text_area :contact_contents, placeholder: "お問い合わせ内容" %>
-	      			  <%= f.submit '送信', class: "btn btn-success col-xs-2" %>
-	      		  <% end %>
-				</div>
-			</div>
-		  </div>
-  	    </div>
-  	</div>
+	</div>
+  </div>
+  <div class = "row" id = "right-head-contents">
+	 <div class = "col-xs-5 contact-new-boxes">
+		<div class="form-group">
+		<%= form_for @contact, url: photographer_contacts_path do |f| %>
+	        <%= f.text_field :last_name, placeholder: "姓", class: "contact-information" %><%= f.text_field :first_name, placeholder: "名", class: "contact-information" %><br>
+	        <%= f.email_field :mail, placeholder: "メールアドレス", class: "contact-information" %><br>
+	        <%= f.text_field :contact_title, placeholder: "件名", class: "contact-information" %><br>
+	        <%= f.text_area :contact_contents, placeholder: "お問い合わせ内容", class: "contact-information" %><br>
+	        <%= f.submit '送信', class: "btn btn-success col-xs-2" %>
+        <% end %>
+		</div>
+	 </div>
+	 <div class = "col-xs-5">
+	 	<p>フォトグラファーよりご記入のメールアドレスに返信いたします</p>
+	 	<p>管理人へのお問い合わせは下記よりお願いいたします</p>
+	 	<%=link_to "お問い合わせ", new_users_contact_path, class: "btn btn-warning" %></h5>
+	 </div>
   </div>
 </div>
 <!-- ユーザーフッター部分テンプレート -->
