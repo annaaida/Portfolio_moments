@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 	 # ログイン後のリダイレクト先
      def after_sign_in_path_for(resource)
        if User.find(resource.id).photographer?
-	     photographer_path(resource.id)
+	     photographer_top_path(resource.id)
        else
 	  	 users_root_path
        end

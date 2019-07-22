@@ -45,7 +45,7 @@
           <p><%= i %> 位　</p>
           <%= attachment_image_tag photographer, :profile_img, :fill, 80, 80, fallback: "noimage.jpg", size: "80x80" %>
           <div class = "right">
-              <span><%#= link_to photographer.users.first_name %></span><br>
+              <span><%#= link_to photographer.user.first_name %></span><br>
               <p class = "details-rank"><%= number_with_delimiter(photographer.price) %>円 / 1時間</p>
           </div>
         </div>

@@ -34,7 +34,6 @@ class PhotographersController < ApplicationController
     @user = current_user
     @photographer = Photographer.find(params[:id])
     @photographer.user = User.find(@photographer.user_id)
-    # @images = @photographer.images.each_with_object({}) { |i, hash| hash[i.image_number] = i }
     @images = @photographer.images.order(image_number: :DESC)
     @reviews = @photographer.reviews.page(params[:page]).per(10)
 

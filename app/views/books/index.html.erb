@@ -25,7 +25,7 @@
 				<td> <%= booking.id %></td>
 				<td> <%= booking.user.last_name %> <%= booking.user.first_name %> </td>
 				<td> <%= booking.date %></td>
-				<td> <%#= booking.time %></td>
+				<td> <%= booking.start_time.to_time.strftime("%-H時%-M分") %>〜<%= booking.end_time.to_time.strftime("%-H時%-M分") %></td>
 				<td> <%= booking.total_price %></td>
 				<td> <%= booking.status %></td>
 				<td> <%= booking.created_at.strftime("%Y/%-m/%-d") %></p>

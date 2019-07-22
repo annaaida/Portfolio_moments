@@ -6,7 +6,7 @@
   	  <table class = "table history-details">
   	    <tr>
           <th>撮影日時</th>
-          <td><p><%= @booking.date %> <%= @booking.start_time %>〜<%= @booking.end_time %></td>
+          <td><p><%= @booking.date %> <%= booking.start_time.to_time.strftime("%-H時%-M分") %>〜<%= booking.end_time.to_time.strftime("%-H時%-M分") %></td>
         </tr>
         <tr>
           <th>発送したメッセージ</th>

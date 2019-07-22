@@ -11,7 +11,7 @@
         <table class =  "table">
           <tbody>
             <tr>
-              <td><%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
+              <td><%= attachment_image_tag @user, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
             </tr>
             <tr>
               <td><p id = "fullname"><%= current_user.last_name %> <%= current_user.first_name %>さん</p></td>
@@ -37,7 +37,11 @@
                   <% end %>
               </li>
               <li><%= link_to edit_user_registration_path do %>
-                    <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
+                   <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
+                  <% end %>
+              </li>
+              <li><%= link_to photographer_top_path(@photographer) do %>
+                    <p><i class="fas fa-camera-retro"></i> フォトグラファーマイページ </p>
                   <% end %>
               </li>
              </ul>
