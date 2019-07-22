@@ -1,5 +1,4 @@
-class PhotographerContactsController < ApplicationController
-
+class PhotographerContactsController < ApplicationControlle
   def new
 
   	@contact = Contact.new
