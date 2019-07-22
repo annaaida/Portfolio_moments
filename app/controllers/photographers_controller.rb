@@ -43,7 +43,7 @@ class PhotographersController < ApplicationController
 
     @photographer = Photographer.find(params[:id])
     #@images = @photographer.images.build
-    #6.times { @photographer.images.build }
+    # 6.times { @photographer.images.build }
 
   end
 

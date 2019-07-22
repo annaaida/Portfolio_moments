@@ -5,7 +5,7 @@
   <div class = "row">
     <!-- メイン背景イメージ -->
     <div id  = "country-show-img-box">
-      <%= attachment_image_tag @country, :country_img, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", class: "country-show-img" %>
+      <%= attachment_image_tag @country, :country_img, :fill, 1000, 500, format: 'jpeg', fallback: "no_image.jpg", class: "country-show-img" %>
       <h1><%= @country.country_name %></h1>
     </div>
   </div>

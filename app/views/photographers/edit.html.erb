@@ -6,4 +6,55 @@
 		<h4 class = "user-edit">フォトグラファー情報の編集</h4>
 	</div>
 </div>
-<%= render 'photographers/nested-form' %>
+<div class = "container">
+  <div class = "row">
+   <%= form_for @photographer do |f| %>
+     <div class = "input">
+      <%= f.label :プロフィール画像 %>
+      <%= f.attachment_field :profile_img %>
+     </div>
+     <div class = "input">
+      <%= f.label :一時間あたりの値段 %>
+      <%= f.text_field :price, autofocus: true %>
+     </div>
+     <div class = "input">
+      <%= f.label :対応可能エリア %>
+      <%= f.text_field :area, autofocus: true %>
+     </div>
+     <div class = "input">
+      <%= f.label :母国語 %>
+      <%= f.text_field :mother_tongue, autofocus: true %>
+     </div>
+     <div class = "input">
+      <%= f.label :話せる言語1 %>
+      <%= f.text_field :language_1, autofocus: true %>
+     </div>
+     <div class = "input">
+      <%= f.label :話せる言語2 %>
+      <%= f.text_field :language_2, autofocus: true %>
+     </div>
+     <div class = "input">
+      <%= f.label :自己紹介 %>
+      <%= f.text_field :introduction, autofocus: true %>
+     </div>
+
+     <!-- images 追加 -->
+     <h3 class = "photographer-edit"> 画像追加 </h3>
+     <div id = "images">
+      <%= f.fields_for :images do |i| %>
+        <div class = "nested-fields">
+	<div class = "field">
+	 <%= i.attachment_field :image %><%= attachment_image_tag i.object, :image, :fill, 100, 100, format: 'jpeg', fallback: "noimage.jpg" %>
+	</div>
+	<div class = "field">
+	 <%= i.select :image_number, [["1", "1"], ["2", "2"],  ["3", "3"], ["4", "4"],["5", "5"],["6", "6"]], class: "form-control", :prompt => "画像の位置を選択" %>
+	</div>
+</div>
+      <% end %>
+     </div>
+     <div class = "actions">
+     <%= f.submit '編集完了', class: "btn btn-primary col-xs-2" %>
+   <% end %>
+  </div>
+</div>
+

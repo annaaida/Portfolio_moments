@@ -15,7 +15,7 @@
   	     <% @countries.each do |country| %>
     		　　<div class = "country-items-box">
               <div class = "country-items">
-    			　　　<%= attachment_image_tag country, :country_img, :fill, 400, 300, format: 'jpeg', fallback: "no_image.jpg", size: "400x300" %><br>
+    			　　　<%= attachment_image_tag country, :country_img, :fill, 400, 400, format: 'jpeg', fallback: "no_image.jpg", size: "400x300" %><br>
     			　　　<span class = "country_name"> <%= link_to country.country_name, users_country_path(country) %></span>
     		　　  </div>
            </div>

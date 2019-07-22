@@ -5,7 +5,7 @@
     <%= render 'layouts/users-header' %>
     <!-- メイン背景イメージ -->
     <div id  = "country-show-img-box">
-      <%= attachment_image_tag @city, :city_img, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", class: "city-show-img" %>
+      <%= attachment_image_tag @city, :city_img, :fill, 1000, 400, format: 'jpeg', fallback: "no_image.jpg", class: "city-show-img" %>
       <h1><%= @city.city_name %></h1>
     </div>
   </div>
