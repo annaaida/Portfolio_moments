@@ -30,10 +30,9 @@ class PhotographersController < ApplicationController
   end
 
   def show
-
     @user = current_user
     @photographer = Photographer.find(params[:id])
-    @photographer.user = User.find(@photographer.user_id)
+    # @photographer.user = User.find(@photographer.user_id)
     @images = @photographer.images.order(image_number: :DESC)
     @reviews = @photographer.reviews.page(params[:page]).per(10)
 

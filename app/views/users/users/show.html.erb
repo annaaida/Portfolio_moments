@@ -40,10 +40,18 @@
                    <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
                   <% end %>
               </li>
+              <% if current_user.photographer_id.present? %>
               <li><%= link_to photographer_top_path(@photographer) do %>
                     <p><i class="fas fa-camera-retro"></i> フォトグラファーマイページ </p>
                   <% end %>
+              <% end %>
               </li>
+              <% unless current_user.photographer_id? %>
+              <li><%= link_to new_photographer_path do %>
+                <p><i class="fas fa-user-cog"></i> フォトグラファー情報新規作成 </p>
+                <% end %>
+              </li>
+          <% end %>
              </ul>
           </div>
         </div>

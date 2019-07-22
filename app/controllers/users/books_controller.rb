@@ -8,7 +8,7 @@ class Users::BooksController < ApplicationController
 
   def show
 
-  	@booking = Book.find(params[:id])
+  	@booking = Book.find(params[:format])
 
   end
 

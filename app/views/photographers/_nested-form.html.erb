@@ -1,8 +1,5 @@
 <div class = "container">
   <div class = "row">
-    <section class = "mypage clearfix">
-      <h4 class = "photographer-edit">ポートフォリオ編集</h4>
-    </section>
    <%= form_for @photographer do |f| %>
      <div class = "input">
       <%= f.label :プロフィール画像 %>
@@ -27,7 +24,7 @@
      <div class = "input">
       <%= f.label :話せる言語2 %>
       <%= f.text_field :language_2, autofocus: true %>
-     </div>s
+     </div>
      <div class = "input">
       <%= f.label :自己紹介 %>
       <%= f.text_field :introduction, autofocus: true %>

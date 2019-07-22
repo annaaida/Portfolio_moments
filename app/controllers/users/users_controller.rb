@@ -10,7 +10,7 @@ class Users::UsersController < ApplicationController
 
     @user = current_user
     @bookings = @user.books.page(params[:page]).per(10).order(id: "DESC")
-    @photographer = Photographer.find_by(user_id: current_user.id)
+ 	@photographer = Photographer.find_by(user_id: current_user.id)
 
   end
 

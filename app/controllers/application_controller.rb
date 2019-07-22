@@ -20,22 +20,10 @@ class ApplicationController < ActionController::Base
 
     protected
 
-     # 新規登録後のリダイレクト先
-     def after_sign_up_path_for(resource)
-	   if User.find(resource.id).photographer?
-	     new_photographer_path(resource.id)
-	   else
-	  	 users_root_path
-	   end
-	 end
-
+	 # 新規登録後のリダイレクト先
 	 # ログイン後のリダイレクト先
      def after_sign_in_path_for(resource)
-       if User.find(resource.id).photographer?
-	     photographer_top_path(resource.id)
-       else
-	  	 users_root_path
-       end
+   	   users_users_path
 	 end
 
 	 # ログアウト後のリダイレクト先
