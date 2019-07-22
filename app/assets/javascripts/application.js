@@ -17,6 +17,8 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require cocoon
+//= require select2
+//= require select2-bootstrap
 //= require pickdate/legacy
 //= require pickdate/picker
 //= require pickdate/picker.date
