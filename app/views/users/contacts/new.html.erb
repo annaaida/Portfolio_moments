@@ -16,7 +16,7 @@
       <br>
       <br>
   		<h2 class = "contact-and-business-time clearfix">Contact us</h2>
-  		<%= form_for @contact, url: users_contacts_path do |f| %>
+  		<%= form_for [:user, @contact], url: users_contacts_path do |f| %>
         <%= f.text_field :last_name, placeholder: "姓", class: "contact-information" %><%= f.text_field :first_name, placeholder: "名", class: "contact-information" %><br>
         <%= f.email_field :mail, placeholder: "メールアドレス", class: "contact-information" %><br>
         <%= f.text_field :contact_title, placeholder: "件名", class: "contact-information" %><br>

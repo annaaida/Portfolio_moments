@@ -1,4 +1,5 @@
 class PhotographerContactsController < ApplicationControlle
+
   def new
 
   	@contact = Contact.new
@@ -14,7 +15,7 @@ class PhotographerContactsController < ApplicationControlle
 
     if @contact.save
       flash[:notice] = "問い合わせを送信しました"
-      redirect_to users_photographer_path
+      redirect_to photographer_path
     end
 
   end
