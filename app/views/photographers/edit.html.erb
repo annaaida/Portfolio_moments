@@ -19,7 +19,7 @@
      </div>
      <div class = "input">
       <%= f.label :対応可能エリア %>
-      <%#= f.select_tag :city_id, city_name, class: "js-searchable" %>
+      <%= f.select_tag :city_name, options_from_collection_for_select(@cities, :id, :city_name), class: "js-searchable" %>
      </div>
      <div class = "input">
       <%= f.label :母国語 %>
