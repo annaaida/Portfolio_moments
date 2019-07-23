@@ -78,7 +78,7 @@
                   <% @bookings.each do |booking| %>
                     <tr>
                       <td><%= attachment_image_tag booking.photographer, :profile_img, :fill, 5, 5, format: 'jpeg', fallback: "noimage.jpg", size: '50x50' %></td>
-                      <td><%= booking.photographer.user.last_name %></td>
+                      <td><%= booking.photographer.user.last_name %><%= booking.photographer.user.first_name %></td>
                       <td><%= booking.date %></td>
                       <td><%= booking.start_time.to_time.strftime("%-H時%-M分") %>〜<%= booking.end_time.to_time.strftime("%-H時%-M分") %></td>
                       <td><%= booking.meeting_spot %></td>

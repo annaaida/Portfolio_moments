@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  namespace :admins do
+    get 'reviews/index'
+    get 'reviews/edit'
+    get 'reviews/update'
+    get 'reviews/destroy'
+  end
   devise_for :users
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',

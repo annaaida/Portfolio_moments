@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# 国のデータ
+
 Country.create(country_name: 'Australia')
 Country.create(country_name: 'Austria')
 Country.create(country_name: 'Belgium')
@@ -44,3 +46,4 @@ Country.create(country_name: 'United States')
 Country.create(country_name: 'Vietnam')
 
 City.create(city_name: 'Tokyo', country_id: 20, photographer_id: 1)
+

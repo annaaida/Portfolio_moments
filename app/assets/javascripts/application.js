@@ -17,8 +17,6 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require cocoon
-//= require select2
-//= require select2-bootstrap
 //= require pickdate/legacy
 //= require pickdate/picker
 //= require pickdate/picker.date
@@ -38,4 +36,11 @@ $(function() {
       $header.removeClass(animationClass);
     }
   });
+});
+
+$('.js-searchable').select2({
+
+  width: 200,
+  allowClear: true
+  theme: "bootstrap"
 });
