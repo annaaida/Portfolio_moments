@@ -1,0 +1,36 @@
+<!-- ヘッダー部分テンプレート -->
+<%= render 'layouts/photographers-header' %>
+<div class = "container">
+  <div class = "row">
+  	<h3><strong>予約詳細</strong></h3>
+  	  <table class = "table history-details">
+  	    <tr>
+          <th style = "width:300px;">撮影日時</th>
+          <td><p><%= @booking.date %> <%= @booking.start_time.to_time.strftime("%-H時%-M分") %>〜<%= @booking.end_time.to_time.strftime("%-H時%-M分") %></td>
+        </tr>
+        <tr>
+          <th style = "width:300px;">発送したメッセージ</th>
+          <td><%= @booking.message %><br>
+        </tr>
+        <tr>
+          <th style = "width:300px;">待ち合わせ希望場所</th>
+          <td><%= @booking.meeting_spot %></td>
+        </tr>
+        <tr>
+          <th style = "width:300px;">合計金額</th>
+          <td> <%= number_with_delimiter(@booking.total_price) %>円（消費税込み） </td>
+        </tr>
+       	<tr>
+          <th style = "width:300px;">予約のステータス</th>
+          <td> <%= @booking.status %> </td>
+        </tr>
+      </table>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= render 'layouts/users-footer' %>

@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_15_035538) do
+ActiveRecord::Schema.define(version: 2019_07_22_154221) do
+
+  create_table "admin_contacts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "photographer_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "mail"
+    t.string "title"
+    t.text "contents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -33,24 +45,24 @@ ActiveRecord::Schema.define(version: 2019_07_15_035538) do
     t.integer "user_id"
     t.integer "photographer_id"
     t.date "date"
-    t.time "time"
     t.text "message"
     t.text "meeting_spot"
     t.string "total_price"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "contact_number"
-    t.integer "people"
+    t.time "start_time"
+    t.time "end_time"
+    t.integer "contact_number"
   end
 
   create_table "cities", force: :cascade do |t|
     t.integer "country_id"
     t.string "city_name"
-    t.string "city_img"
     t.text "about_city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "city_img_id"
   end
 
   create_table "city_photographers", force: :cascade do |t|
@@ -76,9 +88,9 @@ ActiveRecord::Schema.define(version: 2019_07_15_035538) do
     t.integer "photographer_id"
     t.integer "city_id"
     t.string "country_name"
-    t.string "country_img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "country_img_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -90,12 +102,20 @@ ActiveRecord::Schema.define(version: 2019_07_15_035538) do
 
   create_table "images", force: :cascade do |t|
     t.integer "photographer_id"
-    t.string "image_1"
-    t.string "image_2"
-    t.string "image_3"
-    t.string "image_4"
-    t.string "image_5"
-    t.string "image_6"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_id"
+    t.string "image_number"
+  end
+
+  create_table "photographer_contacts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "photographer_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "mail"
+    t.string "title"
+    t.text "contents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -111,7 +131,7 @@ ActiveRecord::Schema.define(version: 2019_07_15_035538) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.string "profile_img"
+    t.string "profile_img_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -145,7 +165,7 @@ ActiveRecord::Schema.define(version: 2019_07_15_035538) do
     t.datetime "updated_at", null: false
     t.boolean "photographer"
     t.integer "photographer_id"
-    t.string "profile_img"
+    t.string "profile_img_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -1,7 +1,16 @@
+<!-- ヘッダー部分テンプレート -->
+<%= render 'layouts/users-header' %>
 <div class = "container">
   <div class = "row">
-    <p class = "complete-message">予約申請が完了しました！</p><br>
-    <p class = "complete-message">フォトグラファーの承認後、当日の案内メールが来ます。必ずご確認ください。</p>
-    <p class = "jump-to-details">予約確認は<%= link_to 'こちら', photographer_book_path(@booking) %></p>
+    <p class = "complete-message-1">予約申請が完了しました！</p><br>
+    <p class = "complete-message-2">フォトグラファーの承認後、当日の案内メールが来ます。必ずご確認ください。</p>
+    <p class = "jump-to-details-of-booking">予約確認は<%= link_to 'こちら', photographer_book_path(@photographerid, @bookid) %></p>
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= render 'layouts/users-footer' %>

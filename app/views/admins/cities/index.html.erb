@@ -3,3 +3,26 @@
 <br>
 <br>
 <br>
+<div class = "container">
+  <div class = "row">
+  	<table class = "table">
+  	  <h3>都市一覧</h3>
+  	  <thead>
+       <tr>
+        <th style = "width:300px;">都市</th>
+        <th style = "width:50px;"></th>
+        <th style = "width:50px;"></th>
+       </tr>
+      </thead>
+      <tbody>
+      	<% @cities.each do |c| %>
+      	 <tr>
+      	  <td class = "countents"><%= c.city_name %></td>
+      	  <td class = "contents"><%= link_to '編集', edit_admins_city_path(c.id), class: "review-button btn btn-success" %></td>
+          <td class = "contents"><%= link_to '削除', admins_city_path(c.id), method: :delete, class: "review-button btn btn-danger", "data-confirm" => "本当に削除しますか？" %></td>
+      	 </tr>
+      	<% end %>
+      	<%= paginate @cities, class: "paginate" %>
+  	</table>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<!-- ユーザーマイページ 予約一覧ページ -->
+<!-- ヘッダー部分テンプレート -->
+<%= render 'layouts/photographers-header' %>
+<br>
+<br>
+<br>
+<div class = "container">
+  <div class = "row">
+	<h1>予約一覧</h1>
+	<table class = "table">
+		<tr>
+			<th> 予約番号</th>
+			<th> フォトグラファー</th>
+			<th> 日付</th>
+			<th> 時間</th>
+			<th> 合計金額</th>
+			<th> 予約状況</th>
+			<th> 予約日</th>
+			<th></th>
+		</tr>
+		<% @bookings.each do |booking| %>
+			<tr>
+				<td> <%= booking.id %></td>
+				<td> <%#= booking.user.last_name %> <%#= booking.user.first_name %> </td>
+				<td> <%= booking.date %></td>
+				<td> <%= booking.start_time.to_time.strftime("%-H時%-M分") %>〜<%= booking.end_time.to_time.strftime("%-H時%-M分") %></td>
+				<td> <%= booking.total_price %></td>
+				<td> <%= booking.status %></td>
+				<td> <%= booking.created_at.strftime("%Y/%-m/%-d") %></p>
+				<td> <%= link_to "詳細", users_book_path(current_user, booking), class: "btn btn-success" %></td>
+			</tr>
+		<% end %>
+		<%= paginate @bookings, class: "paginate" %>
+	</table>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= render 'layouts/users-footer' %>
+
+

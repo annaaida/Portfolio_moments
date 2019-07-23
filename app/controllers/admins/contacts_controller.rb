@@ -1,6 +1,9 @@
 class Admins::ContactsController < ApplicationController
 
   def top
+
+    @bookings = Book.all.order(created_at: :desc)
+
   end
 
   def index

@@ -1,12 +1,14 @@
 <!-- ユーザー登録後、フォトグラファー権限カラムtrueの場合に、フォトグラファー情報登録画面として本画面に遷移 -->
 
-<section class = "mypage clearfix">
-    <h4 class = "user-edit">フォトグラファー情報の登録</h4>
-    <p> 後から編集できます </p>
-</section>
+<%= render 'layouts/photographers-header' %>
+<div class = "container">
+	<div class = "row">
+		<h4 class = "user-edit">フォトグラファー情報の編集</h4>
+	</div>
+</div>
 <div class = "container">
   <div class = "row">
-   <%= form_for @photographer, url: new_photographer_path do |f| %>
+   <%= form_for @photographer do |f| %>
      <div class = "input">
       <%= f.label :プロフィール画像 %>
       <%= f.attachment_field :profile_img %>
@@ -17,7 +19,7 @@
      </div>
      <div class = "input">
       <%= f.label :対応可能エリア %>
-      <%= f.text_field :area, autofocus: true %>
+      <%#= f.select_tag :photographer, options_from_collection_for_select(@photographer, :id, :area), class: "js-searchable" %>
      </div>
      <div class = "input">
       <%= f.label :母国語 %>
@@ -35,34 +37,26 @@
       <%= f.label :自己紹介 %>
       <%= f.text_field :introduction, autofocus: true %>
      </div>
+
      <!-- images 追加 -->
-     <h3> 画像追加 </h3>
-	   <div id = "images">
-	    <%= form_for @images, url: new_photographer_path do |i| %>
-	      <div class = "field">
-	       <%= i.attachment_field :image_1 %>
-	      </div>
-	      <div class = "field">
-	       <%= i.attachment_field :image_2 %>
-	      </div>
-	      <div class = "field">
-	       <%= i.attachment_field :image_3 %>
-	      </div>
-	      <div class = "field">
-	       <%= i.attachment_field :image_4 %>
-	      </div>
-	      <div class = "field">
-	       <%= i.attachment_field :image_5 %>
-	      </div>
-	      <div class = "field">
-	       <%= i.attachment_field :image_6 %>
-	      </div>
-	    <% end %>
-	   </div>
-	    <div class="actions">
-         <%= f.submit '完了', class: "btn btn-primary col-xs-12" %>
+     <h3 class = "photographer-edit"> 画像追加 </h3>
+     <p> ※ 空欄は不可となります。6つすべてに画像を入れてください。</p>
+     <div id = "images">
+      <%= f.fields_for :images do |i| %>
+        <div class = "nested-fields">
+	       <div class = "field">
+	         <%= i.attachment_field :image %>
+	       </div>
+	       <div class = "field">
+	         <%= i.select :image_number, [["1", "1"], ["2", "2"],  ["3", "3"], ["4", "4"],["5", "5"],["6", "6"]], class: "form-control", :prompt => "画像の位置を選択" %>
+	       </div>
         </div>
-    <% end %>
+      <% end %>
+     </div>
+     <br>
+     <div class = "actions">
+       <%= f.submit '編集完了', class: "btn btn-primary col-xs-2" %>
+   <% end %>
   </div>
 </div>
 

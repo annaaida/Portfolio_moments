@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
 
   def create
 
-    @photographer = Photographer.find(params[:product_id])
+    @photographer = Photographer.find(params[:photographer_id])
 
     @review = Review.new(review_params)
     @review.user_id = current_user.id
@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
   def edit
 
     @review = Review.find(params[:id])
-    @photographer = Photographer.find(params[:product_id])
+    @photographer = Photographer.find(params[:photographer_id])
 
   end
 
@@ -38,10 +38,19 @@ class ReviewsController < ApplicationController
 
   end
 
+  def destroy
+
+    review = Review.find(params[:id])
+    review.destroy
+    photographer = Photographer.find(params[:photographer_id])
+    redirect_to users_photographer_path(photographer)
+
+  end
+
   private
 
   def review_params
-    params.require(:review).permit(:product_id, :name, :title, :body)
+    params.require(:review).permit(:photographer_id, :name, :title, :body, :created_at)
   end
 
 end
