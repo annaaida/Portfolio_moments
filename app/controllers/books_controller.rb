@@ -24,7 +24,6 @@ class BooksController < ApplicationController
 
   end
 
-
   def index
 
     @photographer = Photographer.find_by(user_id: current_user.id)
@@ -68,7 +67,6 @@ class BooksController < ApplicationController
     #redirect_to users_photographer_path(photographer)
 
   end
-
 
   private
 

@@ -15,6 +15,7 @@
  *= require_tree .
  *= require_self
  */
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
@@ -307,11 +308,11 @@ footer {
   background-color: #242423;
   height: 250px;
   padding: 20px 50px 0 70px;
-  font-family: Arial, sans-serif;
+  font-family: 'Carter One', cursive;
 }
 
 footer h4 {
-  font-size: 20px;
+  font-size: 25px;
   text-transform: uppercase;
   color: #FFFFFF;
 }
@@ -332,3 +333,4 @@ footer p {
 footer {
   margin-top: 100px;
 }
+

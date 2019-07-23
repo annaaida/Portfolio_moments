@@ -43,8 +43,7 @@ class PhotographersController < ApplicationController
   def edit
 
     @photographer = Photographer.find(params[:id])
-    #@images = @photographer.images.build
-    # 6.times { @photographer.images.build }
+    @cities = City.all
 
   end
 

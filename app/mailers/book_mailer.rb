@@ -4,6 +4,7 @@ class BookMailer < ApplicationMailer
   layout 'mailer'
 
   def send_when_user_book(user, book)
+
   	@user = user
   	@date = book.date
   	@time = book.time
@@ -11,6 +12,8 @@ class BookMailer < ApplicationMailer
   	@meeting_spot = book.meeting_spot
   	@total_price = book.total_price
   	@photographer = book.photographer_id
-	mail to: @user.email, subject:'【 MOMENTS 】ご予約ありがとうございます。'
+	  mail to: @user.email, subject:'【 MOMENTS 】ご予約ありがとうございます。'
+
   end
+
 end

@@ -6,16 +6,14 @@
   <div class = "row">
     <div class = "col-xs-3 js-fullheight text-center">
       <div class = "image-wrap">
-       <%= image_tag 'noimage.jpg' , class: "photographer-image"%>
-       <%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %>
-       <p id = "fullname-users"><%#= @photographer.user.last_name %> <%#= @photographer.user.first_name %></p></li>
+       <%= attachment_image_tag @photographer, :profile_img, :fill, 160, 160, format: 'jpeg', fallback: "noimage.jpg", size: '160x160', class: 'profile_image' %>
+       <p id = "fullname-users"><%= @photographer.user.last_name %> <%= @photographer.user.first_name %></p></li>
         <!-- SNS リンク -->
           <a href = "#" class = "sns-btn"><i class = "fab fa-twitter-square"></i></a>
           <a href = "#" class = "sns-btn"><i class = "fab fa-instagram"></i></a>
           <a href ="#" class = "sns-btn"><i class = "fab fa-facebook-square"></i></a>
         <div class = "form-btn" id = "book-and-contact">
-          <%#= link_to '問い合わせ', new_photographer_photographer_contact_path, class: "btn btn-primary" %>
-          <%= link_to 'Book Now', new_photographer_book_path(@photographer), class: "btn btn-warning" %>
+          <%= link_to 'Book Now', new_photographer_book_path(@photographer), class: "btn btn-primary"%>
         </div>
         <!-- いいねボタン -->
           <span id = "favorite_buttons_<%= @photographer.id %>">
