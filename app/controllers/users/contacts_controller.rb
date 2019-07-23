@@ -13,7 +13,7 @@ class Users::ContactsController < ApplicationController
 
   	if @contact.save!
   		flash[:notice] = "送信に成功しました"
-  		redirect_to user_path(current_user)
+  		redirect_to users_user_path(current_user)
     else
   		flash[:notice] = "送信に失敗しました"
   		render("contacts/new")
