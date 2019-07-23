@@ -17,16 +17,16 @@
 <!-- メイン画像と検索フォーム -->
 <div class = "container-fluid">
   <div class = "row">
-    <div class = "col-xs-8">
+    <div class = "col-xs-9">
       <div clas  = "top-image-city-show">
         <div class = "top-title-city-show">
           <table class="table table-hover">
             <tbody>
             <% @photographers.each do |photo| %>
               <tr>
-                <td style = "width:150px;"><%= attachment_image_tag photo, :profile_img, :fill, 50, 50, format: 'jpeg', fallback: "noimage.jpg", size:'100x100' %></td>
-                <td style = "width:100px;"><%= link_to photo.user.last_name, photographer_path(photo) %><%= link_to photo.user.first_name, photographer_path(photo) %></td>
-                <td style = "width:100px;"><%= photo.price %></td>
+                <td style = "width:80px;"><%= attachment_image_tag photo, :profile_img, :fill, 100, 100, format: 'jpeg', fallback: "noimage.jpg", size:'100x100' %></td>
+                <td style = "width:150px;"><%= link_to photo.user.last_name, photographer_path(photo) %><%= link_to photo.user.first_name, photographer_path(photo) %></td>
+                <td style = "width:150px;"><%= photo.price %>円 / 1時間</td>
                 <td class = "contents"><%= photo.introduction %></td>
               </tr>
             <% end %>
@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div class = "col-xs-4">
+    <div class = "col-xs-3">
       <div class = "sidebar">
         <div class = "ranking-box">
         <p class = "ranking-title">いいねランキング</p>
@@ -52,7 +52,6 @@
       <% end %>
     </div>
   </div>
-    </div>
   </div>
 </div>
 <%= render 'layouts/users-footer' %>
