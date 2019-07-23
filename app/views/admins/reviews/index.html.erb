@@ -1,0 +1,26 @@
+<%= render 'layouts/admins-header' %>
+<div class = "container">
+  <div class = "row">
+	<h1>レビュー一覧</h1>
+	<table class = "table">
+		<tr>
+			<th>お名前</th>
+			<th>投稿日</th>
+			<th>タイトル</th>
+			<th>本文</th>
+		</tr>
+		<% @reviews.each do |r| %>
+			<tr>
+				<td> <%= r.name %></td>
+				<td> <%= r.created_at.strftime("%Y年%-m月%-d日") %></p>
+				<td> <%= r.title %></td>
+				<td> <%= r.body %></td>
+				<td> <%= link_to "編集", edit_admins_review_path(r), class: "btn btn-success" %></td>
+				<td> <%= link_to "削除", admins_review_path(r), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
+			</tr>
+		<% end %>
+		<%= paginate @reviews, class: "paginate" %>
+	</table>
+  </div>
+</div>
+

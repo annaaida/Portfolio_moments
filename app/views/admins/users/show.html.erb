@@ -1,6 +1,8 @@
+<!-- ヘッダー部分テンプレート -->
+<%= render 'layouts/admins-header' %>
 <div class = "container">
   <div class = "row">
-	<h2>登録情報</h2>
+	<h3><strong>登録情報</strong></h3>
 	<table class = "table">
 		<tr>
 			<th> お名前</th>
@@ -16,7 +18,9 @@
 		</tr>
 	</table>
 	<%= link_to "ユーザ削除", user_registration_path, method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
-	<h2> 予約履歴</h2>
+  </div>
+  <div class = "row">
+	<h3><strong>予約履歴</strong></h3>
 	<table class = "table">
 		<tr>
 			<th> 予約ID</th>
@@ -29,28 +33,30 @@
 			<td> <%= booking.id %></td>
 			<td> <%= booking.status %></td>
 			<td> <%= booking.created_at %></td>
-			<td> <%= link_to "予約詳細" %></td>
+			<td> <%= link_to "予約詳細", admins_book_path(booking) %></td>
 		</tr>
 	<% end %>
 	</table>
 	<%= paginate @books %>
-
-	<h2> レビュー一覧</h2>
+  </div>
+  <div class = "row">
+	<h3><strong>レビュー一覧</strong></h3>
 	<table class = "table">
 		<tr>
-			<th> フォトグラファー名</th>
-			<th> タイトル</th>
-			<th> レビュー本文 </th>
+			<th style = "width:300px;"> フォトグラファー名</th>
+			<th style = "width:300px;"> タイトル</th>
+			<th style = "width:300px;"> レビュー本文 </th>
 		</tr>
 		<% @reviews.each do |review| %>
 			<tr>
 				<td> <%= review.photographer.user.last_name %></td>
 				<td> <%= review.title %></td>
 				<td> <%= review.body %> </td>
-				<td> <%#= link_to "レビュー編集", edit_admin_review_path(review), class: "btn btn-warning" %></td>
-				<td> <%#= link_to "レビュー削除", admin_review_path(review), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %></td>
+				<td> <%= link_to "レビュー編集", edit_photographer_review_path(@reviews), class: "btn btn-warning" %></td>
+				<td> <%= link_to "レビュー削除", photographer_review_path(@reviews), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %></td>
 			</tr>
 		<% end %>
 	</table>
+  </div>
   </div>
 </div>

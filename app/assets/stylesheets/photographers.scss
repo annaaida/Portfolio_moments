@@ -46,12 +46,12 @@ header{
     font-weight: bold;
 }
 
- /* ユーザー側 / フォトグラファー側 show page 【共通部分】  */
 
+ /* ユーザー側 / フォトグラファー側 show page 【共通部分】  */
 
 .hi-message {
     font-size: 55px;
-    font-family: 'Sawarabi Mincho', sans-serif;
+    font-family: 'Kosugi', sans-serif;
 }
 
 .table th,td {
@@ -136,10 +136,22 @@ p {
     position: relative;
 }
 
+#user-photographer-show {
+    padding-top: 30px;
+}
+
 .photographer-image {
     border-radius: 50%;
     height: 150px;
     width: 150px;
+}
+
+.images_wrapper {
+    width: 750px;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .col-xs-3 {
@@ -153,6 +165,10 @@ p {
     right: 0;
     overflow-y: hidden;
     z-index: 1001;
+}
+
+#book-and-contact {
+    margin: 30px;
 }
 
 .image-wrap {
@@ -177,7 +193,7 @@ li {
 
 
 #photographer-mypage {
-    background-color: #E8BB53;
+    background-color: #90B44B;
     height: 1000px;
 }
 
@@ -188,6 +204,14 @@ li {
 #fullname-users {
     font-size: 24px;
     margin: 15px;
+}
+
+/* フォトグラファー edit page */
+
+.photographer-edit {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 /* レビュー一覧 / レビュー投稿 / 編集 / 消去ボタン */
@@ -239,7 +263,8 @@ li {
     justify-content: center;
 }
 
-/* アイコン同士の余白 */
+/* new page */
 
-.sns-wrapper li{
+#image-add-part {
+    float: left;
 }

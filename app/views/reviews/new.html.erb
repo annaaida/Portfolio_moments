@@ -1,11 +1,13 @@
-<div class = "container">
+<!-- ヘッダー部分テンプレート -->
+<%= render 'layouts/users-header' %>
+<div class = "container" id = "top-on-review">
   <div class = "row">
     <h3>レビュー投稿</h3>
     <div class = "photographer-information">
       <div class = "col-xs-3">
-          <%#= attachment_image_tag @photographer, :profile_img, :fill, 200, 200, format: 'jpeg', fallback: "noimg.jpg", size: "200x200" %><br>
+          <%= attachment_image_tag @photographer, :profile_img, :fill, 200, 200, format: 'jpeg', fallback: "noimage.jpg", size: "200x200" %><br>
       </div>
-      <div class = "col-xs-9">
+      <div class = "col-xs-9" id = "top-on-review">
           <p class = "name"><%= @photographer.user.last_name %><%= @photographer.user.first_name %></p><br>
       </div>
     </div>
@@ -13,8 +15,8 @@
   <div class = "row">
     <div class = "col-xs-9">
       <div class = "review-form">
-        <%= form_for @review, url: new_photographer_review_path do |r| %>
-  　　       <div class = "form-group-name">
+        <%= form_for @review, url: photographer_reviews_path do |r| %>
+  　　     <div class = "form-group-name">
             <%= r.label :name, '投稿者名'  %>
             <%= r.text_field :name, class: 'form-control' %>
           </div>
@@ -34,3 +36,4 @@
     </div>
   </div>
 </div>
+<%= render 'layouts/users-footer' %>

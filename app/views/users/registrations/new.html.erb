@@ -1,20 +1,20 @@
 <div class="container main-section">
   <div class = "row">
    <div class="col-md-12 text-center user-login-header">
-    <h2>アカウント作成</h2>
+    <h2 class = "login-title">New Account</h2>
    </div>
   </div>
  <div class="row">
-    <div class="col-md-4 col-sm-8 col-xs-12 col-md-offset-4 col-sm-offset-2 login-image-main text-center">
+    <div class="col-md-4 col-sm-8 col-xs-12 col-md-offset-4 col-sm-offset-2 login-image-main">
       <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12 user-image-section">
-            <%= image_tag('/assets/user.jpg') %>
+        <div class="col-md-12 col-sm-12 col-xs-12 user-image-section">
+          <div class = "text-center">
+           <%= image_tag('/assets/user.jpg') %>
           </div>
-　　　　<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-       <%= render "devise/shared/error_messages", resource: resource %>
-          <div class = "col-md-12 col-sm-12 col-xs-12 new-account-box">
+    　　　 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
             <div class= "photographer-check">
-              <%= f.label :フォトグラファーとしてのアカウント作成の場合下記にチェックを入れてください %>
+              <%= f.label :フォトグラファーとしてのアカウント作成  %>
               <%= f.check_box :photographer ,{}, "true", "false" %>
             </div>
             <div class = "new-account-info1">
@@ -35,27 +35,21 @@
               <%= f.label :パスワード %>
                 <% if @minimum_password_length %>
               <% end %>
-              <%= f.password_field :password, autocomplete: "new-password" %>
-              <em>( <%= @minimum_password_length %> 文字以上 )</em>
+              <%= f.password_field :password, autocomplete: "new-password", placeholder: " 6文字以上" %>
             </div>
             <div class="new-account-info8">
               <%= f.label :確認 %>
               <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
             </div>
-            <div>
-             <%= f.submit "会員登録", class: "new-account-button" %>
+            <div class = "click">
+             <%= f.submit "会員登録", class: "login-button new-account-button" %>
             </div>
-      <% end %>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-            <%= render "users/shared/links" %>
-          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
- </div>
 </div>
+<%= render 'layouts/users-footer' %>
 
 

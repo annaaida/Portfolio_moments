@@ -9,31 +9,13 @@
   background-image: url("/assets/photographer.jpg");
   background-size: cover;
   background-position: center;
-  margin-bottom: 30px;
 }
 
 .main-image h1 {
   font-size: 60px;
-  padding: 60px 60px;
+  padding: 60px 80px;
   font-family: 'Sigmar One', cursive;
-}
-
-#city-search {
-  height: 40px;
-}
-
-#search-engine-countries-index input{
-  float: left;
-  height: 40px;
-  margin-left: 10px;
-}
-
-#coutries-container {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
+  color: #FFF;
 }
 
 span {
@@ -48,8 +30,13 @@ span {
 
 .country-wrapper {
   display: flex;
-  flex-direction: row;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.country-items-box {
   margin: 0 auto;
 }
 
@@ -62,37 +49,42 @@ span {
   padding: 20px;
 }
 
+.country-paginate {
+  margin-left: 20px;
+}
+
 
 /* show page*/
 
-.top-image {
-  height: 300px;
-	background-image: url("/assets/teens.jpg");
-  background-size: cover;
-  background-position: center;
+#country-show-img-box{
+  position: relative;
   margin-bottom: 40px;
+  opacity: 0.6;
 }
 
-.top-title h1 {
-  margin: 120px;
-  font-size: 60px;
-  padding-top: 60px;
+#country-show-img-box h1 {
+  position: absolute;
+  top: 120px;
+  left: 80px;
+  font-size: 80px;
+  font-family: 'Sigmar One', cursive;
+  color: #FFF;
 }
 
-#search-engine-country-show {
-  width: 1000px;
-  margin: 0 auto;
+.country-show-img {
+  height: 400px;
+  width: 100%;
+  background-size: cover;
 }
 
-.search-engine input{
-  float:left;
+#search-engine-countries-index {
+  margin-left: 370px;
 }
 
-.cities-box {
-  margin: 70px 50px;
+#search-engine-countries-index input{
+  float: left;
+  height: 40px;
+  margin-left: 10px;
 }
 
-.city-index {
-  width: 300px;
-  height: 200px;
-}
+

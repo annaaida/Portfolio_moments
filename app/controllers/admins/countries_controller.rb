@@ -16,13 +16,14 @@ class Admins::CountriesController < ApplicationController
 
   	country = Country.find(params[:id])
   	country.update(country_params)
+    redirect_to admins_countries_path(country)
 
   end
 
   private
 
   def country_params
-    params.require(:country).permit(:country_name)
+    params.require(:country).permit(:country_name, :country_img)
   end
 
 end

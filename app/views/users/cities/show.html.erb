@@ -1,38 +1,58 @@
 <!-- 都市詳細 フォトグラファー 一覧ページ -->
-<!-- ヘッダー部分テンプレート -->
-<%= render 'layouts/users-header' %>
+<div class = "container-fluid">
+  <div class = "row">
+    <!-- ヘッダー部分テンプレート -->
+    <%= render 'layouts/users-header' %>
+    <!-- メイン背景イメージ -->
+    <div id  = "country-show-img-box">
+      <%= attachment_image_tag @city, :city_img, :fill, 1000, 400, format: 'jpeg', fallback: "no_image.jpg", class: "city-show-img" %>
+      <h1><%= @city.city_name %></h1>
+    </div>
+  </div>
+</div>
 <br>
 <br>
 <br>
 <br>
 <!-- メイン画像と検索フォーム -->
-<div class = "container">
+<div class = "container-fluid">
   <div class = "row">
-    <div clas  = "top-image-city-show">
-      <div class = "top-title-city-show">
-        <h1><%= @city.city_name %></h1>
+    <div class = "col-xs-8">
+      <div clas  = "top-image-city-show">
+        <div class = "top-title-city-show">
+          <table class="table table-hover">
+            <tbody>
+            <% @photographer.each do |photo| %>
+              <tr>
+                <td style = "width:150px;"><%= attachment_image_tag photo.photographer, :profile_img, :fill, 50, 50, format: 'jpeg', fallback: "noimage.jpg", size:'100x100' %></td>
+                <td style = "width:100px;"><%= link_to photo.photographer.user.last_name, users_photographer_path(photo) %><%= link_to photo.photographer.user.first_name, users_photographer_path(photo) %></td>
+                <td style = "width:100px;"><%= photo.photographer.price %></td>
+                <td class = "contents"><%= photo.photographer.introduction %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
-  <div class = container>
-  <div class = "row">
-    <div class = "about_city">
-      <h3><%= @city.about_city %></h3>
+    <div class = "col-xs-4">
+      <div class = "sidebar">
+        <div class = "ranking-box">
+        <p class = "ranking-title">いいねランキング</p>
+      <% @all_ranks.each.with_index(1) do |photographer , i| %>
+        <div class = rank-img>
+          <div class = "tape"></div>
+          <p><%= i %> 位　</p>
+          <%= attachment_image_tag photographer, :profile_img, :fill, 80, 80, fallback: "noimage.jpg", size: "80x80" %>
+          <div class = "right">
+              <span><%#= link_to photographer.user.first_name %></span><br>
+              <p class = "details-rank"><%= number_with_delimiter(photographer.price) %>円 / 1時間</p>
+          </div>
+        </div>
+      <% end %>
     </div>
-    <% @photographer.each do |photo| %>
-      <table class = "table">
-        <tbody>
-          <tr>
-            <td class = "contents"><%#= attachment_image_tag photo, :profile_img, :fill, 50, 50, format: 'jpeg', fallback: "noimage.jpg", size:'50x50' %></td>
-          </tr>
-          <tr>
-            <td class = "contents"><p><%#= photo.user.last_name %><%#= photo.user.first_name %></p></td>
-            <td class = "contents"><p><%= link_to photo.photographer.area, users_photographer_path(photo) %></p></td>
-          </tr>
-        </tbody>
-      </table>
-    <% end %>
+  </div>
+    </div>
   </div>
 </div>
-</div>
-
+<%= render 'layouts/users-footer' %>

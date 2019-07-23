@@ -1,14 +1,9 @@
 <!-- フォトグラファー マイページ トップページ -->
 <div class = "container-fluid">
   <div class = "row">
-    <!-- header -->
-    <div class = "header-line">
-     <p class = "header-message">フォトグラファーページ</p>
-    </div>
-  </div>
-  <div class = "row">
     <div class = "clearfix"></div>
       <div class = "col-xs-3 js-fullheight text-center" id = "photographer-mypage">
+        <h1 class = "mypage-title"> Photographer<br>my page</h1>
         <table class =  "table" id = "photographer-info">
           <tbody>
             <tr>
@@ -17,14 +12,6 @@
             <tr>
               <td><p id = "fullname"><%= @user.last_name %> <%= @user.first_name %></p></td>
             </tr>
-            <tr>
-              <td><p>ランキング</p></td>
-            </tr>
-            <tr>
-              <td><p>レビュー数</td>
-            </tr>
-            <tr>
-              <td><p>いいね数</p></td>
           </tbody>
         </table>
         <div class = "row">
@@ -34,11 +21,11 @@
                    <p><i class="far fa-calendar-alt"></i> 予約一覧</p>
                   <% end %>
               </li>
-              <li><%= link_to photographer_contacts_path(current_user) do %>
+              <li><%#= link_to photographer_contacts_path(current_user) do %>
                    <p><i class="fas fa-inbox"></i> ユーザーからの問い合わせ </p>
-                  <% end %>
+                  <%# end %>
               </li>
-              <li><%= link_to users_photographer_path(current_user) do %> <!-- showページへ -->
+              <li><%= link_to photographer_path(current_user) do %> <!-- showページへ -->
                     <p><i class="fas fa-camera-retro"></i> ポートフォリオを確認 </p>
                   <% end %>
               </li>
@@ -46,7 +33,7 @@
                     <p><i class="far fa-edit"></i> ポートフォリオを編集 </p>
                 <% end %>
               </li>
-              <li><%= link_to edit_user_registration_path(current_user) do %>
+              <li><%= link_to edit_user_registration_path do %>
                     <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
                   <% end %>
               </li>
@@ -55,25 +42,21 @@
         </div>
       </div>
     <div class = "col-xs-9">
-      <header class = "navbar navbar-light bg-light fixed-top">
+      <header class = "navbar">
        <nav>
         <ul class = "nav navbar-nav navbar-right">
-          <li><%= link_to root_path(current_user) do %>
-                <p><i class="fas fa-home"></i> Home</p>
+          <li><%= link_to users_root_path(current_user) do %>
+                <p><i class="fas fa-home"></i> サイトトップへ</p>
               <% end %>
           </li>
-          <li><%= link_to about_path do %>
-                <p><i class="fas fa-question-circle"></i> このページの使い方</p>
+          <li><%= link_to users_user_path(current_user) do %>
+                <p><i class="fas fa-user-circle"></i> ユーザーマイページへ </p>
               <% end %>
           </li>
-          <li><%= link_to users_users_path(current_user) do %>
-                <p><i class="fas fa-user-circle"></i> ユーザーページ </p>
-              <% end %>
-          </li>
-          <li><%= link_to do %>
-                <i class="fas fa-sign-out-alt"></i> ログアウト </p>
-              <% end %>
-          </li>
+          <li><%= link_to destroy_user_session_path, method: :delete do %>
+                  <p><i class="fas fa-sign-out-alt"></i> ログアウト </p>
+                <% end %>
+            </li>
         </ul>
        </nav>
       </header>
@@ -97,10 +80,10 @@
                 <tbody>
                 <% @bookings.each do |booking| %>
                   <tr>
-                    <td><%#= attachment_image_tag , :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "noimage.jpg" %></td>
+                    <td><%= attachment_image_tag booking.photographer, :profile_img, :fill, 5, 5, format: 'jpeg', fallback: "noimage.jpg", size: '50x50' %></td>
                     <td><%= booking.user.last_name %><%= booking.user.first_name %></td>
                     <td><%= booking.date %></td>
-                    <td><%= booking.time %></td>
+                    <td><%= booking.start_time.to_time.strftime("%-H時%-M分") %>〜<%= booking.end_time.to_time.strftime("%-H時%-M分") %></td>
                     <td><%= booking.meeting_spot %></td>
                     <td><%= booking.message %></td>
                     <td><%= booking.status %></td>
@@ -149,30 +132,6 @@
                       <th>ユーザー名</th>
                       <th>タイトル</th>
                       <th>内容</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                  <%# .each do |order| %>
-                    <tr>
-                      <td><%#= link_to order.id, order_path(order.id) %></td>
-                      <td><%#= order.shipping_status %></td>
-                      <td><%#= order.created_at.to_date %></td>
-                    </tr>
-                  <%# end %>
-                  </tbody>
-                </table>
-                <%#= paginate @#orders %>
-            </div>
-        </div>
-        <div class = "row">
-          <div class = "box-title"><p class = "history">いいねしたユーザー</p></div>
-            <div class = "main-boxes">
-                <table class = "table">
-                  <thead>
-                     <tr>
-                      <th>image</th>
-                      <th>いいね時刻</th>
-                      <th>ユーザー名</th>
                      </tr>
                   </thead>
                   <tbody>

@@ -1,0 +1,34 @@
+<%= render 'layouts/users-header' %>
+<div class = "container-fluid">
+  <div class = "row">
+	<div id = "contact-new-right">
+		<div class = "container-fluid" id = "right-header">
+		  <p class = "breadcrumbs">
+		  	<a href = "#">Home</a>
+		  	<a href = "#">Back</a>
+		  </p>
+		  <h1 class = "bread"> Contact </h1>
+		</div>
+	</div>
+  </div>
+  <div class = "row" id = "right-head-contents">
+	 <div class = "col-xs-5 contact-new-boxes">
+		<div class="form-group">
+		<%= form_for @contact, url: photographer_contacts_path do |f| %>
+	        <%= f.text_field :last_name, placeholder: "姓", class: "contact-information" %><%= f.text_field :first_name, placeholder: "名", class: "contact-information" %><br>
+	        <%= f.email_field :mail, placeholder: "メールアドレス", class: "contact-information" %><br>
+	        <%= f.text_field :contact_title, placeholder: "件名", class: "contact-information" %><br>
+	        <%= f.text_area :contact_contents, placeholder: "お問い合わせ内容", class: "contact-information" %><br>
+	        <%= f.submit '送信', class: "btn btn-success col-xs-2" %>
+        <% end %>
+		</div>
+	 </div>
+	 <div class = "col-xs-5">
+	 	<p>フォトグラファーよりご記入のメールアドレスに返信いたします</p>
+	 	<p>管理人へのお問い合わせは下記よりお願いいたします</p>
+	 	<%=link_to "お問い合わせ", new_users_contact_path, class: "btn btn-warning" %></h5>
+	 </div>
+  </div>
+</div>
+<!-- ユーザーフッター部分テンプレート -->
+<%= render 'layouts/users-footer' %>

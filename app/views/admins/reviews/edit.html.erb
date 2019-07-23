@@ -1,0 +1,22 @@
+<%= render 'layouts/admins-header' %>
+<div class = "container">
+  <div class = "row">
+	<h1>レビュー編集</h1>
+	<table class = "table">
+		<tr>
+			<th>お名前</th>
+			<th>タイトル</th>
+			<th>本文</th>
+		</tr>
+	<%= form_for ([:admins, @review]) do |f| %>
+		<tr>
+			<td> <%= f.text_field :name %></td>
+			<td> <%= f.text_field :title %></td>
+			<td> <%= f.text_field :body %></td>
+			<td> <%= f.text_field :encrypted_password %></td>
+			<td> <%= link_to "削除", admins_review_path, method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
+		</tr>
+	<% end %>
+  </div>
+</div>
+

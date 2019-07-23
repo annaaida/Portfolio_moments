@@ -2,19 +2,68 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.top-image-city-show {
-	height: 500px;
-	background-image: url("/assets/teens.jpg");
-	background-size: cover;
-	background-position: center;
-	margin-bottom: 40px;
+
+.top-title-city-show {
+  margin-left: 20px;
 }
 
 .top-title-city-show h1 {
  	margin: 90px;
 	font-size: 60px;
+	font-family: 'Sigmar One', cursive;
+	color: #FFF;
 }
 
 .about_city {
 	padding: 20px;
+}
+
+.city-show-img {
+	height: 500px;
+  	width: 100%;
+  	background-size: cover;
+  	background-position: center;
+  	opacity: 0.8;
+}
+
+/* ランキング　*/
+
+.ranking-box{
+  border-image-slice: 1;
+  float: right;
+  width: 300px;
+  margin: 35px;
+  padding: 1em;
+  background-color: #F0EAD2;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+  margin-bottom: 10px;
+}
+
+.tape{
+  display: block;
+  background-color: #ccb;
+  opacity: 0.2;
+  transform: rotate(3deg);
+  width: 60%;
+  height: 35px;
+  margin: -2em auto 0 auto;
+  border-left: 3px dotted rgba(0,0,0,.1);
+  border-right: 3px dotted rgba(0,0,0,.1);
+}
+
+.ranking-title {
+  font-size: 18px;
+  text-align: center;
+  font-family:'Reimin Light';
+  margin-bottom: 15px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.rank-img{
+  float:left;
+  padding: 10px;
+  width: 100%;
+  background-color: #EBC073;
+  margin-bottom: 30px;
 }

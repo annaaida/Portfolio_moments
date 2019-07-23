@@ -4,6 +4,7 @@ class Users::CitiesController < ApplicationController
 
   	@city = City.find(params[:id])
   	@photographer = @city.city_photographers.includes(:photographer)
+  	@all_ranks = Photographer.find(Favorite.group(:photographer_id).order('count(photographer_id) desc').limit(10).pluck(:photographer_id))
 
   end
 

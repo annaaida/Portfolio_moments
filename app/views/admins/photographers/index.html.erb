@@ -3,3 +3,26 @@
 <br>
 <br>
 <br>
+<div class = "container">
+  <div class = "row">
+	<h1>フォトグラファー 一覧</h1>
+	<table class = "table">
+		<tr>
+			<th style = "width:100px;"> 名前</th>
+			<th style = "width:200px;">アカウント作成日</th>
+			<th style = "width:100px;"> エリア</th>
+			<th></th>
+		</tr>
+		<% @photographers.each do |photographer| %>
+			<tr>
+				<td> <%#= photographer.user.last_name %> <%#= photographer.user.first_name %> </td>
+				<td> <%#= photographer.user.created_at.strftime("%Y年%-m月%-d日") %></p>
+				<td> <%= photographer.area %></td>
+				<td> <%= link_to "詳細", admins_photographer_path(photographer), class: "btn btn-success" %></td>
+				<td> <td><%= link_to "削除", admins_photographer_path(photographer), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %></td>
+			</tr>
+		<% end %>
+		<%= paginate @photographers, class: "paginate" %>
+	</table>
+  </div>
+</div>

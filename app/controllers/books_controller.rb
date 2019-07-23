@@ -3,20 +3,21 @@ class BooksController < ApplicationController
   def new
 
   	@booking = Book.new
-    #@photographer = Photographer.find(params[:id])
+    @photographer = Photographer.find(params[:photographer_id])
+    @booking.photographer_id = params[:photographer_id]
 
   end
 
   def create
 
-  	@photographer = Photographer.find(params[:photographer_id])
-  	@booking = Book.new(booking_params)
+    @booking = Book.new(booking_params)
     @booking.user_id = current_user.id
-    @booking.photographer_id = @photographer.id
+    @booking.photographer_id = (params[:photographer_id])
+    @booking.status = "予約申請中"
 
     if @booking.save
       BookMailer.send_when_user_book(@booking).deliver
-      redirect_to photographer_confirm_path(@photographer.id,@booking.id)
+      redirect_to photographer_confirm_path((params[:photographer_id]),@booking.id)
     else
       render :new
     end
@@ -26,7 +27,8 @@ class BooksController < ApplicationController
 
   def index
 
-    @bookings = Book.page(params[:page])
+    @photographer = Photographer.find_by(user_id: current_user.id)
+    @bookings = @photographer.books.page(params[:page]).per(50).order(id: "DESC")
 
   end
 
@@ -38,27 +40,40 @@ class BooksController < ApplicationController
 
   def confirm
 
-    @booking = Book.find(params[:id])
+    @bookid = params[:format]
+    @photographerid = params[:photographer_id]
 
   end
 
   def edit
 
     @booking = Book.find(params[:id])
+    @photographer = Photographer.find(params[:photographer_id])
 
   end
 
   def update
+
+    booking = Book.find(params[:id])
+    booking.update(booking_params)
+    redirect_to photographer_book_path(booking)
+
   end
 
   def destroy
+
+    booking = Book.find(params[:id])
+    booking.destroy
+    photographer = Photographer.find(params[:photographer_id])
+    #redirect_to users_photographer_path(photographer)
+
   end
 
 
   private
 
   def booking_params
-  	params.require(:book).permit(:date, :time, :message, :meeting_spot, :total_price)
+  	params.require(:book).permit(:date, :start_time, :end_time, :status, :message, :meeting_spot, :total_price)
   end
 
   def photographer_params

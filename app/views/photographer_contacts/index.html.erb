@@ -1,0 +1,35 @@
+<!-- フォトグラファー 問い合わせ 一覧ページ -->
+<!-- ヘッダー部分テンプレート -->
+<%= render 'layouts/photographers-header' %>
+<br>
+<br>
+<br>
+<div class = "container">
+  <div class = "row">
+	<h1>問い合わせ一覧</h1>
+	<table class = "table">
+		<tr>
+			<th> ユーザー名</th>
+			<th> メールアドレス</th>
+			<th> 氏名</th>
+			<th> タイトル</th>
+			<th> 内容</th>
+			<th></th>
+		</tr>
+		<% @contacts.each do |contact| %>
+			<tr>
+				<td> <%= contact.id %></td>
+				<td> <%= contact.mail %></td>
+				<td> <%= contact.last_name %> <%= contact.first_name %> </td>
+				<td> <%= contact.contact_title%></td>
+				<td> <%= contact.contact_contents%></td>
+				<td> <%= link_to "詳細", photographer_contact_path(contact), class: "btn btn-success" %></td>
+			</tr>
+		<% end %>
+		<%= paginate @contacts, class: "paginate" %>
+	</table>
+  </div>
+</div>
+<%= render 'layouts/users-footer' %>
+
+
