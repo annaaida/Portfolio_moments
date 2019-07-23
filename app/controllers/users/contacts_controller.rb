@@ -9,7 +9,7 @@ class Users::ContactsController < ApplicationController
   def create
 
   	@contact = Contact.new(contact_params)
-	  @contact.user_id = current_user.user_id
+	  @contact.user_id = current_user.id
 
   	if @contact.save!
   		flash[:notice] = "送信に成功しました"
