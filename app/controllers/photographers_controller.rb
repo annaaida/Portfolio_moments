@@ -13,6 +13,7 @@ class PhotographersController < ApplicationController
     @photographer = Photographer.new
     @images = @photographer.images.build
     @images = Image.new(photographer_id: @photographer.id)
+    @cities = City.all
 
     5.times { @photographer.images.build }
 

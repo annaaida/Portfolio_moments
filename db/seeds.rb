@@ -45,5 +45,5 @@ Country.create(country_name: 'United Kingdom')
 Country.create(country_name: 'United States')
 Country.create(country_name: 'Vietnam')
 
-City.create(city_name: 'Tokyo', country_id: 20, photographer_id: 1)
+
 
