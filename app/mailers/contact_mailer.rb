@@ -5,7 +5,7 @@ class ContactMailer < ApplicationMailer
 
   def send_when_admin_reply(user, contact)
   	@user = user
-  	@answer = contact.reply_text
+  	@answer = contact.reply
 	mail to: @user.email, subject:'【 MOMENTS 】お問い合わせの回答。'
   end
 
