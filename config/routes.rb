@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admins do
-    get 'reviews/index'
-    get 'reviews/edit'
-    get 'reviews/update'
-    get 'reviews/destroy'
-  end
   devise_for :users
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
@@ -21,6 +15,7 @@ Rails.application.routes.draw do
     resources :contacts, except:[:edit, :update]
     resources :photographers, except:[:edit, :update]
     resources :countries, only:[:index, :edit, :update]
+    resources :reviews, only:[:index, :edit, :update, :destroy]
   end
 
   namespace :users do

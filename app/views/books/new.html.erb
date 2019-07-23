@@ -10,7 +10,7 @@
 		    <br>
 		    <!-- 左下 フォトグラファー情報 -->
             <div class = "row">
-			    <%= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '200x200' %>
+			    <%= attachment_image_tag @photographer, :profile_img, :fill, 200, 200, format: 'jpeg', fallback: "noimage.jpg", size: '200x200' %>
 		  	  <div class = "photographer-infomation-book-new">
 		  	     <h3><strong><%= @photographer.user.last_name %> <%= @photographer.user.first_name %></strong></h3><br>
 		  		 一時間あたり：<%= @photographer.price %>円（税抜き）<br>
