@@ -39,19 +39,20 @@
       <div class = "sidebar">
         <div class = "ranking-box">
         <p class = "ranking-title">いいねランキング</p>
-      <% @all_ranks.each.with_index(1) do |photographer , i| %>
+        <% @all_ranks.each.with_index(1) do |photographer , i| %>
         <div class = rank-img>
           <div class = "tape"></div>
-          <p><%= i %> 位　</p>
-          <%= attachment_image_tag photographer, :profile_img, :fill, 80, 80, fallback: "noimage.jpg", size: "80x80" %>
-          <div class = "right">
-              <span><%= link_to photographer.user.last_name %><%= link_to photographer.user.first_name %></span><br>
-              <p class = "details-rank"><%= number_with_delimiter(photographer.price) %>円 / 1時間</p>
+            <p><%= i %> 位　</p>
+            <%= attachment_image_tag photographer, :profile_img, :fill, 80, 80, fallback: "noimage.jpg", size: "80x80" %>
+            <div class = "right">
+                <span><%= link_to photographer.user.last_name %><%= link_to photographer.user.first_name %></span><br>
+                <p class = "details-rank"><%= number_with_delimiter(photographer.price) %>円 / 1時間</p>
+            </div>
           </div>
+        <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
-  </div>
   </div>
 </div>
 <%= render 'layouts/users-footer' %>

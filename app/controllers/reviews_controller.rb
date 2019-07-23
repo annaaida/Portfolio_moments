@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     @review.photographer_id = @photographer.id
 
     if @review.save
-      redirect_to users_photographer_path(@photographer)
+      redirect_to photographer_path(@photographer)
     else
       render :template => "reviews/new"
     end
@@ -43,7 +43,7 @@ class ReviewsController < ApplicationController
     review = Review.find(params[:id])
     review.destroy
     photographer = Photographer.find(params[:photographer_id])
-    redirect_to users_photographer_path(photographer)
+    redirect_to photographer_path(photographer)
 
   end
 

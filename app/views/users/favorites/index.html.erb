@@ -22,7 +22,7 @@
 		</tr>
 		<% @favorites.each do |f| %>
 			<tr>
-				<td> <%= attachment_image_tag f.photographer, :profile_img, :fill, 100, 100, format: 'jpeg', fallback: "noimage.jpg", size: '100x100', class: 'profile_image' %></td>
+				<td> <%= attachment_image_tag f.photographer, :profile_img, :fill, 100, 100, format: 'jpeg', fallback: "noimage.jpg", size: '100x100' %></td>
 				<td> <%= f.user.last_name %> <%= f.user.first_name %> </td>
 				<td> <%= f.photographer.area %></td>
 				<td> <%= f.photographer.price %></td>
