@@ -1,15 +1,4 @@
 <!-- ユーザー登録後、フォトグラファー権限カラムtrueの場合に、フォトグラファー情報登録画面として本画面に遷移 -->
-<script>
-    
-$('.js-searchable').select2({
-  width: 200,
-  allowClear: true,
-  theme: "bootstrap"
-});
-
-  </script>
-
-
 <%= render 'layouts/photographers-header' %>
 <div class = "container">
 	<div class = "row">
@@ -30,8 +19,8 @@ $('.js-searchable').select2({
      </div>
      <div class = "input">
       <%= f.label :対応可能エリア %>
-      <%= f.select :city_id, options_from_collection_for_select(@cities, :id, :city_name), input_html: {class: "js-searchable"} %>
-      <%#= select_tag :photographer, options_from_collection_for_select(@cities, :id, :city_name), class: "js-searchable" %>
+      <%#= f.select :city_id, options_from_collection_for_select(@cities, :id, :city_name), input_html: {class: "js-searchable"} %>
+      <%= select_tag "photographer[city_id]", options_from_collection_for_select(@cities, :id, :city_name), class: "js-searchable" %>
      </div>
      <div class = "input">
       <%= f.label :母国語 %>

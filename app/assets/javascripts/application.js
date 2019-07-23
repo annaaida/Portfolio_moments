@@ -39,9 +39,11 @@ $(function() {
 });
 
 
-$('.js-searchable').select2({
+$(document).ready(function(){
+  $('.js-searchable').select2({
   width: 200,
   allowClear: true,
   theme: "bootstrap"
+  });
 });
 

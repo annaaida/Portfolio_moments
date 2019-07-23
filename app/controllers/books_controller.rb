@@ -16,7 +16,7 @@ class BooksController < ApplicationController
     @booking.status = "予約申請中"
 
     if @booking.save
-      BookMailer.send_when_user_book(@booking).deliver
+      BookMailer.send_when_user_book(current_user,@booking).deliver
       redirect_to photographer_confirm_path((params[:photographer_id]),@booking.id)
     else
       render :new

@@ -59,7 +59,7 @@ class PhotographersController < ApplicationController
 
   def photographer_params
     params.require(:photographer).permit(
-      :price, :area, :mother_tongue, :language_1, :language_2, :introduction, :profile_img,
+      :price, :city_id, :mother_tongue, :language_1, :language_2, :introduction, :profile_img,
       images_attributes:[:id, :image, :image_number]
       )
   end

@@ -1,2 +1,2 @@
-class ApplicationMailer < ActionMailer::Base
-end
+# class ApplicationMailer < ActionMailer::Base
+# end

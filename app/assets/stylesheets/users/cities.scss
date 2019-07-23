@@ -36,15 +36,14 @@
   padding: 1em;
   background-color: #F6D55C;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
-  margin-bottom: 10px;
 }
 
 .tape{
   display: block;
   background-color: #ccb;
   opacity: 0.2;
-  transform: rotate(3deg);
-  width: 60%;
+  transform: rotate(4deg);
+  width: 40%;
   height: 35px;
   margin: -2em auto 0 auto;
   border-left: 3px dotted rgba(0,0,0,.1);
@@ -65,5 +64,9 @@
   padding: 10px;
   width: 100%;
   background-color: #f8f5f2;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+.right {
+  float: right;
 }

@@ -3,7 +3,7 @@ class Users::CitiesController < ApplicationController
   def show
 
   	@city = City.find(params[:id])
-  	@photographer = @city.city_photographers.includes(:photographer)
+  	@photographers = @city.photographers
   	@all_ranks = Photographer.find(Favorite.group(:photographer_id).order('count(photographer_id) desc').limit(10).pluck(:photographer_id))
 
   end

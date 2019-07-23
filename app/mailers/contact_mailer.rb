@@ -1,4 +1,4 @@
-class ContactMailer < ApplicationMailer
+class ContactMailer < ActionMailer::Base
 
 　default from: 'MOMENTS 管理人 <annaaidamailer@gmail.com>'
   layout 'mailer'

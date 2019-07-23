@@ -3,9 +3,7 @@ class Photographer < ApplicationRecord
   # has_one :user, dependent: :destroy
   has_many :favorites, dependent: :destroy
   belongs_to :user
-
-  has_many :city_photographers
-  has_many :cities, through: :city_photographers
+  belongs_to :city
   has_many :books
   has_many :reviews, dependent: :destroy
 
