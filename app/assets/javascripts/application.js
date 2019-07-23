@@ -17,6 +17,7 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require cocoon
+//= require select2
 //= require pickdate/legacy
 //= require pickdate/picker
 //= require pickdate/picker.date
@@ -39,7 +40,6 @@ $(function() {
 });
 
 $('.js-searchable').select2({
-
   width: 200,
   allowClear: true
   theme: "bootstrap"

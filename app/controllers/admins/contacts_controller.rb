@@ -18,7 +18,7 @@ class Admins::ContactsController < ApplicationController
 
   end
 
-  def create
+  def update
 
     contact = Contact.find(params[:id])
     contact.update(contact_params)
@@ -38,7 +38,7 @@ class Admins::ContactsController < ApplicationController
   end
 
   def contact_params
-    params.require(:contact).permit(:reply_text)
+    params.require(:contact).permit(:name, :contact_title, :contact_contents, :reply)
   end
 
 end

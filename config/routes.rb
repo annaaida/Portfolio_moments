@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :users
     resources :cities
     resources :books, except:[:new, :create]
-    resources :contacts, except:[:edit, :update]
+    resources :contacts, except:[:new, :create]
     resources :photographers, except:[:edit, :update]
     resources :countries, only:[:index, :edit, :update]
     resources :reviews, only:[:index, :edit, :update, :destroy]
@@ -37,7 +37,6 @@ Rails.application.routes.draw do
       get "/books/:id/index" => "books#index", as: "books_index"
       resources :reviews
       resource :favorites, only:[:create, :destroy]
-      resources :photographer_contacts, except:[:edit, :update, :destroy]
 
    end
 
