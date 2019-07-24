@@ -4,18 +4,21 @@
 <br>
 <div class = "container-fluid" id = "user-photographer-show">
   <div class = "row">
+    <div class = "notice">
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+      <% end %>
+    </div>
     <div class = "col-xs-3 js-fullheight text-center">
       <div class = "image-wrap">
-       <%= image_tag 'noimage.jpg' , class: "photographer-image"%>
-       <%#= attachment_image_tag @photographer, :profile_img, :fill, 1, 1, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %>
-       <p id = "fullname-users"><%#= @photographer.user.last_name %> <%#= @photographer.user.first_name %></p></li>
+       <%= attachment_image_tag @photographer, :profile_img, :fill, 160, 160, format: 'jpeg', fallback: "noimage.jpg", size: '160x160', class: 'profile_image' %>
+       <p id = "fullname-users"><%= @photographer.user.last_name %> <%= @photographer.user.first_name %></p></li>
         <!-- SNS リンク -->
           <a href = "#" class = "sns-btn"><i class = "fab fa-twitter-square"></i></a>
           <a href = "#" class = "sns-btn"><i class = "fab fa-instagram"></i></a>
           <a href ="#" class = "sns-btn"><i class = "fab fa-facebook-square"></i></a>
         <div class = "form-btn" id = "book-and-contact">
-          <%#= link_to '問い合わせ', new_photographer_photographer_contact_path, class: "btn btn-primary" %>
-          <%= link_to 'Book Now', new_photographer_book_path(@photographer), class: "btn btn-warning" %>
+          <%= link_to 'Book Now', new_photographer_book_path(@photographer), class: "btn btn-primary"%>
         </div>
         <!-- いいねボタン -->
           <span id = "favorite_buttons_<%= @photographer.id %>">
@@ -32,7 +35,7 @@
           <p class = "who-i-am clearfix"><%= @photographer.introduction %></p>
         </div>
         <div class = "area">
-          <p><span class="fas fa-map-marked-alt" id = "map-pin-icon"></span><strong> <%= @photographer.area %></strong> エリア対応</p>
+          <p><span class="fas fa-map-marked-alt" id = "map-pin-icon"></span><strong> <%= @photographer.city_id %></strong> エリア対応</p>
         </div>
         <div class = "language">
           <p><span class="fas fa-comments" id = "language-icon"></span><strong><%= @photographer.mother_tongue %></strong> が母国語です。日常会話レベルの<strong> <%= @photographer.language_1 %></strong> <strong> <%= @photographer.language_2 %> </strong>に対応できます。</p>

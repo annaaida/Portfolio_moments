@@ -25,7 +25,7 @@ class Admins::ContactsController < ApplicationController
     user = contact.user
     ContactMailer.send_when_admin_reply(user, contact).deliver
 
-    redirect_to admin_contacts_path
+    redirect_to admins_contacts_path
 
   end
 

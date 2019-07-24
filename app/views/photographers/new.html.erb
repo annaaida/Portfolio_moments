@@ -1,5 +1,4 @@
 <!-- ユーザー登録後、フォトグラファー権限カラムtrueの場合に、フォトグラファー情報登録画面として本画面に遷移 -->
-
 <%= render 'layouts/photographers-header' %>
 <div class = "container">
 	<div class = "row">
@@ -13,13 +12,15 @@
       <%= f.label :プロフィール画像 %>
       <%= f.attachment_field :profile_img %>
      </div>
+
      <div class = "input">
       <%= f.label :一時間あたりの値段 %>
       <%= f.text_field :price, autofocus: true %>
      </div>
      <div class = "input">
       <%= f.label :対応可能エリア %>
-      <%= select_tag :city_name, options_from_collection_for_select(@cities, :id, :city_name), class: "js-searchable" %>
+      <%#= f.select :city_id, options_from_collection_for_select(@cities, :id, :city_name), input_html: {class: "js-searchable"} %>
+      <%= select_tag "photographer[city_id]", options_from_collection_for_select(@cities, :id, :city_name), class: "js-searchable" %>
      </div>
      <div class = "input">
       <%= f.label :母国語 %>
@@ -35,7 +36,7 @@
      </div>
      <div class = "input">
       <%= f.label :自己紹介 %>
-      <%= f.text_field :introduction, autofocus: true %>
+      <%= f.text_area :introduction, autofocus: true %>
      </div>
 
      <!-- images 追加 -->

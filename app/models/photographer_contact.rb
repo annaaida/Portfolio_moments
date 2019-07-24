@@ -1,2 +1,0 @@
-class PhotographerContact < ApplicationRecord
-end

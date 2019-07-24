@@ -10,7 +10,7 @@
 .top-title-city-show h1 {
  	margin: 90px;
 	font-size: 60px;
-	font-family: 'Sigmar One', cursive;
+	font-family: 'Acme', sans-serif;
 	color: #FFF;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .city-show-img {
-	height: 500px;
+	height: 400px;
   	width: 100%;
   	background-size: cover;
   	background-position: center;
@@ -34,17 +34,16 @@
   width: 300px;
   margin: 35px;
   padding: 1em;
-  background-color: #F0EAD2;
+  background-color: #F6D55C;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
-  margin-bottom: 10px;
 }
 
 .tape{
   display: block;
   background-color: #ccb;
   opacity: 0.2;
-  transform: rotate(3deg);
-  width: 60%;
+  transform: rotate(4deg);
+  width: 40%;
   height: 35px;
   margin: -2em auto 0 auto;
   border-left: 3px dotted rgba(0,0,0,.1);
@@ -52,18 +51,26 @@
 }
 
 .ranking-title {
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   font-family:'Reimin Light';
-  margin-bottom: 15px;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 .rank-img{
   float:left;
   padding: 10px;
   width: 100%;
-  background-color: #EBC073;
-  margin-bottom: 30px;
+  background-color: #f8f5f2;
+  margin-bottom: 40px;
+}
+
+.right {
+  float: right;
+}
+
+.profile-table {
+  height: 250px;
 }

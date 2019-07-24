@@ -1,17 +1,15 @@
 
-  <h2><%= @user.name %> 様</h2>
+  <h2><%= @user.last_name %> 様</h2>
 　<p>この度は、ご予約ありがとうございました。<br>
 　以下でご予約を承りました。</p>
 
-  <p>フォトグラファー：</p><%= @hotographer %>
-  <p>日付：</p><%= @date %>
-  <p>時間：</p><%= @time %>
-  <p>メッセージ：</p><%= @message %>
-  <p>待ち合わせ場所：</p><%= @meeting_spot %>
-  <p>合計金額：</p><%= @total_price %>
+  <p>フォトグラファーid：<%= @book.photographer_id %></p>
+  <p>日付：<%= @book.date %></p>
+  <p>時間：<%= @book.start_time %>〜<%= @book.end_time %></p>
+  <p>メッセージ：</p><%= @book.message %>
+  <p>待ち合わせ場所：</p><%= @book.meeting_spot %>
 
   <p>フォトグラファーの承認まで予約確定ではありませんので<br>
   ご注意ください。よろしくお願いいたします。</p>
-
 
   <p>MOMENTS 管理人</p>

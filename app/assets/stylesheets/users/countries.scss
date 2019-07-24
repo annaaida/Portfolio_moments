@@ -5,8 +5,8 @@
 /* index page*/
 
 .main-image {
-  height: 550px;
-  background-image: url("/assets/photographer.jpg");
+  height: 500px;
+  background-image: url("/public/photographer.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -14,7 +14,7 @@
 .main-image h1 {
   font-size: 60px;
   padding: 60px 80px;
-  font-family: 'Sigmar One', cursive;
+  font-family: 'Acme', sans-serif;
   color: #FFF;
 }
 
@@ -67,7 +67,7 @@ span {
   top: 120px;
   left: 80px;
   font-size: 80px;
-  font-family: 'Sigmar One', cursive;
+  font-family: 'Acme', sans-serif;
   color: #FFF;
 }
 

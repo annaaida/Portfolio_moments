@@ -15,7 +15,6 @@
 //= require jquery_ujs
 //= require activestorage
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require cocoon
 //= require select2
 //= require pickdate/legacy
@@ -39,8 +38,12 @@ $(function() {
   });
 });
 
-$('.js-searchable').select2({
+
+$(document).ready(function(){
+  $('.js-searchable').select2({
   width: 200,
-  allowClear: true
+  allowClear: true,
   theme: "bootstrap"
+  });
 });
+

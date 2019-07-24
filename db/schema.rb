@@ -10,19 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_23_021346) do
-
-  create_table "admin_contacts", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "photographer_id"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "mail"
-    t.string "title"
-    t.text "contents"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2019_07_23_113822) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -65,13 +53,6 @@ ActiveRecord::Schema.define(version: 2019_07_23_021346) do
     t.string "city_img_id"
   end
 
-  create_table "city_photographers", force: :cascade do |t|
-    t.integer "city_id"
-    t.integer "photographer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "contacts", force: :cascade do |t|
     t.integer "user_id"
     t.integer "photographer_id"
@@ -109,18 +90,6 @@ ActiveRecord::Schema.define(version: 2019_07_23_021346) do
     t.string "image_number"
   end
 
-  create_table "photographer_contacts", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "photographer_id"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "mail"
-    t.string "title"
-    t.text "contents"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "photographers", force: :cascade do |t|
     t.integer "image_id"
     t.string "price"
@@ -133,6 +102,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_021346) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "profile_img_id"
+    t.integer "city_id"
   end
 
   create_table "reviews", force: :cascade do |t|
