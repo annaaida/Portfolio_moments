@@ -42,7 +42,7 @@
                   <% end %>
               <% end %>
               </li>
-              <% unless current_user.photographer_id? %>
+              <% if current_user.photographer_id.nil? %>
                 <li><%= link_to new_photographer_path(current_user) do %>
                       <p><i class="fas fa-user-cog"></i> フォトグラファー情報新規作成 </p>
                     <% end %>
