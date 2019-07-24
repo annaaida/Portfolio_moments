@@ -4,6 +4,11 @@
 <br>
 <div class = "container-fluid" id = "user-photographer-show">
   <div class = "row">
+    <div class = "notice">
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+      <% end %>
+    </div>
     <div class = "col-xs-3 js-fullheight text-center">
       <div class = "image-wrap">
        <%= attachment_image_tag @photographer, :profile_img, :fill, 160, 160, format: 'jpeg', fallback: "noimage.jpg", size: '160x160', class: 'profile_image' %>

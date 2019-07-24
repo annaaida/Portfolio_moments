@@ -1,6 +1,6 @@
 class ContactMailer < ActionMailer::Base
 
-　default from: 'MOMENTS 管理人 <annaaidamailer@gmail.com>'
+  default from: 'MOMENTS 管理人 <annaaidamailer@gmail.com>'
   layout 'mailer'
 
   def send_when_admin_reply(user, contact)
