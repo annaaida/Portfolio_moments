@@ -5,7 +5,7 @@
     <h3>レビュー投稿</h3>
     <div class = "photographer-information">
       <div class = "col-xs-3">
-          <%= attachment_image_tag @photographer, :profile_img, :fill, 200, 200, format: 'jpeg', fallback: "noimage.jpg", size: "200x200" %><br>
+          <%= attachment_image_tag @photographer, :profile_img, :fill, 200, 200, format: 'jpeg', fallback: "/public/noimage.jpg", size: "200x200" %><br>
       </div>
       <div class = "col-xs-9" id = "top-on-review">
           <p class = "name"><%= @photographer.user.last_name %><%= @photographer.user.first_name %></p><br>

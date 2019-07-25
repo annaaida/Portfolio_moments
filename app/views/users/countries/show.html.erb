@@ -5,7 +5,7 @@
   <div class = "row">
     <!-- メイン背景イメージ -->
     <div id  = "country-show-img-box">
-      <%= attachment_image_tag @country, :country_img, :fill, 1000, 500, format: 'jpeg', fallback: "no_image.jpg", class: "country-show-img" %>
+      <%= attachment_image_tag @country, :country_img, :fill, 1000, 500, format: 'jpeg', fallback: "/public/no_image.jpg", class: "country-show-img" %>
       <h1><%= @country.country_name %></h1>
     </div>
   </div>
@@ -24,7 +24,7 @@
      <% @cities.each do |city| %>
     　　<div class = "country-items-box">
           <div class = "country-items">
-      　　　<%= attachment_image_tag city, :city_img, :fill, 400, 300, format: 'jpeg', fallback: "no_image.jpg", size: "400x300" %><br>
+      　　　<%= attachment_image_tag city, :city_img, :fill, 400, 300, format: 'jpeg', fallback: "/public/no_image.jpg", size: "400x300" %><br>
       　　　<span class = "country_name"> <%= link_to city.city_name, users_city_path(city) %></span>
     　　  </div>
        </div>
