@@ -5,7 +5,7 @@
     <%= render 'layouts/users-header' %>
     <!-- メイン背景イメージ -->
     <div id  = "country-show-img-box">
-      <%= attachment_image_tag @city, :city_img, :fill, 1000, 400, format: 'jpeg', fallback: "/public/no_image.jpg", class: "city-show-img" %>
+      <%= attachment_image_tag @city, :city_img, :fill, 1000, 400, format: 'jpeg', fallback: "/no_image.jpg", class: "city-show-img" %>
       <h1><%= @city.city_name %></h1>
     </div>
   </div>
@@ -24,7 +24,7 @@
             <tbody>
             <% @photographers.each do |photo| %>
               <tr>
-                <td style = "width:80px;"><%= attachment_image_tag photo, :profile_img, :fill, 100, 100, format: 'jpeg', fallback: "/public/noimage.jpg", size:'100x100' %></td>
+                <td style = "width:80px;"><%= attachment_image_tag photo, :profile_img, :fill, 100, 100, format: 'jpeg', fallback: "/noimage.jpg", size:'100x100' %></td>
                 <td style = "width:150px;"><%= link_to photo.user.last_name, photographer_path(photo) %><%= link_to photo.user.first_name, photographer_path(photo) %></td>
                 <td style = "width:150px;"><%= photo.price %>円 / 1時間</td>
                 <td class = "contents"><%= photo.introduction %></td>
@@ -43,7 +43,7 @@
         <div class = rank-img>
           <div class = "tape"></div>
             <p><%= i %> 位　</p>
-            <%= attachment_image_tag photographer, :profile_img, :fill, 80, 80, fallback: "/public/noimage.jpg", size: "80x80" %>
+            <%= attachment_image_tag photographer, :profile_img, :fill, 80, 80, fallback: "/noimage.jpg", size: "80x80" %>
             <div class = "right">
                 <span><%= link_to photographer.user.last_name %><%= link_to photographer.user.first_name %></span><br>
                 <p class = "details-rank"><%= number_with_delimiter(photographer.price) %>円 / 1時間</p>

@@ -44,7 +44,7 @@
       <%= f.fields_for :images do |i| %>
         <div class = "nested-fields">
 	       <div class = "field" id = "image-add-part">
-           <%= attachment_image_tag i.object, :image, :fill, 100, 100, format: 'jpeg', fallback: "/public/noimage.jpg" %><p>現在の画像</p>
+           <%= attachment_image_tag i.object, :image, :fill, 100, 100, format: 'jpeg', fallback: "/noimage.jpg" %><p>現在の画像</p>
            <%= i.attachment_field :image %>
 	         <%= i.select :image_number, [["1", "1"], ["2", "2"],  ["3", "3"], ["4", "4"],["5", "5"],["6", "6"]], class: "form-control", :prompt => "画像の位置を選択" %>
            <br>
