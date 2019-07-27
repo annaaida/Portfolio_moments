@@ -11,7 +11,7 @@
         <table class =  "table">
           <tbody>
             <tr>
-              <td><%= attachment_image_tag @user, :profile_img, :fill, 120, 120, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
+              <td><%= attachment_image_tag @user, :profile_img, :fill, 120, 120, format: 'jpeg', fallback: "/noimage.jpg", size: '120x120', class: 'profile_image' %></td>
             </tr>
             <tr>
               <td><p id = "fullname"><%= current_user.last_name %> <%= current_user.first_name %>さん</p></td>
@@ -36,17 +36,16 @@
                    <p><i class="fas fa-user-cog"></i> 基本情報の編集 </p>
                   <% end %>
               </li>
-              <% if current_user.photographer_id.present? %>
+              <% if current_user.photographer_id? %>
               <li><%= link_to photographer_top_path(@photographer) do %>
                     <p><i class="fas fa-camera-retro"></i> フォトグラファーマイページ </p>
                   <% end %>
-              <% end %>
+              <% else %>
               </li>
-              <% unless current_user.photographer_id? %>
-                <li><%= link_to new_photographer_path(current_user) do %>
+              <li><%= link_to new_photographer_path(current_user) do %>
                       <p><i class="fas fa-user-cog"></i> フォトグラファー情報新規作成 </p>
-                    <% end %>
-                </li>
+                  <% end %>
+              </li>
               <% end %>
              </ul>
           </div>
@@ -73,7 +72,7 @@
                   <tbody>
                   <% @bookings.each do |booking| %>
                     <tr>
-                      <td><%= attachment_image_tag booking.photographer, :profile_img, :fill, 50, 50, format: 'jpeg', fallback: "noimage.jpg", size: '50x50' %></td>
+                      <td><%= attachment_image_tag booking.photographer, :profile_img, :fill, 50, 50, format: 'jpeg', fallback: "/noimage.jpg", size: '50x50' %></td>
                       <td><%= booking.photographer.user.last_name %><%= booking.photographer.user.first_name %></td>
                       <td><%= booking.date %></td>
                       <td><%= booking.start_time.to_time.strftime("%-H時%-M分") %>〜<%= booking.end_time.to_time.strftime("%-H時%-M分") %></td>

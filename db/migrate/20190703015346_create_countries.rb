@@ -1,6 +1,6 @@
 class CreateCountries < ActiveRecord::Migration[5.2]
   def change
-    create_table :countries do |t|
+    create_table :countries,:options => 'ENGINE=InnoDB ROW_FORMAT=DYNAMIC' do |t|
       t.integer :photographer_id
       t.integer :city_id
       t.string :country_name
@@ -10,3 +10,4 @@ class CreateCountries < ActiveRecord::Migration[5.2]
     end
   end
 end
+
