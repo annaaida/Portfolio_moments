@@ -4,10 +4,10 @@
     <div class = "clearfix"></div>
       <div class = "col-xs-3 js-fullheight text-center" id = "photographer-mypage">
         <h1 class = "mypage-title"> Photographer<br>my page</h1>
-        <table class =  "table" id = "photographer-info">
+        <table class="table" id="photographer-info">
           <tbody>
             <tr>
-              <td><%= attachment_image_tag @photographer, :profile_img, :fill, 120, 120, format: 'jpeg', fallback: "noimage.jpg", size: '120x120', class: 'profile_image' %></td>
+              <td><%= attachment_image_tag @photographer, :profile_img, :fill, 120, 120, format: 'jpeg', fallback: "/noimage.jpg", size: '120x120', class: 'profile_image' %></td>
             </tr>
             <tr>
               <td><p id = "fullname"><%= @user.last_name %> <%= @user.first_name %></p></td>
@@ -76,7 +76,7 @@
                 <tbody>
                 <% @bookings.each do |booking| %>
                   <tr>
-                    <td><%= attachment_image_tag booking.photographer, :profile_img, :fill, 50, 50, format: 'jpeg', fallback: "noimage.jpg", size: '50x50' %></td>
+                    <td><%= attachment_image_tag booking.photographer, :profile_img, :fill, 50, 50, format: 'jpeg', fallback: "/noimage.jpg", size: '50x50' %></td>
                     <td><%#= booking.user.last_name %><%#= booking.user.first_name %></td>
                     <td><%= booking.date %></td>
                     <td><%= booking.start_time.to_time.strftime("%-H時%-M分") %>〜<%= booking.end_time.to_time.strftime("%-H時%-M分") %></td>

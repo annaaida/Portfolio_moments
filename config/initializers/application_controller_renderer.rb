@@ -7,4 +7,4 @@
 #   )
 # end
 
-Refile.secret_key = '8cc046272dc93e5f67cf2ceecfed9edc4a4f78d29272195ced1a31bbeb6cff037e0920ce1b1650cf1b1f54d78d34bc56fcb0b784a7136165afb758a33fe4778a'
+Refile.secret_key = 'eb6e2d9717bc77d22765a15bc8d0febc140857a29e469e1c510d3b93f31df3df1756b535dc390b19edd1e3e6698e9fc18c287da3c13d26e4a42fbc83d66dfcab'

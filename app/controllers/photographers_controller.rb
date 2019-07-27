@@ -23,7 +23,10 @@ class PhotographersController < ApplicationController
 
     @photographer = Photographer.new(photographer_params)
     @photographer.user_id = current_user.id
-    if @photographer.save
+
+    @user = current_user
+    if @photographer.save!
+       @user.update(photographer_id: current_user.id)
       flash[:notice] = "フォトグラファー情報の登録が完了しました"
       redirect_to photographer_path(@photographer.id)
     end
@@ -62,6 +65,10 @@ class PhotographersController < ApplicationController
       :price, :city_id, :mother_tongue, :language_1, :language_2, :introduction, :profile_img,
       images_attributes:[:id, :image, :image_number]
       )
+  end
+
+  def user_params
+    params.require(:user).permit(:photographer_id)
   end
 
 end

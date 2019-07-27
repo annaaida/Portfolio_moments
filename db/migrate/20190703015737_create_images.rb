@@ -1,6 +1,7 @@
 class CreateImages < ActiveRecord::Migration[5.2]
   def change
-    create_table :images,:options => 'ENGINE=InnoDB ROW_FORMAT=DYNAMIC' do |t|
+    create_table :images, :options => 'ENGINE=InnoDB ROW_FORMAT=DYNAMIC' do |t|
+
       t.integer :photographer_id
       t.string :image_1
       t.string :image_2

@@ -11,7 +11,7 @@
     </div>
     <div class = "col-xs-3 js-fullheight text-center">
       <div class = "image-wrap">
-       <%= attachment_image_tag @photographer, :profile_img, :fill, 160, 160, format: 'jpeg', fallback: "noimage.jpg", size: '160x160', class: 'profile_image' %>
+       <%= attachment_image_tag @photographer, :profile_img, :fill, 160, 160, format: 'jpeg', fallback: "/noimage.jpg", size: '160x160', class: 'profile_image' %>
        <p id = "fullname-users"><%= @photographer.user.last_name %> <%= @photographer.user.first_name %></p></li>
         <!-- SNS リンク -->
           <a href = "#" class = "sns-btn"><i class = "fab fa-twitter-square"></i></a>
@@ -35,7 +35,7 @@
           <p class = "who-i-am clearfix"><%= @photographer.introduction %></p>
         </div>
         <div class = "area">
-          <p><span class="fas fa-map-marked-alt" id = "map-pin-icon"></span><strong> <%= @photographer.city_id %></strong> エリア対応</p>
+          <p><span class="fas fa-map-marked-alt" id = "map-pin-icon"></span><strong> <%= @photographer.city.city_name %></strong> エリア対応</p>
         </div>
         <div class = "language">
           <p><span class="fas fa-comments" id = "language-icon"></span><strong><%= @photographer.mother_tongue %></strong> が母国語です。日常会話レベルの<strong> <%= @photographer.language_1 %></strong> <strong> <%= @photographer.language_2 %> </strong>に対応できます。</p>
@@ -44,7 +44,7 @@
           <div class = "images_wrapper">
             <% @images.each do |i| %>
               <div class = "row">
-                <%= attachment_image_tag i, :image, :fill, 220, 220, format: 'jpeg', fallback: "noimage.jpg", size: '220x220', class: 'portfolio-picture' %>
+                <%= attachment_image_tag i, :image, :fill, 220, 220, format: 'jpeg', fallback: "/noimage.jpg", size: '220x220', class: 'portfolio-picture' %>
               </div>
             <% end %>
           </div>
