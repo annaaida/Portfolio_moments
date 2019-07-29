@@ -17,15 +17,15 @@
         <div class = "row">
           <div class = "side-bar">
             <ul class="nav nav-sidebar">
-              <li><%= link_to photographer_books_path(current_user.photographer) do %>
+              <li><%= link_to photographer_books_path(current_user.photographer_id) do %>
                    <p><i class="far fa-calendar-alt"></i> 予約一覧</p>
                   <% end %>
               </li>
-              <li><%= link_to photographer_path(current_user.photographer) do %> <!-- showページへ -->
+              <li><%= link_to photographer_path(current_user.photographer_id) do %> <!-- showページへ -->
                     <p><i class="fas fa-camera-retro"></i> ポートフォリオを確認 </p>
                   <% end %>
               </li>
-              <li><%= link_to edit_photographer_path(current_user.photographer) do %> <!-- editページへ -->
+              <li><%= link_to edit_photographer_path(current_user.photographer_id) do %> <!-- editページへ -->
                     <p><i class="far fa-edit"></i> ポートフォリオを編集 </p>
                 <% end %>
               </li>
