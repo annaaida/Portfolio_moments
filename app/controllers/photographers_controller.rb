@@ -26,8 +26,7 @@ class PhotographersController < ApplicationController
 
     @user = current_user
     if @photographer.save!
-       binding.pry
-       @user.update(photographer_id: @photograher.id)
+       @user.update(photographer_id: @photographer.id)
       flash[:notice] = "フォトグラファー情報の登録が完了しました"
       redirect_to photographer_path(@photographer.id)
     end
