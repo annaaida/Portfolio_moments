@@ -2,7 +2,7 @@ class Users::FavoritesController < ApplicationController
 
   def index
 
-  	@favorites = Favorite.page(params[:page]).per(20).order(id: "DESC")
+  	@favorites = Favorite.where(user_id: current_user.id)
 
   end
 

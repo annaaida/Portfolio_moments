@@ -23,14 +23,13 @@
 		<% @favorites.each do |f| %>
 			<tr>
 				<td> <%= attachment_image_tag f.photographer, :profile_img, :fill, 100, 100, format: 'jpeg', fallback: "/noimage.jpg", size: '100x100' %></td>
-				<td> <%= f.user.last_name %> <%= f.user.first_name %> </td>
+				<td> <%= f.photographer.user.last_name %> <%= f.photographer.user.first_name %> </td>
 				<td> <%= f.photographer.area %></td>
 				<td> <%= f.photographer.price %></td>
 				<td> <%= f.photographer.introduction %></td>
 				<td> <%= link_to "詳細", photographer_path(f.photographer_id), class: "btn btn-success" %></td>
 			</tr>
 		<% end %>
-		<%= paginate @favorites, class: "paginate" %>
 	</table>
   </div>
 </div>
