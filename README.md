@@ -10,7 +10,7 @@
 
 * Database initialization： `Mysql`
 
-* Library： gem devise / gem ‘kaminari’ /gem refile / gem refile-mini_magick / gem ransack / gem bootstrap-sass, ~> 3.3.6 / gem pry-rails / gem select-2
+* Library： `gem devise` / `gem ‘kaminari’` /`gem refile` / `gem refile-mini_magick` / `gem ransack` / `gem bootstrap-sass, ~> 3.3.6` / `gem pry-rails` / `gem select-2`
 
 * Deployment instructions： `AWS`
 
